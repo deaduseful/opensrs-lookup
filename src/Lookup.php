@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DeadUseful;
+namespace DeadUseful\Opensrs;
 
 use Exception;
 use SimpleXMLElement;
@@ -15,7 +15,7 @@ define('OSRS_USERNAME', getenv('OSRS_USERNAME'));
  */
 define('OSRS_KEY', getenv('OSRS_KEY'));
 
-class OpensrsLookup
+class Lookup
 {
     /**
      * OpenSRS domain service API url.
@@ -196,9 +196,9 @@ class OpensrsLookup
 
     /**
      * @param string $key
-     * @return OpensrsLookup
+     * @return Lookup
      */
-    public function setKey(string $key): OpensrsLookup
+    public function setKey(string $key): Lookup
     {
         $this->key = $key;
         return $this;
@@ -214,9 +214,9 @@ class OpensrsLookup
 
     /**
      * @param string $username
-     * @return OpensrsLookup
+     * @return Lookup
      */
-    public function setUsername(string $username): OpensrsLookup
+    public function setUsername(string $username): Lookup
     {
         $this->username = $username;
         return $this;
@@ -258,9 +258,9 @@ class OpensrsLookup
 
     /**
      * @param int $timeout
-     * @return OpensrsLookup
+     * @return Lookup
      */
-    public function setTimeout(int $timeout): OpensrsLookup
+    public function setTimeout(int $timeout): Lookup
     {
         $this->timeout = $timeout;
         return $this;
@@ -276,9 +276,9 @@ class OpensrsLookup
 
     /**
      * @param string $host
-     * @return OpensrsLookup
+     * @return Lookup
      */
-    public function setHost(string $host): OpensrsLookup
+    public function setHost(string $host): Lookup
     {
         $this->host = $host;
         return $this;
@@ -294,7 +294,7 @@ class OpensrsLookup
 
     /**
      * @param array $result
-     * @return OpensrsLookup
+     * @return Lookup
      */
     public function setResult($result)
     {

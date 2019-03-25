@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DeadUseful;
+namespace DeadUseful\Opensrs;
 
 use Exception;
 
-class OpensrsFastLookup
+class FastLookup
 {
     /**
      * OpenSRS domain service API url.
@@ -33,7 +33,7 @@ class OpensrsFastLookup
     private $port = self::OSRS_FASTLOOKUP_PORT;
 
     /**
-     * OpensrsFastLookup constructor.
+     * FastLookup constructor.
      * @param $query string The domain to query.
      */
     function __construct($query)
@@ -104,9 +104,9 @@ class OpensrsFastLookup
 
     /**
      * @param string $host
-     * @return OpensrsFastLookup
+     * @return FastLookup
      */
-    public function setHost(string $host): OpensrsFastLookup
+    public function setHost(string $host): FastLookup
     {
         $this->host = $host;
         return $this;
@@ -122,9 +122,9 @@ class OpensrsFastLookup
 
     /**
      * @param string $port
-     * @return OpensrsFastLookup
+     * @return FastLookup
      */
-    public function setPort(string $port): OpensrsFastLookup
+    public function setPort(string $port): FastLookup
     {
         $this->port = $port;
         return $this;
