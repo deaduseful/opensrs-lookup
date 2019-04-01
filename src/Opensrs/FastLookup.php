@@ -1,6 +1,6 @@
 <?php
 
-namespace DeadUseful\Opensrs;
+namespace Deaduseful\Opensrs;
 
 use Exception;
 

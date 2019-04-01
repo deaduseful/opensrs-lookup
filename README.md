@@ -8,10 +8,16 @@ A simple Tucows OpenSRS lookup API for PHP.
 
 ## Usage
 
+### FastLookup
 ```php
+    /**
+     * @param $query
+     * @return bool
+     * @throws Exception
+     */
     function checkAvailability($query)
     {
-        $lookup = new DeadUseful\Opensrs\FastLookup($query);
+        $lookup = new Deaduseful\Opensrs\FastLookup($query);
         $result = $lookup->getResult();
         if ($result['status'] === 'taken') {
             return false;
@@ -22,3 +28,17 @@ A simple Tucows OpenSRS lookup API for PHP.
         throw new Exception('No result.');
     }
 ```
+### Lookup
+```php
+    function checkTransferable($query)
+    {
+        $lookup = new Deaduseful\Opensrs\Lookup($query, 'check_transfer');
+        $result = $lookup->getResult();
+        return $result['transferrable'] === 1;
+    }
+```
+
+### About
+
+- A [deaduseful](https://deaduseful.com/) project.
+- [Made by Wade](https://wade.be/)
