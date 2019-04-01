@@ -2,6 +2,7 @@
     "name": "deaduseful/opensrs-lookup",
     "description": "A simple Tucows OpenSRS lookup API for PHP",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "James Wade",
