@@ -13,7 +13,7 @@ class FastLookup
     const OSRS_HOST = 'rr-n1-tor.opensrs.net';
 
     /**
-     * OpenSRS API fastlookup port.
+     * OpenSRS API fast lookup port.
      */
     const OSRS_FASTLOOKUP_PORT = 51000;
 
@@ -34,7 +34,7 @@ class FastLookup
 
     /**
      * FastLookup constructor.
-     * @param $query string The domain to query.
+     * @param string $query The domain to query.
      */
     function __construct($query)
     {
@@ -42,7 +42,7 @@ class FastLookup
     }
 
     /**
-     * @param $query
+     * @param string $query
      * @return void
      * @throws Exception
      */

@@ -8,12 +8,12 @@ use SimpleXMLElement;
 /**
  * OpenSRS reseller username.
  */
-define('OSRS_USERNAME', getenv('OSRS_USERNAME'));
+define('OSRS_USERNAME', (string) getenv('OSRS_USERNAME'));
 
 /**
  * OpenSRS reseller private Key. Please generate a key if you do not already have one.
  */
-define('OSRS_KEY', getenv('OSRS_KEY'));
+define('OSRS_KEY', (string) getenv('OSRS_KEY'));
 
 class Lookup
 {
@@ -65,7 +65,7 @@ class Lookup
 
     /**
      * DomainTransferable constructor.
-     * @param $query
+     * @param string $query
      * @param string $action
      * @param string $username
      * @param string $key
@@ -171,7 +171,7 @@ class Lookup
     /**
      * Builds the headers.
      *
-     * @param $request
+     * @param string $request
      * @return string
      */
     private function buildHeaders($request)
