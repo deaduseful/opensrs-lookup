@@ -28,7 +28,7 @@ class FastLookup
     private $host = self::OSRS_HOST;
 
     /**
-     * @var string
+     * @var integer
      */
     private $port = self::OSRS_FASTLOOKUP_PORT;
 
@@ -51,7 +51,7 @@ class FastLookup
         $command = "check_domain $query" . PHP_EOL;
         $response = self::lookup($command, $this->getHost(), $this->getPort());
         $results = explode(' ', $response, 2);
-        $responseCode = trim($results[0]);
+        $responseCode = (int)trim($results[0]);
         if (empty($responseCode)) {
             throw new Exception('Empty response.');
         }
@@ -77,9 +77,9 @@ class FastLookup
     /**
      * @param string $payload
      * @param string $host
-     * @param int $port
-     * @param int $length
-     * @param int $timeout
+     * @param integer $port
+     * @param integer $length
+     * @param integer $timeout
      * @return string
      */
     public function lookup($payload, $host = self::OSRS_HOST, $port = self::OSRS_FASTLOOKUP_PORT, $length = 2048, $timeout = 1)
@@ -113,18 +113,18 @@ class FastLookup
     }
 
     /**
-     * @return string
+     * @return integer
      */
-    public function getPort(): string
+    public function getPort(): integer
     {
         return $this->port;
     }
 
     /**
-     * @param string $port
+     * @param integer $port
      * @return FastLookup
      */
-    public function setPort(string $port): FastLookup
+    public function setPort(integer $port): FastLookup
     {
         $this->port = $port;
         return $this;
