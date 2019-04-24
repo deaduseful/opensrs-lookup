@@ -3,17 +3,18 @@
 namespace Deaduseful\Opensrs;
 
 use Exception;
+use RuntimeException;
 use SimpleXMLElement;
 
 /**
  * OpenSRS reseller username.
  */
-define('OSRS_USERNAME', (string) getenv('OSRS_USERNAME'));
+define('OSRS_USERNAME', (string)getenv('OSRS_USERNAME'));
 
 /**
  * OpenSRS reseller private Key. Please generate a key if you do not already have one.
  */
-define('OSRS_KEY', (string) getenv('OSRS_KEY'));
+define('OSRS_KEY', (string)getenv('OSRS_KEY'));
 
 class Lookup
 {
@@ -176,6 +177,12 @@ class Lookup
      */
     private function buildHeaders($request)
     {
+        if (empty($this->getUsername())) {
+            throw new RuntimeException('Username cannot be empty');
+        }
+        if (empty($this->getKey())) {
+            throw new RuntimeException('Key cannot be empty');
+        }
         $len = strlen($request);
         $signature = md5(md5($request . $this->getKey()) . $this->getKey());
         $header[] = 'Content-Type: text/xml';
