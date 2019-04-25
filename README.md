@@ -10,15 +10,10 @@ A simple Tucows OpenSRS lookup API for PHP.
 
 ### FastLookup
 ```php
-    /**
-     * @param $query
-     * @return bool
-     * @throws Exception
-     */
     function checkAvailability($query)
     {
-        $lookup = new Deaduseful\Opensrs\FastLookup($query);
-        $result = $lookup->getResult();
+        $lookup = new Deaduseful\Opensrs\FastLookup();
+        $result = $lookup->lookup($query);
         if ($result['status'] === 'taken') {
             return false;
         }
@@ -32,8 +27,8 @@ A simple Tucows OpenSRS lookup API for PHP.
 ```php
     function checkTransferable($query)
     {
-        $lookup = new Deaduseful\Opensrs\Lookup($query, 'check_transfer');
-        $result = $lookup->getResult();
+        $lookup = new Deaduseful\Opensrs\Lookup();
+        $result = $lookup->lookup($query, 'check_transfer');
         return $result['transferrable'] === 1;
     }
 ```

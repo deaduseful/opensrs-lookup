@@ -65,19 +65,21 @@ class Lookup
     private $key = OSRS_KEY;
 
     /**
-     * DomainTransferable constructor.
+     * Perform lookup.
      * @param string $query
      * @param string $action
      * @param string $username
      * @param string $key
+     * @return array
      */
-    public function __construct($query, $action = 'lookup', $username = OSRS_USERNAME, $key = OSRS_KEY)
+    public function lookup($query, $action = 'lookup', $username = OSRS_USERNAME, $key = OSRS_KEY)
     {
         $this->setQuery($query);
         $this->setAction($action);
         $this->setUsername($username);
         $this->setKey($key);
         $this->process();
+        return $this->getResult();
     }
 
     /**

@@ -9,8 +9,8 @@ include '../src/Opensrs/FastLookup.php';
  */
 function checkAvailability($query)
 {
-    $lookup = new Deaduseful\Opensrs\FastLookup($query);
-    $result = $lookup->getResult();
+    $lookup = new Deaduseful\Opensrs\FastLookup();
+    $result = $lookup->lookup($query);
     if ($result['status'] === 'taken') {
         return false;
     }

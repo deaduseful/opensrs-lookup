@@ -9,8 +9,8 @@ include '../src/Opensrs/Lookup.php';
  */
 function checkTransferable($query)
 {
-    $lookup = new Deaduseful\Opensrs\Lookup($query, 'check_transfer');
-    $result = $lookup->getResult();
+    $lookup = new Deaduseful\Opensrs\Lookup();
+    $result = $lookup->lookup($query, 'check_transfer');
     return $result['transferrable'] === 1;
 }
 
