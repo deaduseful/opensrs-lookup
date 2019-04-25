@@ -65,6 +65,16 @@ class Lookup
     private $key = OSRS_KEY;
 
     /**
+     * @param $query
+     * @return bool
+     */
+    public function checkTransfer($query)
+    {
+        $result = $this->lookup($query, 'check_transfer');
+        return (int)$result['transferrable'] === 1;
+    }
+
+    /**
      * Perform lookup.
      * @param string $query
      * @param string $action
@@ -198,24 +208,6 @@ class Lookup
     /**
      * @return string
      */
-    public function getKey(): string
-    {
-        return $this->key;
-    }
-
-    /**
-     * @param string $key
-     * @return Lookup
-     */
-    public function setKey(string $key): Lookup
-    {
-        $this->key = $key;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getUsername(): string
     {
         return $this->username;
@@ -228,6 +220,24 @@ class Lookup
     public function setUsername(string $username): Lookup
     {
         $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKey(): string
+    {
+        return $this->key;
+    }
+
+    /**
+     * @param string $key
+     * @return Lookup
+     */
+    public function setKey(string $key): Lookup
+    {
+        $this->key = $key;
         return $this;
     }
 

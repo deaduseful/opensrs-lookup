@@ -9,29 +9,12 @@ A simple Tucows OpenSRS lookup API for PHP.
 ## Usage
 
 ### FastLookup
-```php
-    function checkAvailability($query)
-    {
-        $lookup = new Deaduseful\Opensrs\FastLookup();
-        $result = $lookup->lookup($query);
-        if ($result['status'] === 'taken') {
-            return false;
-        }
-        if ($result['status'] === 'available') {
-            return true;
-        }
-        throw new Exception('No result.');
-    }
-```
+
+- See `example/availablility.php`
+
 ### Lookup
-```php
-    function checkTransferable($query)
-    {
-        $lookup = new Deaduseful\Opensrs\Lookup();
-        $result = $lookup->lookup($query, 'check_transfer');
-        return $result['transferrable'] === 1;
-    }
-```
+
+- See `example/transferability.php`
 
 ### About
 
