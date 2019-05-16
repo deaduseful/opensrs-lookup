@@ -22,7 +22,17 @@ class Lookup
      * OpenSRS domain service API url.
      * LIVE => rr-n1-tor.opensrs.net, TEST => horizon.opensrs.net
      */
-    const OSRS_HOST = 'https://rr-n1-tor.opensrs.net:55443';
+    const HOST = 'https://rr-n1-tor.opensrs.net:55443';
+
+    /**
+     * OpenSRS reseller username.
+     */
+    const USERNAME = OSRS_USERNAME;
+
+    /**
+     * OpenSRS reseller private Key. Please generate a key if you do not already have one.
+     */
+    const KEY = OSRS_KEY;
 
     /**
      * Socket Timeout in seconds.
@@ -52,7 +62,7 @@ class Lookup
     /**
      * @var string
      */
-    private $host = self::OSRS_HOST;
+    private $host = self::HOST;
 
     /**
      * @var string
@@ -84,7 +94,7 @@ class Lookup
      * @return array
      * @throws Exception
      */
-    public function lookup(string $query, string $action = 'lookup', string $username = OSRS_USERNAME, string $key = OSRS_KEY)
+    public function lookup(string $query, string $action = 'lookup', string $username = self::USERNAME, string $key = self::KEY)
     {
         $this->setQuery($query);
         $this->setAction($action);
