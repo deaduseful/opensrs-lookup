@@ -117,18 +117,18 @@ class FastLookup
     }
 
     /**
-     * @return integer
+     * @return int
      */
-    public function getPort(): integer
+    public function getPort(): int
     {
         return $this->port;
     }
 
     /**
-     * @param integer $port
+     * @param int $port
      * @return FastLookup
      */
-    public function setPort(integer $port): FastLookup
+    public function setPort(int $port): FastLookup
     {
         $this->port = $port;
         return $this;
