@@ -67,6 +67,7 @@ class Lookup
     /**
      * @param $query
      * @return bool
+     * @throws Exception
      */
     public function checkTransfer($query)
     {
