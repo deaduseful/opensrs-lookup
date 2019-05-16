@@ -37,6 +37,7 @@ class FastLookup
      *
      * @param string $query The domain to query.
      * @return array
+     * @throws Exception
      */
     public function lookup($query)
     {
