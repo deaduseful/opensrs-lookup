@@ -10,12 +10,12 @@ class FastLookup
      * OpenSRS domain service API url.
      * LIVE => rr-n1-tor.opensrs.net, TEST => horizon.opensrs.net
      */
-    const OSRS_HOST = 'rr-n1-tor.opensrs.net';
+    const HOST = 'rr-n1-tor.opensrs.net';
 
     /**
      * OpenSRS API fast lookup port.
      */
-    const OSRS_FASTLOOKUP_PORT = 51000;
+    const PORT = 51000;
 
     /**
      * @var array
@@ -25,12 +25,12 @@ class FastLookup
     /**
      * @var string
      */
-    private $host = self::OSRS_HOST;
+    private $host = self::HOST;
 
     /**
      * @var int
      */
-    private $port = self::OSRS_FASTLOOKUP_PORT;
+    private $port = self::PORT;
 
     /**
      * Lookup.
@@ -86,7 +86,7 @@ class FastLookup
      * @param int $timeout
      * @return string
      */
-    public function query(string $payload, string $host = self::OSRS_HOST, int $port = self::OSRS_FASTLOOKUP_PORT, int $length = 2048, int $timeout = 1)
+    public function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $length = 2048, int $timeout = 1)
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $options = ['sec' => $timeout, 'usec' => 0];
