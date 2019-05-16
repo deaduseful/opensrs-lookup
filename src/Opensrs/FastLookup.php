@@ -28,7 +28,7 @@ class FastLookup
     private $host = self::OSRS_HOST;
 
     /**
-     * @var integer
+     * @var int
      */
     private $port = self::OSRS_FASTLOOKUP_PORT;
 
@@ -39,7 +39,7 @@ class FastLookup
      * @return array
      * @throws Exception
      */
-    public function lookup($query)
+    public function lookup(string $query)
     {
         $this->checkDomain($query);
         return $this->getResult();
@@ -50,7 +50,7 @@ class FastLookup
      * @return void
      * @throws Exception
      */
-    public function checkDomain($query)
+    public function checkDomain(string $query)
     {
         $command = "check_domain $query" . PHP_EOL;
         $response = self::query($command, $this->getHost(), $this->getPort());
@@ -81,12 +81,12 @@ class FastLookup
     /**
      * @param string $payload
      * @param string $host
-     * @param integer $port
-     * @param integer $length
-     * @param integer $timeout
+     * @param int $port
+     * @param int $length
+     * @param int $timeout
      * @return string
      */
-    public function query($payload, $host = self::OSRS_HOST, $port = self::OSRS_FASTLOOKUP_PORT, $length = 2048, $timeout = 1)
+    public function query(string $payload, string $host = self::OSRS_HOST, int $port = self::OSRS_FASTLOOKUP_PORT, int $length = 2048, int $timeout = 1)
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $options = ['sec' => $timeout, 'usec' => 0];
