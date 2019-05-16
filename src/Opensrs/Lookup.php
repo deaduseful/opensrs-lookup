@@ -81,6 +81,7 @@ class Lookup
      * @param string $username
      * @param string $key
      * @return array
+     * @throws Exception
      */
     public function lookup($query, $action = 'lookup', $username = OSRS_USERNAME, $key = OSRS_KEY)
     {
