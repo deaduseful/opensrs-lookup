@@ -83,7 +83,7 @@ class Lookup
      * @return array
      * @throws Exception
      */
-    public function lookup($query, $action = 'lookup', $username = OSRS_USERNAME, $key = OSRS_KEY)
+    public function lookup(string $query, string $action = 'lookup', string $username = OSRS_USERNAME, string $key = OSRS_KEY)
     {
         $this->setQuery($query);
         $this->setAction($action);
@@ -161,7 +161,7 @@ class Lookup
     /**
      * @param string $action
      */
-    public function setAction($action)
+    public function setAction(string $action)
     {
         $this->action = $action;
     }
@@ -177,7 +177,7 @@ class Lookup
     /**
      * @param string $query
      */
-    public function setQuery($query)
+    public function setQuery(string $query)
     {
         $this->query = $query;
     }
@@ -188,7 +188,7 @@ class Lookup
      * @param string $request
      * @return string
      */
-    private function buildHeaders($request)
+    private function buildHeaders(string $request)
     {
         if (empty($this->getUsername())) {
             throw new RuntimeException('Username cannot be empty');
@@ -245,13 +245,13 @@ class Lookup
     /**
      * Similar to file_get_contents but uses the POST method.
      *
-     * @param $host
-     * @param $content
-     * @param $headers
+     * @param string $host
+     * @param string $content
+     * @param string $headers
      * @return string
      * @throws Exception
      */
-    private function filePostContents($host, $content, $headers)
+    private function filePostContents(string $host, string $content, string $headers)
     {
         $opts = [
             'http' =>
