@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-      "ext-simplexml": "*"
+      "ext-simplexml": "*",
+        "ext-sockets": "*"
     },
     "autoload": {
         "psr-4": {
