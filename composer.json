@@ -9,7 +9,9 @@
             "email": "jpswade@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+      "ext-simplexml": "*"
+    },
     "autoload": {
         "psr-4": {
             "Deaduseful\\Opensrs\\": "src"
