@@ -2,6 +2,7 @@
 
 namespace Deaduseful\Opensrs;
 
+use DomainException;
 use Exception;
 
 class FastLookup
@@ -48,7 +49,7 @@ class FastLookup
     /**
      * @param string $query
      * @return void
-     * @throws Exception
+     * @throws DomainException
      */
     public function checkDomain(string $query)
     {
@@ -57,7 +58,7 @@ class FastLookup
         $results = explode(' ', $response, 2);
         $responseCode = (int)trim($results[0]);
         if (empty($responseCode)) {
-            throw new Exception('Empty response.');
+            throw new DomainException('Empty response.');
         }
         $responseCodes = [
             210 => 'available',
@@ -68,7 +69,7 @@ class FastLookup
             701 => 'unknown_tld',
         ];
         if (array_key_exists($responseCode, $responseCodes) === false) {
-            throw new Exception('Unexpected response: ' . $response);
+            throw new DomainException('Unexpected response: ' . $response);
         }
         $result = [
             'response' => $response,
