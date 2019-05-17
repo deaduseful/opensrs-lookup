@@ -119,9 +119,6 @@ class Lookup
         $this->request = $this->encode();
         $this->headers = $this->buildHeaders($this->request);
         $this->content = $this->filePostContents($this->getHost(), $this->request, $this->headers);
-        if (empty($this->content)) {
-            throw new DomainException('Empty response.');
-        }
         $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
             throw new DomainException('Invalid XML response.');
@@ -268,10 +265,11 @@ class Lookup
      * @param string $headers
      * @return string
      * @throws Exception
+     * @throws DomainException
      */
     private function filePostContents(string $host, string $content, string $headers)
     {
-        $opts = [
+        $options = [
             'http' =>
                 [
                     'method' => 'POST',
@@ -280,9 +278,12 @@ class Lookup
                     'timeout' => $this->getTimeout()
                 ]
         ];
-        $context = stream_context_create($opts);
+        $context = stream_context_create($options);
         $flags = null;
         $contents = @file_get_contents($host, $flags, $context);
+        if (empty($this->content)) {
+            throw new DomainException(sprintf('Empty response, from host %s, with options %s', $host, var_export($options, true)));
+        }
         return $contents;
     }
 
