@@ -77,7 +77,8 @@ class Lookup
 
     public $request;
     public $headers;
-    public $content;
+    public $responseContent;
+    public $responseHeaders;
 
     /**
      * @param $query
@@ -118,7 +119,7 @@ class Lookup
     {
         $this->request = $this->encode();
         $this->headers = $this->buildHeaders($this->request);
-        $this->content = $this->filePostContents($this->getHost(), $this->request, $this->headers);
+        $this->content = $this->parseContents($this->getHost(), $this->request, $this->headers);
         $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
             throw new DomainException('Invalid XML response.');
@@ -274,9 +275,31 @@ class Lookup
         ];
         $context = stream_context_create($options);
         $flags = null;
-        $contents = @file_get_contents($host, $flags, $context);
+        $this->responseContent = @file_get_contents($host, $flags, $context);
+        $this->responseHeaders = $http_response_header;
+        return $this->responseContent;
+    }
+
+    /**
+     * @param string $host
+     * @param string $content
+     * @param string $headers
+     * @return string
+     * @throws Exception
+     */
+    private function parseContents(string $host, string $content, string $headers) {
+        $contents = $this->filePostContents($host, $content, $headers);
+        $responseHeaders = $this->responseHeaders;
         if (empty($contents)) {
-            throw new DomainException(sprintf('Empty response, from host %s, with request options %s, response headers: %s', $host, var_export($options, true), var_export($http_response_header, true)));
+            if (!empty($responseHeaders)) {
+                $contents = implode(PHP_EOL, $responseHeaders);
+                if (strpos($contents, '</OPS_envelope>') === false) {
+                    $contents .= '</OPS_envelope>';
+                }
+            }
+        }
+        if (empty($contents)) {
+            throw new DomainException(sprintf('Empty response, from host %s, with request content %s, request headers %s response headers: %s', $host, var_export($content, true), var_export($headers, true), var_export($responseHeaders, true)));
         }
         return $contents;
     }
