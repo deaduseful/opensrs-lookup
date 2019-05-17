@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Deaduseful\\Opensrs\\": "src"
+            "Deaduseful\\": "src"
         }
     },
     "require-dev": {
