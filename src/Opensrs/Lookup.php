@@ -200,6 +200,7 @@ class Lookup
      *
      * @param string $request
      * @return string
+     * @throws InvalidArgumentException
      */
     private function buildHeaders(string $request)
     {
