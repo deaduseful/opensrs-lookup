@@ -205,12 +205,6 @@ class Lookup
      */
     private function buildHeaders(string $request)
     {
-        if (empty($this->getUsername())) {
-            throw new InvalidArgumentException('Username cannot be empty');
-        }
-        if (empty($this->getKey())) {
-            throw new InvalidArgumentException('Key cannot be empty');
-        }
         $len = strlen($request);
         $signature = md5(md5($request . $this->getKey()) . $this->getKey());
         $header[] = 'Content-Type: text/xml';
