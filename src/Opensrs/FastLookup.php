@@ -145,9 +145,11 @@ class FastLookup
 
     /**
      * @param array $result
+     * @return FastLookup
      */
     public function setResult($result)
     {
         $this->result = $result;
+        return $this;
     }
 }
