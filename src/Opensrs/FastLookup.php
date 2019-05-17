@@ -58,7 +58,7 @@ class FastLookup
         $results = explode(' ', $response, 2);
         $responseCode = (int)trim($results[0]);
         if (empty($responseCode)) {
-            throw new DomainException('Empty response.');
+            throw new DomainException('Empty response code.');
         }
         $responseCodes = [
             210 => 'available',
