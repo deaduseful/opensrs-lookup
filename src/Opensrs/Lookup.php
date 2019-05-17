@@ -2,8 +2,9 @@
 
 namespace Deaduseful\Opensrs;
 
+use DomainException;
 use Exception;
-use RuntimeException;
+use InvalidArgumentException;
 use SimpleXMLElement;
 
 /**
@@ -106,6 +107,7 @@ class Lookup
 
     /**
      * Process query.
+     * @throws DomainException
      * @throws Exception
      */
     private function process()
@@ -114,11 +116,11 @@ class Lookup
         $headers = $this->buildHeaders($request);
         $result = $this->filePostContents($this->getHost(), $request, $headers);
         if (empty($result)) {
-            throw new Exception('Empty response.');
+            throw new DomainException('Empty response.');
         }
         $xml = simplexml_load_string($result, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
-            throw new Exception('Unable to load XML response.');
+            throw new DomainException('Invalid XML response.');
         }
         $dataBlock = [];
         foreach ($xml->body->data_block->dt_assoc->item as $item) {
@@ -128,10 +130,10 @@ class Lookup
         }
         $responseCode = (int)$dataBlock['response_code'];
         if ($responseCode === 401) {
-            throw new Exception('Username or key is incorrect, please check your config file.');
+            throw new DomainException('Username or key is incorrect, please check your config file.');
         }
         if ($responseCode > 299) {
-            throw new Exception($dataBlock['response_text']);
+            throw new DomainException($dataBlock['response_text']);
         }
         $attributes = [];
         foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
@@ -202,10 +204,10 @@ class Lookup
     private function buildHeaders(string $request)
     {
         if (empty($this->getUsername())) {
-            throw new RuntimeException('Username cannot be empty');
+            throw new InvalidArgumentException('Username cannot be empty');
         }
         if (empty($this->getKey())) {
-            throw new RuntimeException('Key cannot be empty');
+            throw new InvalidArgumentException('Key cannot be empty');
         }
         $len = strlen($request);
         $signature = md5(md5($request . $this->getKey()) . $this->getKey());
