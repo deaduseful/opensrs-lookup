@@ -75,10 +75,30 @@ class Lookup
      */
     private $key = OSRS_KEY;
 
+    /**
+     * @var string
+     */
     public $request;
+
+    /**
+     * @var string
+     */
     public $headers;
+
+    /**
+     * @var string
+     */
     public $responseContent;
+
+    /**
+     * @var string
+     */
     public $responseHeaders;
+
+    /**
+     * @var string
+     */
+    private $content;
 
     /**
      * @param $query
