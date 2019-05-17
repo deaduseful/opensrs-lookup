@@ -275,7 +275,7 @@ class Lookup
         $context = stream_context_create($options);
         $flags = null;
         $contents = @file_get_contents($host, $flags, $context);
-        if (empty($this->content)) {
+        if (empty($contents)) {
             throw new DomainException(sprintf('Empty response, from host %s, with request options %s, response headers: %s', $host, var_export($options, true), var_export($http_response_header, true)));
         }
         return $contents;
