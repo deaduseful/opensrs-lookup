@@ -152,10 +152,10 @@ class Lookup
         }
         $responseCode = (int)$dataBlock['response_code'];
         if ($responseCode === 401) {
-            throw new DomainException('Username or key is incorrect, please check your config file.');
+            throw new DomainException('Username or key is incorrect, please check your config file.', $responseCode);
         }
         if ($responseCode > 299) {
-            throw new DomainException($dataBlock['response_text']);
+            throw new DomainException($dataBlock['response_text'], $responseCode);
         }
         $attributes = [];
         foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
