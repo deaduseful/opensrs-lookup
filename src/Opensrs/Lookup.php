@@ -75,6 +75,10 @@ class Lookup
      */
     private $key = OSRS_KEY;
 
+    public $request;
+    public $headers;
+    public $content;
+
     /**
      * @param $query
      * @return bool
@@ -112,13 +116,13 @@ class Lookup
      */
     private function process()
     {
-        $request = $this->encode();
-        $headers = $this->buildHeaders($request);
-        $result = $this->filePostContents($this->getHost(), $request, $headers);
-        if (empty($result)) {
+        $this->request = $this->encode();
+        $this->headers = $this->buildHeaders($this->request);
+        $this->content = $this->filePostContents($this->getHost(), $this->request, $this->headers);
+        if (empty($this->content)) {
             throw new DomainException('Empty response.');
         }
-        $xml = simplexml_load_string($result, 'SimpleXMLElement', LIBXML_NOCDATA);
+        $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
             throw new DomainException('Invalid XML response.');
         }
