@@ -69,7 +69,7 @@ class FastLookup
             701 => 'unknown_tld',
         ];
         if (array_key_exists($responseCode, $responseCodes) === false) {
-            throw new DomainException('Unexpected response: ' . $response);
+            throw new DomainException('Unexpected response: ' . $response, $responseCode);
         }
         $result = [
             'response' => $response,
