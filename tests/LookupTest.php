@@ -1,6 +1,7 @@
 <?php
 
 include '../vendor/autoload.php';
+include '../config.php';
 
 use Deaduseful\Opensrs\Lookup;
 use PHPUnit\Framework\TestCase;
