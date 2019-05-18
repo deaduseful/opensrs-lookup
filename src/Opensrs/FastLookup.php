@@ -68,13 +68,15 @@ class FastLookup
             555 => 'invalid_ip',
             701 => 'unknown_tld',
         ];
-        if (array_key_exists($responseCode, $responseCodes) === false) {
-            throw new DomainException('Unexpected response: ' . $response, $responseCode);
+        if (array_key_exists($responseCode, $responseCodes) === true) {
+            $status = $responseCodes[$responseCode];
+        } else {
+            $status = 'unknown';
         }
         $result = [
             'response' => $response,
             'code' => $responseCode,
-            'status' => $responseCodes[$responseCode]
+            'status' => $status
         ];
         $this->setResult($result);
     }
