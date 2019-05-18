@@ -122,18 +122,19 @@ class Lookup
      */
     public function lookup(string $query, string $action = 'lookup', string $username = self::USERNAME, string $key = self::KEY)
     {
-        $this->setQuery($query);
-        $this->setAction($action);
-        $this->setUsername($username);
-        $this->setKey($key);
-        $this->process();
-        return $this->getResult();
+        return $this->setQuery($query)
+        ->setAction($action)
+        ->setUsername($username)
+        ->setKey($key)
+        ->process()
+        ->getResult();
     }
 
     /**
      * Process query.
      * @throws DomainException
      * @throws Exception
+     * @return Lookup
      */
     private function process()
     {
@@ -151,11 +152,14 @@ class Lookup
             $dataBlock[$key] = $value;
         }
         $responseCode = (int)$dataBlock['response_code'];
-        if ($responseCode === 401) {
-            throw new DomainException('Username or key is incorrect, please check your config file.', $responseCode);
-        }
-        if ($responseCode > 299) {
-            throw new DomainException($dataBlock['response_text'], $responseCode);
+        $responseCodes = [
+            401 => 'unauthorized',
+            555 => 'invalid_ip'
+        ];
+        if (array_key_exists($responseCode, $responseCodes) === true) {
+            $status = $responseCodes[$responseCode];
+        } else {
+            $status = 'unknown';
         }
         $attributes = [];
         foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
@@ -163,7 +167,14 @@ class Lookup
             $value = (string)$item;
             $attributes[$key] = $value;
         }
-        $this->setResult($attributes);
+        $response =  $dataBlock['response_text'];
+        $result = [
+            'response' => $response,
+            'code' => $responseCode,
+            'status' => $status,
+            'attributes' => $attributes
+        ];
+        return $this->setResult($result);
     }
 
     /**
@@ -195,10 +206,12 @@ class Lookup
 
     /**
      * @param string $action
+     * @return Lookup
      */
     public function setAction(string $action)
     {
         $this->action = $action;
+        return $this;
     }
 
     /**
@@ -211,10 +224,12 @@ class Lookup
 
     /**
      * @param string $query
+     * @return Lookup
      */
     public function setQuery(string $query)
     {
         $this->query = $query;
+        return $this;
     }
 
     /**
