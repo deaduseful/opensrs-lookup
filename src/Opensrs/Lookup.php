@@ -157,7 +157,10 @@ class Lookup
         }
         $responseCode = (int)$dataBlock['response_code'];
         $responseCodes = [
+            200 => 'success',
+            400 => 'invalid_credentials',
             401 => 'unauthorized',
+            404 => 'missing_header',
             555 => 'invalid_ip'
         ];
         if (array_key_exists($responseCode, $responseCodes) === true) {
