@@ -8,12 +8,14 @@ use PHPUnit\Framework\TestCase;
 class lookupTest extends TestCase
 {
     /**
-     * @expectedException  DomainException
      */
     public function testLookup()
     {
         $query = 'example.com';
         $lookup = new Lookup();
-        $lookup->checkTransfer($query);
+        $result = $lookup->lookup($query, 'check_transfer');
+        $this->assertIsString($result['response']);
+        $this->assertIsInt($result['code']);
+        $this->assertIsString($result['status']);
     }
 }
