@@ -163,7 +163,7 @@ class Lookup
             404 => 'missing_header',
             555 => 'invalid_ip'
         ];
-        if (array_key_exists($responseCode, $responseCodes) === true) {
+        if (isset($responseCodes[$responseCode]) === true) {
             $status = $responseCodes[$responseCode];
         } else {
             $status = 'unknown';
