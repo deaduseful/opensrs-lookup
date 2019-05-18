@@ -6,6 +6,7 @@ use DomainException;
 use Exception;
 use InvalidArgumentException;
 use SimpleXMLElement;
+use UnexpectedValueException;
 
 /**
  * OpenSRS reseller username.
@@ -108,7 +109,10 @@ class Lookup
     public function checkTransfer($query)
     {
         $result = $this->lookup($query, 'check_transfer');
-        return (int)$result['transferrable'] === 1;
+        if (array_key_exists('transferrable', $result)) {
+            return (int)$result['transferrable'] === 1;
+        }
+        return null;
     }
 
     /**
@@ -143,7 +147,7 @@ class Lookup
         $this->content = $this->parseContents($this->getHost(), $this->request, $this->headers);
         $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
-            throw new DomainException('Invalid XML response.');
+            throw new UnexpectedValueException('Invalid XML response.');
         }
         $dataBlock = [];
         foreach ($xml->body->data_block->dt_assoc->item as $item) {
@@ -162,12 +166,14 @@ class Lookup
             $status = 'unknown';
         }
         $attributes = [];
-        foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
-            $key = (string)$item->attributes()['key'];
-            $value = (string)$item;
-            $attributes[$key] = $value;
+        if (array_key_exists('attributes', $dataBlock)) {
+            foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
+                $key = (string)$item->attributes()['key'];
+                $value = (string)$item;
+                $attributes[$key] = $value;
+            }
         }
-        $response =  $dataBlock['response_text'];
+        $response = (string)$dataBlock['response_text'];
         $result = [
             'response' => $response,
             'code' => $responseCode,
