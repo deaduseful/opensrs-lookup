@@ -89,7 +89,7 @@ class FastLookup
      * @param int $timeout
      * @return string
      */
-    public function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $length = 2048, int $timeout = 1)
+    public function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048)
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $options = ['sec' => $timeout, 'usec' => 0];
