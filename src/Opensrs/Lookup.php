@@ -335,7 +335,7 @@ class Lookup
         $contents = $this->filePostContents($host, $content, $headers);
         $responseHeaders = $this->responseHeaders;
         if (empty($contents)) {
-            if (!empty($responseHeaders)) {
+            if (empty($responseHeaders) === false) {
                 $contents = implode(PHP_EOL, $responseHeaders);
                 if (strpos($contents, '</OPS_envelope>') === false) {
                     $contents .= '</OPS_envelope>';
