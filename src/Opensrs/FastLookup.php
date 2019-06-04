@@ -19,6 +19,18 @@ class FastLookup
     const PORT = 51000;
 
     /**
+     * Response codes and their status.
+     */
+    const RESPONSE_CODES = [
+        210 => 'available',
+        211 => 'taken',
+        465 => 'invalid_domain',
+        5050 => 'invalid_command',
+        555 => 'invalid_ip',
+        701 => 'unknown_tld',
+    ];
+
+    /**
      * @var array
      */
     private $result = [];
@@ -60,14 +72,7 @@ class FastLookup
         if (empty($responseCode)) {
             throw new DomainException('Empty response code.');
         }
-        $responseCodes = [
-            210 => 'available',
-            211 => 'taken',
-            465 => 'invalid_domain',
-            5050 => 'invalid_command',
-            555 => 'invalid_ip',
-            701 => 'unknown_tld',
-        ];
+        $responseCodes = self::RESPONSE_CODES;
         if (array_key_exists($responseCode, $responseCodes) === true) {
             $status = $responseCodes[$responseCode];
         } else {
