@@ -31,6 +31,11 @@ class FastLookup
     ];
 
     /**
+     * Unknown status.
+     */
+    const STATUS_UNKNOWN = 'unknown';
+
+    /**
      * @var array
      */
     private $result = [];
@@ -76,7 +81,7 @@ class FastLookup
         if (array_key_exists($responseCode, $responseCodes) === true) {
             $status = $responseCodes[$responseCode];
         } else {
-            $status = 'unknown';
+            $status = self::STATUS_UNKNOWN;
         }
         $result = [
             'response' => $response,
