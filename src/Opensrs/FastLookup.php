@@ -19,11 +19,17 @@ class FastLookup
     const PORT = 51000;
 
     /**
-     * Response codes and their status.
+     * Success response codes and their status.
      */
-    const RESPONSE_CODES = [
+    const SUCCESS_RESPONSE_CODES = [
         210 => 'available',
         211 => 'taken',
+    ];
+
+    /**
+     * Failure response codes and their status.
+     */
+    const FAILURE_RESPONSE_CODES = [
         465 => 'invalid_domain',
         5050 => 'invalid_command',
         555 => 'invalid_ip',
@@ -77,16 +83,21 @@ class FastLookup
         if (empty($responseCode)) {
             throw new DomainException('Empty response code.');
         }
-        $responseCodes = self::RESPONSE_CODES;
-        if (array_key_exists($responseCode, $responseCodes) === true) {
-            $status = $responseCodes[$responseCode];
+        if (array_key_exists($responseCode, self::SUCCESS_RESPONSE_CODES) === true) {
+            $status = self::SUCCESS_RESPONSE_CODES[$responseCode];
+            $success = true;
+        } elseif (array_key_exists($responseCode, self::FAILURE_RESPONSE_CODES) === true) {
+            $status = self::FAILURE_RESPONSE_CODES[$responseCode];
+            $success = false;
         } else {
             $status = self::STATUS_UNKNOWN;
+            $success = false;
         }
         $result = [
+            'success' => $success,
             'response' => $response,
             'code' => $responseCode,
-            'status' => $status
+            'status' => $status,
         ];
         $this->setResult($result);
     }

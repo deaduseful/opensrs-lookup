@@ -42,6 +42,22 @@ class Lookup
     const SOCKET_TIMEOUT = 120;
 
     /**
+     * Response codes and their status.
+     */
+    const RESPONSE_CODES = [
+        200 => 'success',
+        400 => 'invalid_credentials',
+        401 => 'unauthorized',
+        404 => 'missing_header',
+        555 => 'invalid_ip'
+    ];
+
+    /**
+     * Unknown status.
+     */
+    const STATUS_UNKNOWN = 'unknown';
+
+    /**
      * @var string
      */
     private $action = '';
@@ -156,17 +172,11 @@ class Lookup
             $dataBlock[$key] = $value;
         }
         $responseCode = (int)$dataBlock['response_code'];
-        $responseCodes = [
-            200 => 'success',
-            400 => 'invalid_credentials',
-            401 => 'unauthorized',
-            404 => 'missing_header',
-            555 => 'invalid_ip'
-        ];
+        $responseCodes = self::RESPONSE_CODES;
         if (isset($responseCodes[$responseCode]) === true) {
             $status = $responseCodes[$responseCode];
         } else {
-            $status = 'unknown';
+            $status = self::STATUS_UNKNOWN;
         }
         $attributes = [];
         if (array_key_exists('attributes', $dataBlock)) {
