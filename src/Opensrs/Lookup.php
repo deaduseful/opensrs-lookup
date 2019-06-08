@@ -172,7 +172,8 @@ class Lookup
     {
         $this->request = $this->encode();
         $this->headers = $this->buildHeaders($this->request);
-        $this->content = $this->parseContents($this->getHost(), $this->request, $this->headers);
+        $contents = $this->filePostContents($this->getHost(), $this->request, $this->headers);
+        $this->content = $this->parseContents($contents);
         $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
             throw new UnexpectedValueException('Invalid XML response.');
@@ -319,15 +320,11 @@ class Lookup
     }
 
     /**
-     * @param string $host
-     * @param string $content
-     * @param string $headers
+     * @param string $contents
      * @return string
-     * @throws Exception
      */
-    private function parseContents(string $host, string $content, string $headers)
+    private function parseContents($contents)
     {
-        $contents = $this->filePostContents($host, $content, $headers);
         $responseHeaders = $this->responseHeaders;
         if (empty($contents)) {
             if (empty($responseHeaders) === false) {
