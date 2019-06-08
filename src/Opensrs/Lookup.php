@@ -152,17 +152,17 @@ class Lookup
     {
         return $this->setQuery($query)
         ->setAction($action)
-        ->process()
+        ->perform()
         ->getResult();
     }
 
     /**
-     * Process query.
+     * Perform action.
      * @throws DomainException
      * @throws Exception
      * @return Lookup
      */
-    private function process()
+    private function perform()
     {
         $this->request = $this->encode();
         $this->headers = $this->buildHeaders($this->request);
