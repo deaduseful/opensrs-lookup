@@ -56,62 +56,50 @@ class Lookup
      * Unknown status.
      */
     const STATUS_UNKNOWN = 'unknown';
-
-    /**
-     * @var string
-     */
-    private $action = '';
-
-    /**
-     * @var string
-     */
-    private $query = '';
-
-    /**
-     * @var array
-     */
-    private $result = [];
-
-    /**
-     * @var int
-     */
-    private $timeout = self::SOCKET_TIMEOUT;
-
-    /**
-     * @var string
-     */
-    private $host = self::HOST;
-
-    /**
-     * @var string
-     */
-    private $username = OSRS_USERNAME;
-
-    /**
-     * @var string
-     */
-    private $key = OSRS_KEY;
-
     /**
      * @var string
      */
     public $request;
-
     /**
      * @var string
      */
     public $headers;
-
     /**
      * @var string
      */
     public $responseContent;
-
     /**
      * @var string
      */
     public $responseHeaders;
-
+    /**
+     * @var string
+     */
+    private $action = '';
+    /**
+     * @var string
+     */
+    private $query = '';
+    /**
+     * @var array
+     */
+    private $result = [];
+    /**
+     * @var int
+     */
+    private $timeout = self::SOCKET_TIMEOUT;
+    /**
+     * @var string
+     */
+    private $host = self::HOST;
+    /**
+     * @var string
+     */
+    private $username = OSRS_USERNAME;
+    /**
+     * @var string
+     */
+    private $key = OSRS_KEY;
     /**
      * @var string
      */
@@ -149,16 +137,34 @@ class Lookup
     public function lookup(string $query, string $action = 'lookup')
     {
         return $this->setQuery($query)
-        ->setAction($action)
-        ->perform()
-        ->getResult();
+            ->setAction($action)
+            ->perform()
+            ->getResult();
+    }
+
+    /**
+     * @return array
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * @param array $result
+     * @return Lookup
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+        return $this;
     }
 
     /**
      * Perform action.
-     * @throws DomainException
-     * @throws Exception
      * @return Lookup
+     * @throws Exception
+     * @throws DomainException
      */
     private function perform()
     {
@@ -277,6 +283,24 @@ class Lookup
     /**
      * @return string
      */
+    public function getKey(): string
+    {
+        return $this->key;
+    }
+
+    /**
+     * @param string $key
+     * @return Lookup
+     */
+    public function setKey(string $key): Lookup
+    {
+        $this->key = $key;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getUsername(): string
     {
         return $this->username;
@@ -293,21 +317,28 @@ class Lookup
     }
 
     /**
+     * @param string $host
+     * @param string $content
+     * @param string $headers
      * @return string
+     * @throws Exception
      */
-    public function getKey(): string
+    private function parseContents(string $host, string $content, string $headers)
     {
-        return $this->key;
-    }
-
-    /**
-     * @param string $key
-     * @return Lookup
-     */
-    public function setKey(string $key): Lookup
-    {
-        $this->key = $key;
-        return $this;
+        $contents = $this->filePostContents($host, $content, $headers);
+        $responseHeaders = $this->responseHeaders;
+        if (empty($contents)) {
+            if (empty($responseHeaders) === false) {
+                $contents = implode(PHP_EOL, $responseHeaders);
+                if (strpos($contents, '</OPS_envelope>') === false) {
+                    $contents .= '</OPS_envelope>';
+                }
+            }
+        }
+        if (empty($contents)) {
+            throw new DomainException(sprintf('Empty response, from host %s, with request content %s, request headers %s response headers: %s', $host, var_export($content, true), var_export($headers, true), var_export($responseHeaders, true)));
+        }
+        return $contents;
     }
 
     /**
@@ -336,30 +367,6 @@ class Lookup
         $this->responseContent = @file_get_contents($host, $flags, $context);
         $this->responseHeaders = $http_response_header;
         return $this->responseContent;
-    }
-
-    /**
-     * @param string $host
-     * @param string $content
-     * @param string $headers
-     * @return string
-     * @throws Exception
-     */
-    private function parseContents(string $host, string $content, string $headers) {
-        $contents = $this->filePostContents($host, $content, $headers);
-        $responseHeaders = $this->responseHeaders;
-        if (empty($contents)) {
-            if (empty($responseHeaders) === false) {
-                $contents = implode(PHP_EOL, $responseHeaders);
-                if (strpos($contents, '</OPS_envelope>') === false) {
-                    $contents .= '</OPS_envelope>';
-                }
-            }
-        }
-        if (empty($contents)) {
-            throw new DomainException(sprintf('Empty response, from host %s, with request content %s, request headers %s response headers: %s', $host, var_export($content, true), var_export($headers, true), var_export($responseHeaders, true)));
-        }
-        return $contents;
     }
 
     /**
@@ -395,24 +402,6 @@ class Lookup
     public function setHost(string $host): Lookup
     {
         $this->host = $host;
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getResult()
-    {
-        return $this->result;
-    }
-
-    /**
-     * @param array $result
-     * @return Lookup
-     */
-    public function setResult($result)
-    {
-        $this->result = $result;
         return $this;
     }
 }
