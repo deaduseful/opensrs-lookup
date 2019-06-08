@@ -118,6 +118,14 @@ class Lookup
     private $content;
 
     /**
+     * Lookup constructor.
+     */
+    public function __construct(string $username = self::USERNAME, string $key = self::KEY)
+    {
+        $this->setUsername($username)->setKey($key);
+    }
+
+    /**
      * @param $query
      * @return bool
      * @throws Exception
@@ -140,12 +148,10 @@ class Lookup
      * @return array
      * @throws Exception
      */
-    public function lookup(string $query, string $action = 'lookup', string $username = self::USERNAME, string $key = self::KEY)
+    public function lookup(string $query, string $action = 'lookup')
     {
         return $this->setQuery($query)
         ->setAction($action)
-        ->setUsername($username)
-        ->setKey($key)
         ->process()
         ->getResult();
     }
