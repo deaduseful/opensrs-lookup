@@ -107,6 +107,8 @@ class Lookup
 
     /**
      * Lookup constructor.
+     * @param string $username
+     * @param string $key
      */
     public function __construct(string $username = self::USERNAME, string $key = self::KEY)
     {
