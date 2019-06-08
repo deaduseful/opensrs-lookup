@@ -143,8 +143,6 @@ class Lookup
      * Perform lookup.
      * @param string $query
      * @param string $action
-     * @param string $username
-     * @param string $key
      * @return array
      * @throws Exception
      */
