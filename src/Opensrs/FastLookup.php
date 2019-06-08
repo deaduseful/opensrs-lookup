@@ -65,13 +65,12 @@ class FastLookup
      */
     public function lookup(string $query)
     {
-        $this->checkDomain($query);
-        return $this->getResult();
+        return $this->checkDomain($query)->getResult();
     }
 
     /**
      * @param string $query
-     * @return void
+     * @return FastLookup
      * @throws DomainException
      */
     public function checkDomain(string $query)
@@ -99,7 +98,7 @@ class FastLookup
             'code' => $responseCode,
             'status' => $status,
         ];
-        $this->setResult($result);
+        return $this->setResult($result);
     }
 
     /**
