@@ -61,5 +61,35 @@ class TldChart
         }
         return $tlds;
     }
+
+    /**
+     * @param $tld
+     * @return mixed
+     */
+    public function getDataByTld($tld) {
+        $data = $this->getData();
+        foreach ($data as $item) {
+            if ($item[0] === $tld) {
+                return $tld;
+            }
+        }
+        return [];
+    }
+
+    public function getSuffixes() {
+        $data = $this->getData();
+        $results = [];
+        foreach ($data as $item) {
+            if ($item[5]) {
+                $suffixes = explode(',', $item[5]);
+                foreach ($suffixes as $suffix) {
+                    $results[] = trim($suffix);
+                }
+            } else {
+                $results[] = $item[0];
+            }
+        }
+        return $results;
+    }
 }
 
