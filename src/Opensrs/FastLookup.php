@@ -76,7 +76,7 @@ class FastLookup
     public function checkDomain(string $query)
     {
         $command = "check_domain $query" . PHP_EOL;
-        $response = self::query($command, $this->getHost(), $this->getPort());
+        $response = trim(self::query($command, $this->getHost(), $this->getPort()));
         $results = explode(' ', $response, 2);
         $responseCode = (int)trim($results[0]);
         if (empty($responseCode)) {
