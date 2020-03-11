@@ -19,4 +19,12 @@ class lookupTest extends TestCase
         $this->assertIsInt($result['code']);
         $this->assertIsString($result['status']);
     }
+
+    public function testFormatResult()
+    {
+        $lookup = new Lookup();
+        $content = file_get_contents('suggest.xml');
+        $result = $lookup->formatResult($content);
+        $this->assertNotNull($result);
+    }
 }

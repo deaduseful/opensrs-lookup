@@ -1,0 +1,486 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE OPS_envelope SYSTEM "ops.dtd">
+<OPS_envelope>
+ <header>
+  <version>0.9</version>
+  </header>
+ <body>
+  <data_block>
+   <dt_assoc>
+    <item key="protocol">XCP</item>
+    <item key="request_response_time">1.341</item>
+    <item key="is_success">1</item>
+    <item key="response_text">Command completed successfully</item>
+    <item key="is_search_completed">1</item>
+    <item key="action">REPLY</item>
+    <item key="response_code">200</item>
+    <item key="attributes">
+     <dt_assoc>
+      <item key="lookup">
+       <dt_assoc>
+        <item key="count">3</item>
+        <item key="is_success">1</item>
+        <item key="response_text">Command completed successfully.</item>
+        <item key="items">
+         <dt_array>
+          <item key="0">
+           <dt_assoc>
+            <item key="domain">example.com</item>
+            <item key="status">taken</item>
+           </dt_assoc>
+          </item>
+          <item key="1">
+           <dt_assoc>
+            <item key="status">taken</item>
+            <item key="domain">example.net</item>
+           </dt_assoc>
+          </item>
+          <item key="2">
+           <dt_assoc>
+            <item key="domain">example.org</item>
+            <item key="reason">Reserved Name</item>
+            <item key="status">taken</item>
+           </dt_assoc>
+          </item>
+         </dt_array>
+        </item>
+        <item key="response_code">200</item>
+       </dt_assoc>
+      </item>
+      <item key="premium">
+       <dt_assoc>
+        <item key="response_code">200</item>
+        <item key="items">
+         <dt_array>
+          <item key="0">
+           <dt_assoc>
+            <item key="price">2395.00</item>
+            <item key="domain">examplec.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="1">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">exampleof.com</item>
+            <item key="price">1999.00</item>
+           </dt_assoc>
+          </item>
+          <item key="2">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">exampleb.com</item>
+            <item key="price">695.00</item>
+           </dt_assoc>
+          </item>
+          <item key="3">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="price">2295.00</item>
+            <item key="domain">examplea.com</item>
+           </dt_assoc>
+          </item>
+          <item key="4">
+           <dt_assoc>
+            <item key="price">2695.00</item>
+            <item key="domain">examplecom.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="5">
+           <dt_assoc>
+            <item key="domain">examplei.com</item>
+            <item key="price">300.00</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="6">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">examplejs.com</item>
+            <item key="price">495.00</item>
+           </dt_assoc>
+          </item>
+          <item key="7">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">exampleinc.com</item>
+            <item key="price">2695.00</item>
+           </dt_assoc>
+          </item>
+          <item key="8">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">exampleltd.com</item>
+            <item key="price">1895.00</item>
+           </dt_assoc>
+          </item>
+          <item key="9">
+           <dt_assoc>
+            <item key="price">2795.00</item>
+            <item key="domain">exampleone.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="10">
+           <dt_assoc>
+            <item key="domain">lesson.org</item>
+            <item key="price">1380.00</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+         </dt_array>
+        </item>
+        <item key="count">11</item>
+        <item key="response_text">Command Successful</item>
+        <item key="is_success">1</item>
+       </dt_assoc>
+      </item>
+      <item key="suggestion">
+       <dt_assoc>
+        <item key="items">
+         <dt_array>
+          <item key="0">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourexample.org</item>
+           </dt_assoc>
+          </item>
+          <item key="1">
+           <dt_assoc>
+            <item key="domain">exampleonline.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="2">
+           <dt_assoc>
+            <item key="domain">yourexampleonline.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="3">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourmodel.org</item>
+           </dt_assoc>
+          </item>
+          <item key="4">
+           <dt_assoc>
+            <item key="domain">yourmodelonline.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="5">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">allexample.org</item>
+           </dt_assoc>
+          </item>
+          <item key="6">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourexampleonline.org</item>
+           </dt_assoc>
+          </item>
+          <item key="7">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">examplecenter.org</item>
+           </dt_assoc>
+          </item>
+          <item key="8">
+           <dt_assoc>
+            <item key="domain">allexample.net</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="9">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourexampleonline.net</item>
+           </dt_assoc>
+          </item>
+          <item key="10">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">allexampleonline.com</item>
+           </dt_assoc>
+          </item>
+          <item key="11">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">examplecenter.net</item>
+           </dt_assoc>
+          </item>
+          <item key="12">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourexamplecenter.com</item>
+           </dt_assoc>
+          </item>
+          <item key="13">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">your-example.org</item>
+           </dt_assoc>
+          </item>
+          <item key="14">
+           <dt_assoc>
+            <item key="domain">example-online.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="15">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">your-example.net</item>
+           </dt_assoc>
+          </item>
+          <item key="16">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">all-example.com</item>
+           </dt_assoc>
+          </item>
+          <item key="17">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">example-online.net</item>
+           </dt_assoc>
+          </item>
+          <item key="18">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">your-example-online.com</item>
+           </dt_assoc>
+          </item>
+          <item key="19">
+           <dt_assoc>
+            <item key="domain">example-center.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="20">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">allmodel.org</item>
+           </dt_assoc>
+          </item>
+          <item key="21">
+           <dt_assoc>
+            <item key="domain">yourmodelonline.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="22">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">allmodel.net</item>
+           </dt_assoc>
+          </item>
+          <item key="23">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourmodelonline.net</item>
+           </dt_assoc>
+          </item>
+          <item key="24">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">allmodelonline.com</item>
+           </dt_assoc>
+          </item>
+          <item key="25">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourmodelcenter.com</item>
+           </dt_assoc>
+          </item>
+          <item key="26">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">topexample.org</item>
+           </dt_assoc>
+          </item>
+          <item key="27">
+           <dt_assoc>
+            <item key="domain">allexampleonline.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="28">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourexamplecenter.org</item>
+           </dt_assoc>
+          </item>
+          <item key="29">
+           <dt_assoc>
+            <item key="domain">examplestore.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="30">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">your-model.org</item>
+           </dt_assoc>
+          </item>
+          <item key="31">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">model-online.org</item>
+           </dt_assoc>
+          </item>
+          <item key="32">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">topexample.net</item>
+           </dt_assoc>
+          </item>
+          <item key="33">
+           <dt_assoc>
+            <item key="domain">allexampleonline.net</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="34">
+           <dt_assoc>
+            <item key="domain">topexampleonline.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="35">
+           <dt_assoc>
+            <item key="domain">yourexamplecenter.net</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="36">
+           <dt_assoc>
+            <item key="domain">allexamplecenter.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="37">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">examplestore.net</item>
+           </dt_assoc>
+          </item>
+          <item key="38">
+           <dt_assoc>
+            <item key="domain">your-model-online.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="39">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">yourcaseonline.org</item>
+           </dt_assoc>
+          </item>
+          <item key="40">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">all-example.org</item>
+           </dt_assoc>
+          </item>
+          <item key="41">
+           <dt_assoc>
+            <item key="domain">your-example-online.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="42">
+           <dt_assoc>
+            <item key="domain">example-center.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="43">
+           <dt_assoc>
+            <item key="domain">yourcaseonline.net</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="44">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">allcaseonline.com</item>
+           </dt_assoc>
+          </item>
+          <item key="45">
+           <dt_assoc>
+            <item key="domain">problemonline.org</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="46">
+           <dt_assoc>
+            <item key="domain">all-example.net</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="47">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">your-example-online.net</item>
+           </dt_assoc>
+          </item>
+          <item key="48">
+           <dt_assoc>
+            <item key="domain">all-example-online.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+          <item key="49">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">example-center.net</item>
+           </dt_assoc>
+          </item>
+         </dt_array>
+        </item>
+        <item key="response_code">200</item>
+        <item key="count">50</item>
+        <item key="is_success">1</item>
+        <item key="response_text">Command Successful</item>
+       </dt_assoc>
+      </item>
+      <item key="personal_names">
+       <dt_assoc>
+        <item key="response_code">200</item>
+        <item key="items">
+         <dt_array>
+          <item key="0">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">example.ourmail.com</item>
+           </dt_assoc>
+          </item>
+          <item key="1">
+           <dt_assoc>
+            <item key="status">available</item>
+            <item key="domain">example.cyberbud.com</item>
+           </dt_assoc>
+          </item>
+          <item key="2">
+           <dt_assoc>
+            <item key="domain">example.thecomputer.com</item>
+            <item key="status">available</item>
+           </dt_assoc>
+          </item>
+         </dt_array>
+        </item>
+        <item key="is_success">1</item>
+        <item key="count">3</item>
+        <item key="response_text">Command completed successfully.</item>
+       </dt_assoc>
+      </item>
+     </dt_assoc>
+    </item>
+   </dt_assoc>
+  </data_block>
+ </body>
+</OPS_envelope>
