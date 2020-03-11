@@ -174,7 +174,7 @@ class Lookup
         $this->headers = $this->buildHeaders($this->request);
         $contents = $this->filePostContents($this->getHost(), $this->request, $this->headers);
         $this->content = $this->parseContents($contents);
-        $result = $this->formatResult();
+        $result = $this->formatResult($this->content);
         return $this->setResult($result);
     }
 
@@ -445,11 +445,12 @@ class Lookup
     }
 
     /**
+     * @param string $content
      * @return array
      */
-    private function formatResult(): array
+    public function formatResult($content): array
     {
-        $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
+        $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
             throw new UnexpectedValueException('Invalid XML response.');
         }
