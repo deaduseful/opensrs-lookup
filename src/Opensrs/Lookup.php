@@ -484,4 +484,12 @@ class Lookup
         ];
         return $result;
     }
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
+    }
 }
