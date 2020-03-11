@@ -63,7 +63,7 @@ class Lookup
     /**
      * @var string
      */
-    public $headers;
+    private $headers;
     /**
      * @var string
      */
@@ -402,5 +402,13 @@ class Lookup
     {
         $this->host = $host;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHeaders(): string
+    {
+        return $this->headers;
     }
 }
