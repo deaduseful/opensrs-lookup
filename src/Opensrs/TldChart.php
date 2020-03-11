@@ -1,5 +1,7 @@
 <?php
 
+namespace Deaduseful\Opensrs;
+
 class TldChart
 {
     /** @var string URL to fetch data from. */
@@ -59,6 +61,7 @@ class TldChart
                 $tlds[] = $row[0];
             }
         }
+        array_shift($tlds);
         return $tlds;
     }
 
