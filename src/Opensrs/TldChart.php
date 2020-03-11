@@ -12,19 +12,23 @@ class TldChart
 
     /**
      * TldChart constructor.
+     *
+     * @param string|null $source the file or url of the source
      */
-    public function __construct()
+    public function __construct($source = null)
     {
-        $this->data = $this->fetch();
+        $source = $source ? $source : self::SOURCE;
+        $this->data = $this->fetch($source);
     }
 
     /**
+     * @param string|null $source the file or url of the source
      * @return array
      */
-    private function fetch()
+    private function fetch($source = null)
     {
         $array = [];
-        $fh = fopen(self::SOURCE, 'r');
+        $fh = fopen($source, 'r');
         while (($data = fgetcsv($fh)) !== false) {
             $array[] = $data;
         }
@@ -80,11 +84,12 @@ class TldChart
     }
 
     public function getSuffixes() {
+        $column = 16;
         $data = $this->getData();
         $results = [];
         foreach ($data as $item) {
-            if ($item[5]) {
-                $suffixes = explode(',', $item[5]);
+            if ($item[$column]) {
+                $suffixes = explode(',', $item[$column]);
                 foreach ($suffixes as $suffix) {
                     $results[] = trim($suffix);
                 }
@@ -92,6 +97,7 @@ class TldChart
                 $results[] = $item[0];
             }
         }
+        array_shift($results);
         return $results;
     }
 }

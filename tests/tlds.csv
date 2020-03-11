@@ -1,0 +1,570 @@
+TLD,Explicit renewal,"Domain
+locking available",Auto-renew by default,Auto renew date,Renew/Let Expire setting,"Grace 
+period","Redemption
+period",Authcode required,Whois Privacy available,DNSSEC,Transfers,Registry,TLD Type,Technical provider,Country,Reg levels offered,Local Presence Requirements,Name length (excluding TLD),Synchronous,Term,"DNS
+requirements",IDNs available,Available in Test environment,Registry premiums allowed,Applicable registry premium group(s),TLD policies,"Additional
+information"
+.abogado,Y,Y,N,30,-,40,30,Y,N,,-,,Geo,Nominet,-,,restricted,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,N/A,.abogado policies,Validation as accredited lawyer is required.
+.ac,Y,Y,N,0,-,N,90,Y,N,N,-,,Geo,,Ascension Island,,,3 to 63,Y,1 to 10 ,2 to 8,"cze, dan, dut, fin, fre, hun, ice, ita, nor, pol, por, rum, spa, swe",Y,,,-,"Can be renewed for 1 or 2 years. To redeem, contact help@opensrs.com. Allow 3 business days to process redemption requests."
+.academy,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.accountant,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N ,Y,1,-,
+.accountants,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.actor,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.adult,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.ae,N,N,Y,20,2,N,20,Y,N,N,"No charge, no change",,Geo,,Arab Emirates,,,3 to 63,N,1,2 to 8,N,Y,,,.ae policies,
+.aero,Y,Y,N,30,-,30,30,Y,N,N,-,,Generic,,-,,restricted,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,.aero policies,Member of aviation community.  Get .aero ID and password from registry at https://www.information.aero/node/add/request-aero-id
+.af,Y,Y,N,30,2,N,N,Y,N,N,No change to reg period,,Geo,,Afghanistan,".af, .com.af, .net.af, .org.af",,2 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.africa,N,N,Y,2,-,N,10,N,N,N,-,,Geo,,Continent of Africa,,,2 to 63,Y,1,2 to 8,N,N,N,,-,
+.ag,Y,Y,N,30,2,N,N,Y,N,N,-,,Geo,Afilias,Antigua and Barbuda,".ag, .co.ag, .com.ag, .net.ag, .nom.ag, .org.ag",,1 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.agency,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.ai,N,N,Y,45,-,N,N,N,N,N,No change to reg period,,Geo,,Anguilla,".com.ai, .net.ai, .off.ai, .org.ai",,3 to 63,N,2,2 to 8,N,N,,,-,Allow 5 to 10 business days to process requests.
+.airforce,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,Registrant may not misrepresent self as affiliated with military if that is not the case.
+.alsace,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,AFNIC,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,Local presence with Alsace community
+.am,Y,N,N,30,4,N,N,N,N,N,"No charge, no change",,Geo,,Armenia,,,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,"Registrants must submit paper form for transfers. For registrant to registrant trades, a new term begins at trade date."
+.amsterdam,Y,Y,N,30,-,N,30,Y,Y,N,-,,Geo,SIDN,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,-,New registrations are currently unavailable.
+.apartments,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.app,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Google,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,N/A,.app policies,SSL Certificate on host required for domains of this TLD.
+.ar,N,N,Y,32,-,N,N,N,N,N,No change to reg period,,Geo,,Argentina,.com.ar,local,3 to 19,N,1 to 2 ,2 to 8,N,N,,,.ar policies,Owner contact must be local.  Maximum of 200 domains per registrant. Allow 5 business days to process registrations.
+.archi,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.army,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,,-,Registrant may not misrepresent self as affiliated with military if that is not the case.
+.art,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,,,
+.as,N,N,Y,60,-,28,N,Y,N,N,-,,Geo,,American Samoa,,,3 to 63,Y,2 to 10 ,2 to 8,N,N,,,-,"Can be renewed for 1 to 10 years. If not renewed, the domain is deleted from OpenSRS two days after expiration and given the status 'pending release'. To redeem, contact help@opensrs.com."
+.asia,Y,Y,N,30,-,40,30,Y,N,N,-,Afilias,Geo,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.asia policies,
+.associates,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.at,N,N,Y,2,3,N,59,Y,N,N,No change to reg period,NIC.AT,Geo,NIC.AT,Austria,".at, .co.at, .or.at",,1 to 63,Y,1,2 to 8,"dan, dut, fin, fre, ice, ita, nor, por, spa, swe",Y,,,.at policies,
+.attorney,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,Additional terms are required by linking to Exhibit A.
+.au,Y,Y,N,30,-,30,N,Y,N,N,"No charge, no change",auDA,Geo,Afilias,Australia,".asn.au, .com.au, .net.au, .id.au, .org.au",local,2 to 63,Y,1 to 5,2 to 13,N,N,,,.au policies,Resellers are required to indicate on the website that you are an OpenSRS Reseller. Ownership changes (trades) start a new registration period and incur a one year renewal fee. Allow 2 weeks to process changes of ownership.
+.auction,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,
+.audio,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.auto,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.baby,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.band,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,
+.bar,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.barcelona,Y,N,N,30,-,40,30,Y,N,N,-,,Geo,,-,,,3 to 36,Y,1 to 10 ,2 to 13,N,N,,,-,Registrants are required to state their intended use of the registered domain name.
+.bargains,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.bayern,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,Nominet,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,Registrants are required to provide an address within the Federal Republic of Germany as administrative contact.
+.be,Y,N,N,30,-,N,40,Y,N,N,New term,DNS Belgium,Geo,,Belgium,,,1 to 63,Y,1,2 to 9,Y,Y,,,.be policies,The expiration date will be updated after the first week of the following month.
+.beer,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.berlin,Y,Y,N,30,1,N,N,Y,N,N,-,,Geo,NIC.AT,-,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.best,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,N,N/A,-,
+.bet,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.bid,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.bike,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.bingo,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.bio,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,Registrant must show commitment to Principles of Organic Agriculture.
+.biz,Y,Y,N,30,-,40,30,Y,Y,Y,-,NeuStar,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, dan, fin, ger, hun, ice, jpn, kor, lav, lit, nor, pol, por, spa, swe",N,,,.biz policies,
+.black,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.blackfriday,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.blog,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,4 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.blue,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.boston,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,Nominet,-,,,3 to 63,Y,1 to 10,2 to 13,N,N,Y,,.boston policies,
+.boutique,Y,Y,N,30,-,,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.br,Y,N,N,30,-,N,73,Y,N,N,Not supported,,Geo,,Brazil,.com.br,local,3 to 26,N,1 to 10 ,2 to 13,N,Y,,,.br policies ,"If not set to autorenew, must be renewed at least 3 days prior to expiry. See the OpenSRS Knowledge Base for complete registration rules."
+.brussels,Y,Y,N,30,-,40,30,Y,N,N,-,DNS Belgium,Geo,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,-,
+.build,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.builders,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.business,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.buzz,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.bz,Y,Y,N,30,-,40,30,Y,Y,N,-,Afilias,Geo,Afilias,Belize,.org.bz,,2 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.bz policies,
+.bzh,Y,Y,N,30,-,40,30,Y,N,N,-,,Geo,AFNIC,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.bzh policies,
+.ca,Y,Y,N,30,-,40,30,Y,Y,Y,-,CIRA,Geo,CIRA,Canada,,local,up to 63,Y,1 to 10 ,2 to 13,N,Y,,,.ca policies,"Reseller must display the CIRA Registrant Agreement, in full, and ensure that registrant agrees to the conditions of the agreement. See http://www.cira.ca/policies/ Registrant must provide firstname, lastname, email, phone number, and complete address for domain registration and all updates."
+.cab,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cafe,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.camera,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.camp,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.capetown,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,ZACR,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,.capetown policies ,
+.capital,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.car,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.cards,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.care,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.careers,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cars,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.casa,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.cash,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.casino,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cat,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,Websites using the .cat TLD must include significant content in Catalan.
+.catering,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cc,Y,Y,N,30,-,40,30,Y,Y,Y,-,Verisign,Geo,Verisign,Cocos Islands,,,1 to 63,Y,1 to 10 ,2 to 13,"afr, alb, ara, arg, arm, asm, ast, ave, awa, aze, bak, bal, ban, baq, bas, bel, ben, bho, bos, bul, bur, car, cat, che, chi, chv, cop, cos, cze, dan, div, doi, dut, est, fao, fij, fin, fre, fry, geo, ger, gla, gle, gon, gre, guj, heb, hin, hun, ice, inc, ind, inh, ita, jav, jpn, kas, kaz, khm, kir, kor, kur, lao, lav, lit, ltz, mac, mal, mao, may, mlt, mol, mon, nep, nor, ori, oss, pan, per, pol, por, pus, raj, rum, rus, san, scc, scr, sin, slo, slv, smo, snd, som, spa, srd, swa, swe, syr, tam, tel, tgk, tha, tib, tur, ukr, urd, uzb, vie, wel, yid",Y,,,.cc policies,
+.cd,N,N,Y,32,-,N,N,N,N,N,-,,Geo,,see note,,,4 to 63,N,1,2 to 8,N,N,,,,Allow 2 to 5 business days to process requests.
+.center,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.ceo,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10,2 to 13,N,Y,N,N/A,.ceo policies,
+.ch,N,N,Y,-5,2,N,40,Y,N,N,"No charge, no change",SWITCH,Geo,,Switzerland,,,3 to 63,Y,1,2 to 4,"dan, dut, fin, fre, ice, ita, nor, por, spa, swe",Y,,,.ch policies ,
+.charity,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,N,N/A,-,
+.chat,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cheap,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.christmas,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.church,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.city,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.cl,N,N,Y,32,-,N,N,N,N,N,"No charge, no change",,Geo,,Chile,,,3 to 63,N,1 to 2 ,2 to 8,N,N,,,-,Admin contact must be a person.                                                                    Please see https://opensrs.com/domain-policies/ for further information on .CL transfers
+.claims,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cleaning,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.click,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.clinic,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.clothing,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cloud,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.club,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,1,-,
+.cm,Y,Y,N,30,4,N,N,Y,N,N,-,,Geo,,Cameroon,".cm, .co.cm, .com.cm, .net.cm",,2 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.cn,N,N,N,30,5,N,15,Y,,N,Not supported,,Geo,,China,,,,N,,2 to 6,N,Y,,,.cn policies,".CN registrations are currently suspended. Existing domains can be renewed for 1 to 10 years. If not renewed, domain is deleted from OpenSRS two days before expiry date and given status 'pending release'."
+.co,Y,Y,N,30,-,40,15,Y,Y,Y,-,.CO Internet,Geo,Neustar,Colombia,".co, .com.co, .net.co, .nom.co",,2 to 63,Y,1 to 5 ,2 to 13,"chi, dan, fin, fre, ger, hun, ice, jpn, kor, lav, lit, nor, pol, por, rus, spa, swe",Y,Y,2,.co policies,
+.coach,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.codes,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.coffee,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.college,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,"ara, chi, gre, heb, lao, jpn, rus, tha",N,Y,3,-,"GA begins September 29, 2015 at 14:00 UTC."
+.cologne,Y,Y,N,30,-,40,N,Y,N,N,-,RyCE,Geo,Knipp/Tango,-,,,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.com,Y,Y,N,30,-,40,30,Y,Y,Y,-,Verisign,Generic,Verisign,-,,,3 to 63,Y,1 to 10 ,2 to 13,"afr, alb, ara, arg, arm, asm, ast, ave, awa, aze, bak, bal, ban, baq, bas, bel, ben, bho, bos, bul, bur, car, cat, che, chi, chv, cop, cos, cze, dan, div, doi, dut, eng, est, fao, fij, fin, fre, fry, geo, ger, gla, gle, gon, gre, guj, heb, hin, hun, ice, inc, ind, inh, ita, jav, jpn, kas, kaz, khm, kir, kor, kur, lao, lav, lit, ltz, mac, mal, mao, may, mlt, mol, mon, nep, no, nor, ori, oss, pan, per, pol, por, pus, raj, rum, rus, san, scc, scr, sin, slo, slv, smo, snd, som, spa, srd, swa, swe, syr, tam, tel, tgk, tha, tib, tur, ukr, urd, uzb, vie, wel, yid",Y,,,-,
+.community,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.company,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.computer,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.condos,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.construction,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.consulting,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.contractors,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cooking,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.cool,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.coop,Y,Y,N,0,-,30,15,Y,N,N,-,,Generic,,-,,restricted,3 to 63,Y,1 to 10 ,2 to 8,N,Y,,,.coop policies ,
+.corsica,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,AFNIC,-,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,.corsica policies,
+.country,Y,Y,N,30,-,40,45,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.coupons,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.courses,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,"Sunrise ends September 13, 2015 at 23:59:59 UTC. GA begins September 23, 2015 at 16:00 UTC. All domain names, and their subsequent use, must be consistent with the mission and purpose of the TLD as determined by the registry, at their sole discretion."
+.credit,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.creditcard,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cricket,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.cruises,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.cx,N,Y,Y,2,4,N,N,Y,N,N,Not supported,,Geo,,Christmas Islands,,,2 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.cymru,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.cz,N,N,Y,32,32,N,30,Y,N,N,"No charge, no change",,Geo,,Czech Republic,,,1 to 63,N,1,2 to 8,N,N,,,-,
+.dance,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.date,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.dating,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.de,N,N,Y,2,5,N,30,Y,N,N,Temp Spec: See 'Additional Information',DENIC,Geo,,Germany,,,1 to 63,Y,1,2 to 6,"alb, cat, cze, dan, dut, est, fin, fre, ger, hun, ice, ita, lav, lit, nor, pol, por, scr, slo, spa, swe, tur, vie, wel",Y,,,.de policies,"To delete the name or allow it to expire, complete and submit the deletion form at least 5 days prior to the expiry date: http://opensrs.com/site/resources/agreements/domain-policies#de
+
+Reseller to Reseller Transfers = Charge but no renewal. Please contact our support team for credit adjustment
+Registrar to Registrar Transfers = Charge with Renewal."
+.deals,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.degree,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,.degree policies,Additional terms are required by linking to Exhibit A.
+.delivery,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.democrat,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.dental,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.dentist,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,Additional terms are required by linking to Exhibit A.
+.desi,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.dev,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Google,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,N/A,.dev policies,SSL Certificate on host required for domains of this TLD.
+.design,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.diamonds,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.diet,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.digital,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.direct,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.directory,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.discount,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.dk,N,N,Y,40,38,N,N,N,N,N,No change to reg period,dk-hostmaster,Geo,,Denmark,,,2 to 63,N,1,2 to 5,dan,N,,,.dk policies,Nameservers must be registered with the registry before they can be used. Domains with invalid registrant address data will be deleted by the registry.
+.doctor,Y,Y,N,40,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,restricted,3 to 63,Y,1 to 10 ,2 to 5,"chi, fre, ger, spa",Y,Y,2,-,"Registrants who hold themselves out to be licensed medical
+practitioners must be able to demonstrate to the Registrar and
+Registry, upon request, that they hold the applicable license"
+.dog,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.domains,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.download,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.durban,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,ZACR,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,.durban policies,
+.earth,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.ec,Y,N,N,30,1,N,N,N,N,N,-,,Geo,,Ecuador,".ec, .com.ec, .fin.ec, .info.ec, .med.ec, .net.ec, .pro.ec",,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,.ec policies,
+.education,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.email,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.energy,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.engineer,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,.engineer policies,Additional terms are required by linking to Exhibit A.
+.engineering,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.enterprises,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.equipment,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.es,Y,N,N,30,-,10,N,N,N,N,No change to reg period,Esnic,Geo,,Spain,".es, .com.es, .nom.es, .org.es",,3 to 63,Y,"1 to 5, 10 ",2 to 7,"fre, ger, por, spa",Y,,,.es policies,Can be renewed for 1 to 5 or 10 years.
+.estate,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.eu,Y,N,N,30,-,N,40,Y,Y,N,-,EURid,Geo,,European Community,,local,2 to 63,Y,1 to 10 ,2 to 9,"bul, cze, dan, dut, eng, est, fin, fre, ger, gle, gre, hun, ita, lav, lit, mlt, pol, por, rum, scr, slo, slv, spa, swe",Y,,,.eu policies,"Presence in EU required.  If not renewed by expiry date, domain is deleted at end of the expiry month. For transfers, you must specify at least one nameserver. Allow up to 21 days for transfer to complete."
+.events,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.exchange,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.expert,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.exposed,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.express,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.fail,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.faith,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.family,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.fan,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.fans,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.farm,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.fashion,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.feedback,Y,Y,N,30,-,40,30,Y,N,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,.feedback policies,No new registrations. Cannot use A records. See domain policies
+.fi,N,N,Y,30,-,N,N,Y,N,N,"No charge, no change",,Geo,,Finland,,,2 to 63,N,1 to 5 ,2 to 8,fin,N,,,.fi policies ,Nameservers must be setup prior to registration.
+.film,Y,Y,N,,-,,,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,,N,N,Y,2,-,"""The applicant or registrant must be a member of an approved association, body or union and/or closely connected to the domain name.
+If the domain name is a film title, the applicant or registrant must be a member of an approved association, body or union and hold rights to the exact matching film title."""
+.finance,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.financial,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.fish,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.fishing,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.fit,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.fitness,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.flights,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.florist,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.flowers,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.fm,Y,Y,N,30,2,N,N,Y,N,Y,Temp Spec: See 'Additional Information',,Geo,CentralNic,Micronesia,,,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,"Reseller 2 Reseller Transfers = Charge but no renewal. Please contact our support team for credit adjustment
+Registrar 2 Registrar Transfers = Charge with Renewal."
+.football,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.forsale,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,
+.foundation,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.fr,Y,N,Y,30,1,N,30,Y,N,N,New term,AFNIC,Geo,AFNIC,France,,local,3 to 63,Y,1 to 10 ,2 to 8,"dut, fin, fre, ger, ita, por, spa, swe",Y,,,.fr policies ,"Presence in European Union, Switzerland, Norway, Iceland, or Liechtenstein.  Nameservers needs to pass AFNIC zone check prior to registration."
+.frl,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,-,
+.fun,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Radix,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,,
+.fund,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.furniture,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.futbol,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.fyi,Y,Y,N,30,-,40,30,Y,Y ,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.gallery,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.game,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.games,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.garden,Y,N,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.gd,N,Y,Y,8,-,N,N,Y,N,N,New term,,Geo,KSRegistry,Grenada,,,3 to 63,Y,1,2 to 8,N,N,,,-,New registrations and transfers are currently unavailable for this TLD.
+.gg,Y,N,N,30,-,28,N,Y,N,N,-,,Geo,,Guernsey,".gg, .co.gg, .net.gg, .org.gg",,1 to 63,Y,1 to 10 ,2 to 8,"cze, dan, dut, fin, fre, hun, ice, ita, nor, pol, por, rum, spa, swe",N,,,-,"If not renewed, the domain is deleted from OpenSRS two days after expiration and given the status 'pending release'. "
+.gift,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.gifts,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.gives,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,.gives policies,Additional terms are required by linking to Exhibit A.
+.gl,N,N,Y,33,-,N,N,Y,N,N,Not supported,,Geo,,Greenland,".gl, .co.gl, .com.gl, .net.gl, .org.gl",,1 to 63,Y,1,2 to 8,N,N,,,-,
+.glass,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.global,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.gmbh,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.gold,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.golf,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.gr,N,N,Y,36,32,N,N,Y,N,N,No change to reg period,,Geo,,Greece,".gr, .com.gr, .edu.gr, .net.gr, .org.gr",,3 to 63,Y,2,2 to 8,N,N,,,-,"If ordered for 4 years, 2 years will be displayed at the time of registration. The additional 2 years will be added 6 days after expiration."
+.graphics,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.gratis,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.green,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.gripe,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.group,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.gs,N,Y,Y,4,-,N,N,Y,N,N,No change to reg period,,Geo,CoCCA,South Georgia,,,2 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.guide,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.guitars,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.guru,Y,Y,N,30,-,40,180,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.gy,N,N,Y,4,-,N,N,N,N,N,No change to reg period,,Geo,,Guyana,".gy, .co.gy, .com.gy, .net.gy",,3 to 63,Y,1 to 4 ,2 to 8,N,N,,,-,
+.hamburg,Y,Y,N,30,-,N,N,Y,N,N,-,,Geo,NIC.AT,-,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,"Registrant, Admin or Tech contact in Hamburg - requirement will be validated by registry post registration."
+.haus,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.health,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Google,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,N/A,.health policies,
+.healthcare,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.help,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.hiphop,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.hiv,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,Resellers must clearly display that $125 of each .hiv registration is donated to charity.
+.hk,N,N,Y,32,-,N,N,Y,N,N,No change to reg period,,Geo,,Hong Kong,,,2 to 63,N,1,2 to 8,N,N,,,.hk policies ,
+.hm,N,N,Y,12,-,N,N,N,N,N,New term,,Geo,,Heard and McDonald Islands,,,3 to 63,N,1 to 10 ,2 to 8,N,N,,,-,
+.hn,Y,Y,N,30,2,N,N,Y,N,N,-,,Geo,,Honduras,".hn, .com.hn, .net.hn, .org.hn",,2 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.hockey,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.holdings,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.holiday,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.homes*,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,Live on 2019-01-14*
+.horse,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.hospital,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,,
+.host,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.hosting,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.house,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.how,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Google,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,N/A,-,"Only owner, admin and tech contacts."
+.hr,N,N,Y,30,-,N,N,N,N,N,No change to reg period,,Geo,,Croatia,.com.hr,,3 to 63,N,1 to 2 ,2 to 8,N,N,,,-,
+.ht,N,Y,Y,32,-,N,N,Y,N,N,Not supported,,Geo,,Haiti,".ht, .com.ht, .info.ht, .net.ht, .org,ht",,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.hu,N,N,Y,32,-,N,N,N,N,N,New term,,Geo,,Hungary,"hu, .co.hu",local,2 to 40,N,1 to 2 ,2 to 8,hun,N,,,.hu policies,Admin contact must be local.  14-day activation delay - final success message will not arrive before that.
+.il,N,N,Y,32,-,N,N,N,N,N,No change to reg period,,Geo,,Israel,.co.il,,3 to 63,N,2,2 to 5,N,N,,,,Registrants must submit paper form for transfers. Allow 2 to 5 business days to process requests.
+.im,N,Y,Y,4,-,N,N,Y,N,N,"No charge, no change",,Geo,,Isle of Man,".im, .co.im, .com.im, .net.im, .org.im",,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.immo,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.immobilien,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.in,Y,Y,N,30,30,40,30,Y,N,N,-,,Geo,Afilias,India,".in, .co.in, .firm.in, .gen.in, .ind.in, .net.in, .org.in",,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.in policies,
+.inc,Y,Y,N,30,-,40,30,Y,Y,N,-,Intercap Holdings Inc. ,Generic,Uniregistry,-,,,3 to 63,TBD,1 to 10 ,2 to 13,TBD,N,Y,N,-,
+.industries,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.info,Y,Y,N,30,-,40,30,Y,Y,Y,-,Afilias,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,"dan, ger, hun, ice, kor, lav, lit, pol, swe",Y,,,-,
+.ink,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.institute,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.insure,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.international,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.investments,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.io,Y,N,N,0,3,N,30,Y,N,N,-,,Geo,,British Indian Ocean Territory,,,3 to 63,Y,1 to 10 ,2 to 8,"cze, dan, dut, fin, fre, hun, ice, ita, nor, pol, por, rum, spa, swe",Y,-,-,.io policies,Can be renewed for 1 or 2 years. Allow 3 business days to process requests. 
+.irish,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.is,N,N,Y,62,-,N,N,N,N,N,No change to reg period,,Geo,,Iceland,,,3 to 63,N,1 to 2 ,2 to 8,ice,N,,,.is policies ,
+.ist,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.istanbul,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.it,N,N,N,30,~ 6,10,30,Y,Y,N,New term,NIC.it,Geo,,Italy,,local,3 to 63,Y,1,2 to 13,N,N,,,.it policies,Resident or Citizen of an EU country.  Renewal is applied 15 days after expiration. 
+.je,Y,N,N,30,-,28,N,Y,N,N,-,,Geo,,Jersey,".je, .co.je",,1 to 63,Y,1 to 10 ,2 to 8,"cze, dan, dut, fin, fre, hun, ice, ita, nor, pol, por, rum, spa, swe",N,,,-,"If not renewed, the domain is deleted from OpenSRS two days after expiration and given the status 'pending release'. To redeem, contact help@opensrs.com."
+.jetzt,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.jewelry,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.jobs,Y,Y,N,30,-,30,30,Y,N,N,-,,Generic,,-,,restricted,3 to 63,N,1 to 10 ,2 to 8,N,Y,,,.jobs policies,Member of SHRM or in HR management.  Company name must be legal trade name or name it is commonly known by.
+.joburg,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,ZACR,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,.joburg policies,
+.jp,N,N,Y,18,-,N,N,N,N,N,Not supported,,Geo,,Japan,,local,3 to 63,N,1,2 to 8,N,N,,,.jp policies ,"Local contact in Japan.  
+Allow 2 to 5 business days to process requests.  
+Max period extension on renewals is 1 year."
+.juegos,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.kaufen,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.kg,N,N,Y,32,-,N,N,N,N,N,-,,Geo,,Kyrghyzstan,,,3 to 63,N,1 to 2 ,2 to 8,N,N,,,-,
+.ki,N,Y,Y,4,-,N,N,Y,N,N,No change to reg period,,Geo,,Kiribati,".biz.ki, .com.ki, .info.ki, .mobi.ki, .net.ki, .tel.ki",,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.kim,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.kitchen,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.kiwi,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,CIRA,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.koeln,Y,Y,N,30,-,40,30,Y,Y,N,-,RyCE,Generic,Knipp/Tango,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.kr,N,N,Y,10,-,N,N,N,N,N,Not supported,,Geo,,see note,".kr, .co.kr",local,3 to 63,N,1 to 5 ,2 to 8,kor,N,,,-,Registrant must be based in Republic of Korea
+.la,Y,Y,N,30,2,N,N,Y,N,N,-,,Geo,CentralNic,Laos,,,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.land,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.law,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,Nominet,-,,restricted,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,N/A,.law policies,Member of legal profession.  Validation as accredited lawyer is required.
+.lawyer,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,Additional terms are required by linking to Exhibit A.
+.lc,N,Y,Y,2,2,N,N,Y,N,N,-,,Geo,Afilias,Saint Lucia,".lc, .co.lc, .com.lc, .l.lc, .net.lc, .org.lc, .p.lc",,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.lease,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.legal,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.lgbt,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.li,N,N,Y,-5,2,N,14,Y,N,N,"No charge, no change",SWITCH,Geo,,Liechtenstein,,,3 to 63,Y,1,2 to 4,"dan, dut, fin, fre, ice, ita, lit, nor, por, spa, swe",N,,,.li policies ,
+.life,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.lighting,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.limited,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.limo,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.link,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.live,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.llc,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.loan ,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.loans,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.lol,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.london,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,.london policies,
+.love,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,4 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.lt,N,Y,Y,37,-,N,N,Y,N,N,"No charge, no change",,Geo,,Lithuania,,,2 to 63,N,1 to 2 ,2 to 8,N,N,,,-,
+.ltd ,N,Y,Y,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.ltda,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,.ltda policies ,Registrant must be a company registered as LTDA.
+.lu,N,N,Y,2,-,N,N,N,N,N,Not supported,,Geo,,Luxembourg,,,3 to 63,Y,1,2 to 8,fre,N,,,-,
+.luxury,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.lv,N,N,Y,37,-,N,N,Y,N,N,"No charge, no change",,Geo,,Latvia,".lv, .com.lv",,2 to 63,N,1 to 5 ,2 to 8,N,N,,,.lv policies,"In order to change the ownership of a .LV or .COM.LV domain, a signed change of ownership form must be submitted along with identification documents from both the old and new registrants. To begin the process contact OpenSRS support at help@opensrs.com."
+.ly,N,N,Y,32,-,N,N,N,N,N,-,,Geo,,Libya,".ly, .com.ly",,4 to 63,N,1 to 10 ,2 to 8,N,N,,,.ly policies,"For transfers, current registrant must send confirmation email to sales@register.ly using address in WHOIS."
+.ma,N,N,Y,32,-,N,N,Y,N,N,No change to reg period,,Geo,,Morocco,".ma, .co.ma",,3 to 63,N,1 to 5 ,2,N,N,,,.ma policies,
+.maison,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.management,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.market,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,"chi, fre, ger, spa",N,Y,2,.market policies,Additional terms are required by linking to Exhibit A.
+.marketing,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"fre, spa",Y,Y,2,-,
+.mba,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.md,Y,Y,N,30,7,N,N,N,N,N,No change to reg period,,Geo,,Moldova,,local,3 to 63,Y,1 to 5 ,2,N,N,,,-,"Eligible countries: AG, AI, AR, AI, BB, BM, BO, BR, BS, BW, BZ, CA, CH, CL, CM, CO, CU, DE, DM, DO, EC, ES, FJ, FM, FR, GB, GD, GH, GI, GT, GU, GY, HN, ID, IE, IN, JM, JP, KE, KI, KN, KP, KY, LR, LS, MH, MP, MT, MU, MW, MX, NA, NG, NI, NR, NZ, PA, PE, PG, PH, PR, PW, PY, SB, SG, SL, SV, SZ, TO, TT, TV, UG, US, UY, VE, VG, VI, VU, WS, ZA, ZM, ZW. Can be renewed for 1 to 5 years."
+.me,Y,Y,N,30,-,40,30,Y,Y,N,-,Afilias,Geo,Afilias,Montenegro,,,2 to 63,Y,1 to 10 ,2 to 13,N,N,,,.me policies ,
+.media,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.melbourne,Y,Y,N,30,-,40,30,Y,N,Y,-,,Geo,ARI,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,.melbourne policies,"Registrant must be a Victorian entity, resident or associated entity"
+.memorial,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.men,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.menu,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.miami,Y,Y ,N,30,-,40,30,Y,Y,N,-,,Geo,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,"Sunrise ends September 18, 2015 at 16:00 UTC.  GA begins October 2, 2015 at 16:00 UTC."
+.mn,Y,Y,N,30,2,N,N,Y,N,N,Not supported,,Geo,Afilias,Mongolia,,,2 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.mobi,Y,Y,N,30,-,40,30,Y,Y,N,-,mTLD,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.mobi policies,
+.moda,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.moe,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,-,
+.mom,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.money,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.monster,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.mortgage,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,.mortage policies,Additional terms are required by linking to Exhibit A.
+.movie,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.ms,N,Y,Y,4,9,N,N,Y,N,N,-,,Geo,,Montserrat,,,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.mu,N,Y,Y,~4,~4,N,N,Y,N,N,No change to reg period,,Geo,,Mauritius,,,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.mx,Y,Y,N,30,1,N,30,Y,N,N,-,registry.MX,Geo,,Mexico,".mx, .com.mx",,3 to 63,Y,1 to 5 ,2 to 5,N,Y,,,.mx policies ,Can be renewed for 1 to 5 years.
+.my,N,N,Y,12,-,N,N,N,N,N,"No charge, no change",,Geo,,Malaysia,".my, .com.my, .name.my, .net.my, .org.my",local,1 to 40,N,1 to 2 ,2,N,N,,,.my policies ,Local contact in Malaysia.  Registrant admin login data must be submitted to help@opensrs.com for transfers. Ownership changes require a trade; new term begins at trade date. Allow 2 to 5 business days to process requests.
+.nagoya,Y,Y,N,30,-,40,30,Y,Y,N,-,ICM,Geo,GMO,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.name,Y,Y,N,30,-,40,30,Y,Y,N,-,Verisign,Generic,Verisign,-,,,3 to 63,Y,1 to 10 ,2 to 13,"afr, alb, ara, arg, arm, asm, ast, ave, awa, aze, bak, bal, ban, baq, bas, bel, ben, bho, bos, bul, bur, car, cat, che, chi, chv, cop, cos, cze, dan, div, doi, dut, eng, est, fao, fij, fin, fre, fry, geo, ger, gla, gle, gon, gre, guj, heb, hin, hun, ice, inc, ind, inh, ita, jav, jpn, kas, kaz, khm, kir, kor, kur, lao, lav, lit, ltz, mac, mal, mao, may, mlt, mol, mon, nep, no, nor, ori, oss, pan, per, pol, por, pus, raj, rum, rus, san, scc, scr, sin, slo, slv, smo, snd, som, spa, srd, swa, swe, syr, tam, tel, tgk, tha, tib, tur, ukr, urd, uzb, vie, wel, yid",Y,,,.name policies,Changes to contacts not allowed for 5 days after registration.  Enabling of WHOIS Privacy not allowed at registration or within first 5 days.
+.navy,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,restricted,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,Registrant may not misrepresent self as affiliated with military if that is not the case.
+.net,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Verisign,-,,,3 to 63,Y,1 to 10 ,2 to 13,"afr, alb, ara, arg, arm, asm, ast, ave, awa, aze, bak, bal, ban, baq, bas, bel, ben, bho, bos, bul, bur, car, cat, che, chi, chv, cop, cos, cze, dan, div, doi, dut, eng, est, fao, fij, fin, fre, fry, geo, ger, gla, gle, gon, gre, guj, heb, hin, hun, ice, inc, ind, inh, ita, jav, jpn, kas, kaz, khm, kir, kor, kur, lao, lav, lit, ltz, mac, mal, mao, may, mlt, mol, mon, nep, no, nor, ori, oss, pan, per, pol, por, pus, raj, rum, rus, san, scc, scr, sin, slo, slv, smo, snd, som, spa, srd, swa, swe, syr, tam, tel, tgk, tha, tib, tur, ukr, urd, uzb, vie, wel, yid",Y,,,,
+.network,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.news,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.ngo/.ong,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias/PIR,-,,,3 to 63,Y,1 to 10 ,2 to 13,"ger, spa",N,Y,2,.ngo/.ong policies,.NGO and .ONG are bundled and cannot be registered separately. Registrant must meet NGO/public interest eligibilty requirements.
+.ninja,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.nl,Y,N,N,30,-,N,45,Y,N,N,New term,SIDN,Geo,SIDN,Netherlands,,,2 to 63,Y,1,2 to 13,N,Y,,,.nl policies,"If manually renewed, send renewal request at least 2 days in advance. Domain expires loosely around the expiration date"
+.no,N,N,Y,12,-,N,N,Y,N,N,"No charge, no change",,Geo,,Norway,,local,2 to 63,N,1,2 to 8,N,N,,,-,Owner must be local.  Maximum of 20 names per registrant; registrant must be an organziation; forms need to be reproduced within 24 hrs on demand.
+.nrw,Y,Y,N,30,-,40,30,Y,N,N,-,,Geo,Knipp/Tango,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,N/A,.nrw policies,Physical presence in Germany
+.nu,Y,N,N,30,-,N,N,Y,N,N,No change to reg period,,Geo,IIS,Niue,,,1 to 63,Y,1 to 10 ,2 to 8,"dan, dut, fin, ger, ice, ita, nor, spa, swe",Y,,,-,Individuals must submit ID card number; organizations must submit business registration number. Organziations based outside of Sweden must also submit VAT-ID.
+.nyc,Y,Y,N,30,-,40,30,Y,N,Y,-,,Geo,ARI,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,.nyc policies,Physical presence in one of the five New York City boroughs
+.nz,Y,Y,N,30,3,N,90,Y,N,N,"No charge, no change",,Geo,,New Zealand,".nz, .co.nz, .net.nz, .org.nz",,2 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,"Can be renewed for 1 to 10 years. If not renewed, domain is deleted from OpenSRS two days before expiry date and given status 'pending release'. To redeem, contact help@opensrs.com."
+.observer,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10,2 to 13,N,N,Y,3,,
+.one,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.online,Y,Y,N,30,-,40,30,Y,Y,Y,-,Radix,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,"ara, jpn, kor, heb, gre, tha, lao
+",Y,Y,3,-,
+.org,Y,Y,N,30,-,40,30,Y,Y,Y,-,pir.org,Generic,Afilias/PIR,-,,,3 to 63,Y,1 to 10 ,2 to 13,"bel, bos, bul, dan, ger, hun, ice, kor, lav, lit, mac, pol, rus, scc, spa, swe, ukr, zh-cn, zh-tw",Y,,,.org policies,
+.organic,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,,
+.page*,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Google,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,N/A,.page policies,"*Live on 2018-10-03
+"
+.paris,Y,Y,N,30,-,40,30,Y,N,N,-,,Geo,AFNIC,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.paris policies,Local presence with Paris community
+.partners,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.parts,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Geo,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.party,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.pe,Y,Y,N,30,3,N,N,Y,N,N,Not supported,,Geo,,Peru,".pe, .com.pe, .net.pe",,2 to 20,Y,1 to 5 ,2 to 8,N,N,,,-,
+.pet,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.ph,N,N,Y,12,-,N,N,N,N,N,No change to reg period,,Geo,,Philippines,".ph, .com.ph, .net.ph, .org.ph",,3 to 63,Y,"1, 2, 5, or 10 ",2 to 3,N,N,,,-,
+.photo,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.photography,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.photos,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.physio,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,.physio policies,Additional terms are required by linking to Exhibit A.
+.pics,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.pictures,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.pink,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.pizza,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.pl,Y,N,N,30,2,N,30,Y,N,N,"No charge, no change",,Geo,,Poland,".pl, .biz.pl .com.pl, .edu.pl, .info.pl, .net.pl, .nom.pl, .org.pl, .shop.pl, .waw.pl",,3 to 63,Y,1 to 10 ,2 to 8,pol,Y,,,.pl policies,"For transfers from registry (not registrar), a form is sent to Reseller for completion by registrant. Transfer will not complete until form is returned to OpenSRS. To redeem, contact help@opensrs.com."
+.place,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.plumbing,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.plus,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.pm,Y,N,Y,2,1,N,N,N,N,N,New term,,Geo,AFNIC,Saint Pierre and Miquelon,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,Admin contact must be local or within EU.  Nameservers needs to pass AFNIC zone check prior to registration.
+.poker,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.porn,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.pr,N,N,Y,32,-,N,N,N,N,N,-,,Geo,,Puerto Rico,.com.pr,,3 to 63,N,1,2 to 8,N,N,,,-,Allow 2 to 5 business days to process requests.
+.press,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.pro,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,Afilias,-,,,4 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.pro policies ,
+.productions,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.promo,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.properties,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.property,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.protection,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.pt,N,N,Y,32,-,N,N,Y,N,N,"No charge, no change",,Geo,,Portugal,".pt, .com.pt",,3 to 63,N,1 to 5 ,2 to 8,N,N,,,.pt policies,"For registrations, individuals must submit ID card number and tax number; organizations must submit business registration number."
+.pub,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.pw,N,N,Y,2,-,N,N,Y,N,N,"No charge, no change",,Geo,,Palau,,,3 to 63,Y,1 to 10 ,2 to 8,N,Y,,,-,
+.qa,N,N,Y,0,32,N,N,N,N,N,Not supported,,Geo,,Qatar,,,3 to 63,N,1 to 5 ,2 to 8,N,N,,,-,Allow 2 to 5 business days to process requests.
+.quebec,Y,Y,N,30,-,40,30,Y,N,N,-,,Geo,CORE,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,.quebec policies,Local presence with the Quebec community.  Registrants are required to state their intended use of the registered domain name.
+.racing,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.re,Y,N,Y,2,1,N,N,N,N,N,New term,,Geo,AFNIC,Réunion Island,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,Owner must be local.  Nameservers needs to pass AFNIC zone check prior to registration.
+.realestate,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Verisign,-,,,3 to 63,Y,1 to 10,2 to 13,"afr, alb, ara, arg, arm, asm, ast, ave, awa, aze, bak, bal, ban, baq, bas, bel, ben, bho, bos, bul, bur, car, cat, che, chi, chv, cop, cos, cze, dan, div, doi, dut, eng, est, fao, fij, fin, fre, fry, geo, ger, gla, gle, gon, gre, guj, heb, hin, hun, ice, inc, ind, inh, ita, jav, jpn, kas, kaz, khm, kir, kor, kur, lao, lav, lit, ltz, mac, mal, mao, may, mlt, mol, mon, nep, no, nor, ori, oss, pan, per, pol, por, pus, raj, rum, rus, san, scc, scr, sin, slo, slv, smo, snd, som, spa, srd, swa, swe, syr, tam, tel, tgk, tha, tib, tur, ukr, urd, uzb, vie, wel, yid",Y,Y,,-,
+.realty,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10,2 to 13,N,N,Y,3,-,
+.recipes,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.red,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,N,1 to 10 ,2 to 13,N,N,Y,2,-,
+.rehab,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,.rehab policies,Additional terms are required by linking to Exhibit A.
+.reise,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.reisen,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.rent,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.rentals,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.repair,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.report,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.republican,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, spa",N,Y,2,-,
+.rest,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.restaurant,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.review,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.reviews,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.rio,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,,,Local presence to city
+.rip,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,-,
+.ro,N,N,Y,0,1,N,90,Y,N,N,No change to reg period,,Geo,Rightside,Romania,".ro, .com.ro",,3 to 26,N,1 to 10,2 to 8,N,N,,,-,
+.rocks,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.rodeo,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.ru,N,N,Y,34,-,N,30,N,N,N,Not supported,,Geo,Knipp/Tango,Russia,".ru, .com.ru",,2 to 63,N,1,2 to 8,N,N,,,.ru policies,Ownership changes are not supported for this TLD
+.ruhr,Y,Y,N,30,1,40,N,Y,N,N,-,,Geo,Donuts,-,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,Registrant or Admin contact in Germany
+.run,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.sale,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.salon,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.sarl,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.sb,N,Y,Y,4,-,N,N,Y,N,N,No change to reg period,,Geo,,Solomon Islands,".com.sb, .net.sb, .org.sb",,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.sc,Y,Y,N,30,2,N,N,Y,N,N,-,,Geo,Afilias,Seychelles,".sc, .com.sc, .net.sc, .org.sc",,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.school,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.schule,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.science,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.scot,Y,Y,N,30,-,40,30,Y,N,N,-,,Geo,CORE,-,,local,3 to 63,Y,1 to 10 ,2 to 5,N,Y,,,.scot policies,Written nexus declaration recommended to prevent policy deletion.
+.se,Y,N,N,30,2,N,60,Y,N,N,"No charge, no change",,Geo,IIS,Sweden,,,2 to 63,Y,1 to 10 ,2 to 8,"dan, dut, fin, ice, ita, nor, spa, swe",Y,,,.se policies ,Individuals must submit ID card number; organizations must submit business registration number. Organizations based outside of Sweden must also submit VAT-ID.
+.security,Y,Y,N,30,-,N,N,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.services,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.sex,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.sexy,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.sg,N,N,Y,6,-,N,N,Y,N,N,"No charge, no change",,Geo,,Singapore,,local,2 to 63,N,1 to 2 ,2 to 8,N,N,,,-,Owner and Admin must be local.  Organizations must submit their business registration number.
+.sh,Y,Y,N,0,3,N,90,Y,N,N,-,,Geo,,Saint Helena,,,3 to 63,Y,1 to 10 ,2 to 8,"cze, dan, dut, fin, fre, hun, ice, ita, nor, pol, por, rum, spa, swe",Y,,,-,"Can be renewed for 1, or 2 years."
+.shiksha,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,,
+.shoes,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.shop,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,GMO,-,,,3 to 63,Y,1 to 10 ,2 to 13,ara chi dut ger fre jpn kor pol por rus spa tur,N,Y,2,-,
+.shopping,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.show,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.si,N,N,Y,33,-,N,N,Y,N,N,"No charge, no change",,Geo,,Slovenia,,,2 to 63,N,1 to 5 ,2 to 8,N,N,,,.si policies,
+.singles,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.site,Y,Y,N,30,-,40,30,Y,Y,Y,-,Radix,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,3,-,
+.ski,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Radix,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.so,Y,N,N,30,8,N,N,Y,N,N,-,,Geo,,Somalia,".so, .com.so, .net.so, .org.so",local,3 to 63,Y,,2 to 8,N,N,,,-,"Owner must be local.  Renewals limited to one year, auto-renew only (no manual). "
+.soccer,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.social,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.software,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,N,Y,2,.software policies,Additional terms are required by linking to Exhibit A.
+.solar,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.solutions,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.soy,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Google,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,N/A,-,"Only owner, admin and tech contacts."
+.space,Y,Y,N,30,-,40,30,Y,Y,Y,-,Radix,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,3,-,
+.sport,Y,Y,N,30,-,40,30,Y,N,N,-,,Geo,CORE,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,,.sport policies ,
+.sr,N,N,Y,46,-,N,N,N,N,N,Not supported,,Geo,,Suriname,,,3 to 63,N,1,2 to 5,N,N,,,-,
+.srl,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,,-,,restricted,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,,Only companies that are registered as SRL qualify to be a Registrant of an .SRL domain name
+.st,Y,N,N,30,2,N,N,Y,N,N,"No charge, no change",,Geo,,Sao Tome and Principe,,,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,Billing contact is mandatory.
+.storage,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.store,Y,Y,N,30,-,40,30,Y,Y,Y,-,Radix,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,3,-,
+.stream,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.studio,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,
+.study,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.style,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.sucks,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,2,-,Domain parking not allowed.
+.supplies,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.supply,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.support,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.surf,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.surgery,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.sx,N,N,Y,4,-,N,N,Y,N,N,-,,Geo,,Sint Maarten,,,3 to 63,Y,1 to 10 ,2 to 8,N,Y,,,-,
+.sydney,Y,Y,N,30,-,40,30,Y,N,Y,-,,Geo,ARI,-,,local,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,3,.sydney policies,"Registrant must be a resident, entity or associated entity of New South Wales."
+.systems,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tattoo,Y,Y,N,30,-,40,180,Y,Y,N,-,,Generic,Uniregistry,-,,,3 to 63,Y,1 to 10 ,2 to 13,"fre, ger, ita, por, rus, spa",N,Y,2,-,
+.tax,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.taxi,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tc,N,N,Y,4,-,N,N,Y,N,N,No change to reg period,,Geo,,Turks and Caicos Islands,,,3 to 63,Y,1,2 to 8,N,N,,,-,New registrations and transfers are currently unavailable for this TLD.
+.team,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tech,Y,Y,N,30,-,40,30,Y,Y,Y,-,Radix,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,3,-,
+.technology,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tel,Y,Y,N,30,-,40,30,Y,Y;  no extra charge,N,-,Telnic,Generic,ARI,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, dan, fin, ger, hun, ice, jpn, kor, lav, lit, nor, pol, por, rus, spa, swe",Y,,,.tel policies,
+.tennis,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tf,Y,N,Y,2,1,N,N,N,N,N,New term,,Geo,AFNIC,French Southern and Antarctic Lands,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,Admin contact must be local or within EU.  Nameservers needs to pass AFNIC zone check prior to registration.
+.theater,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.theatre,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.tienda,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tips,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tires,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tirol,Y,Y,N,30,-,40,30,Y,Y,N,-,RyCE,Geo,NIC.AT,-,,local,3 to 63,Y,1 to 10 ,2 to 13,"afr, cat, dut, fre, ger, lux, por",N,,,.tirol policies,Nexus with Tyrol community
+.tk,N,N,Y,4,-,N,N,Y,N,N,-,,Geo,,Tokelau,,,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.tl,N,Y,Y,4,-,N,N,Y,N,N,No change to reg period,,Geo,CoCCA,East Timor,,,3 to 63,Y,1 to 5 ,2 to 8,N,N,,,-,
+.tm,N,N,Y,4,-,N,N,Y,N,N,-,,Geo,,Turkmenistan,,,3 to 63,Y,10,2 to 8,N,N,,,-,
+.to,Y,N,N,15,13,N,N,Y,N,N,New term,,Geo,,Tonga,,,3 to 26,Y,1 or 2 ,2 to 8,N,N,,,.to policies,Domain will be deleted ~13 before expiry if not renewed 
+.today,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.tokyo,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,GMO,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,N,-,-,
+.tools,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.top,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.tours,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.town,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.trade,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.training,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.travel,N,Y,Y,-45,1,N,N,Y,N,N,-,,Generic,Neustar,-,,restricted,3 to 63,N,1 to 10 ,2 to 8,N,N,,,.travel policies,Participant in travel industry with a UIN.  Can only be renewed by auto-renew; will renew 45 days after expiry.
+.tube,Y,Y,N,-45,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.tv,Y,Y,N,30,-,40,30,Y,Y,Y,-,Verisign,Geo,Verisign,Tuvalu,,,2 to 63,Y,1 to 10 ,2 to 13,"afr, alb, ara, arg, arm, asm, ast, ave, awa, aze, bak, bal, ban, baq, bas, bel, ben, bho, bos, bul, bur, car, cat, che, chi, chv, cop, cos, cze, dan, div, doi, dut, est, fao, fij, fin, fre, fry, geo, ger, gla, gle, gon, gre, guj, heb, hin, hun, ice, inc, ind, inh, ita, jav, jpn, kas, kaz, khm, kir, kor, kur, lao, lav, lit, ltz, mac, mal, mao, may, mlt, mol, mon, nep, nor, ori, oss, pan, per, pol, por, pus, raj, rum, rus, san, scc, scr, sin, slo, slv, smo, snd, som, spa, srd, swa, swe, syr, tam, tel, tgk, tha, tib, tur, ukr, urd, uzb, vie, wel, yid",Y,,,.tv policies,
+.tw,Y,Y,N,30,2,N,N,Y,N,N,-,,Geo,Neustar,Taiwan,".tw, .com.tw, .idv.tw, .org.tw",,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,"For transfers, if domain is held with Taiwanese registrar, a form is sent to Reseller for completion by registrant. Transfer will not complete until form is returned to OpenSRS.
+
+.com.tw extention can only be registered by person type 'company'"
+.ua,N,N,Y,30,-,N,N,Y,N,Y,-,,Geo,,Ukraine,.com.ua,,3 to 63,N,1 to 2 ,2 to 8,N,N,,,-,"For all transfers, a form is sent to Reseller for completion by registrant. Transfer will not complete until form is returned to OpenSRS. Allow 2 to 5 business days to process requests."
+.uk,Y,N,N,30,-,30,60,N,N,N,No change to reg period,Nominet,Geo,Nominet,United Kingdom,".uk, .co.uk, .ltd.uk, .me.uk, .net.uk, .org.uk, .plc.uk",local,up to 63,Y,1 to 10 ,2 to 10,N,Y,,,.uk policies,"Registrant must be based in UK for .uk only.  Reseller can set default period for auto-renewals to 1 or 2 years.  Note: New registrations not supported for .ltd.uk, .net.uk and .plc.uk - transfers and renewals only."
+.university,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.uno,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,ARI,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.us,Y,Y,N,30,-,40,30,Y,N,N,-,NeuStar,Geo,Neustar,United States,,local,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,.us policies,
+.uy,N,N,Y,32,-,N,N,N,N,N,Not supported,,Geo,,Uruguay,.com.uy,,3 to 26,N,1,2 to 8,N,N,,,-,"For all transfers, a form is sent to Reseller for completion by registrant. Transfer will not complete until form is returned to OpenSRS. 
+ Allow 2 to 5 business days to process requests."
+.vacations,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.vc,Y,Y,N,30,5,40,30,Y,N,N,-,,Geo,Afilias,Saint Vincent and the Grenadines,".vc, .com.vc, .net.vc, .org.vc",,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,-,Renewals can take up to 24hrs to process.
+.ve,N,N,Y,45,-,N,N,N,N,N,"No charge, no change",,Geo,,Venezuela,".co.ve, .com.ve",,3 to 63,N,1 to 2 ,2 to 8,N,N,,,-,"For all transfers, a form is sent to Reseller for completion by registrant. Transfer will not complete until form is returned to OpenSRS.  Allow 2 to 5 business days to process requests."
+.vegas,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.ventures,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.vet,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 9,N,Y,Y,2,.vet policies ,Additional terms are required by linking to Exhibit A.
+.vg,N,Y,Y,8,-,N,N,Y,N,N,New term,,Geo,,British Virgin Islands,,,1 to 63,Y,1,2 to 8,N,N,,,-,New registrations and transfers are currently unavailable for this TLD.
+.viajes,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.video,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Rightside,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.villas,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.vin,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.vip,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.vision,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.vlaanderen,Y,Y,N,30,-,40,30,Y,N,N,-,DNS Belgium,Geo,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,,,-,
+.vodka,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.vote,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,Additional terms are required by linking to Exhibit A.
+.voto,Y,Y,N,30,-,40,30,Y,N,N,-,,Generic,Afilias,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,Additional terms are required by linking to Exhibit A.
+.voyage,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.wales,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.watch,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.webcam,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.website,Y,Y,N,30,-,40,30,Y,Y,Y,-,Radix,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,Y,Y,3,-,
+.wedding,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.wf,Y,N,Y,2,1,N,N,N,N,N,New term,,Geo,AFNIC,Wallis and Futuna Islands,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,Owner and Admin contact must be local or within EU.  Nameservers needs to pass AFNIC zone check prior to registration.
+.wien,Y,Y,N,30,1,N,N,Y,N,N,-,RyCE,Geo,NIC.AT,-,,,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,
+.wiki,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.win,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Neustar,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,1,-,
+.wine,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.work,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",N,Y,2,-,
+.works,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"fre, spa",Y,Y,2,-,
+.world,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.ws,Y,Y,N,30,-,45,30,Y,Y,N,-,WebSite.ws,Geo,,Western Samoa,,,4 to 63,Y,1 to 10 ,2 to 13,"afr, alb, ara, bel, bul, cat, chi, cze, dan, dut, eng, est, fil, fin, fre, ger, gle, gre, heb, hin, hun, ice, ind, ita, jpn, kor, lav, lit, mac, mal, mlt, nor, per, pol, por, rum, rus, scc, scr, slo, slv, spa, swa, swe, tha, tur, ukr, vie, wel, yid",Y,Y,2,.ws policies,
+.wtf,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
+.xxx,Y,Y,N,30,-,40,30,Y,Y,N,-,ICM,Generic,,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,.xxx policies,Registrants must belong to the Sponsored Community for domain to resolve.
+.xyz,Y,Y,N,30,-,40,30,Y,Y,Y,-,,Generic,CentralNic,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,3,-,
+.yoga,Y,Y,N,30,-,40,30,Y,Y,N,-,,Generic,Nominet,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,Y,2,-,
+.yokohama,Y,Y,N,30,-,40,30,Y,Y,N,-,,Geo,GMO,-,,,3 to 63,Y,1 to 10 ,2 to 13,N,N,,,-,
+.yt,Y,N,Y,2,1,N,N,N,N,N,New term,,Geo,AFNIC,Mayotte,,local,3 to 63,Y,1 to 10 ,2 to 8,N,N,,,-,Admin contact must be local or within EU.  Nameservers needs to pass AFNIC zone check prior to registration.
+.za,N,N,Y,2,-,N,10,N,N,N,"No charge, no change",,Geo,ZACR,South Africa,".co.za, net.za, org.za, web.za",,2 to 63,Y,1,2 to 8,N,N,,,.za policies,".net.za, .org.za and .web.za can be registered for 1-10 years and require admin and billing contacts in addition to owner and tech contacts."
+.zone,Y,Y,N,30,-,40,30,Y,Y,Y,-,ICM,Generic,Donuts,-,,,2 to 63,Y,1 to 10 ,2 to 13,"chi, fre, ger, spa",Y,Y,2,-,
