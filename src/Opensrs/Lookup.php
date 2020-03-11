@@ -59,11 +59,7 @@ class Lookup
     /**
      * @var string
      */
-    public $request;
-    /**
-     * @var string
-     */
-    private $headers;
+    private $request = '';
     /**
      * @var string
      */
@@ -75,11 +71,15 @@ class Lookup
     /**
      * @var string
      */
-    private $action = '';
+    private $headers;
     /**
      * @var string
      */
-    private $query = '';
+    private $action = '';
+    /**
+     * @var array
+     */
+    private $attributes = [];
     /**
      * @var array
      */
@@ -221,9 +221,20 @@ class Lookup
         $assoc->addChild('item', $this->getAction())->addAttribute('key', 'action');
         $assoc->addChild('item', 'DOMAIN')->addAttribute('key', 'object');
         $attributes = $assoc->addChild('item');
-        $attributesAssoc = $attributes->addChild('dt_assoc');
-        $attributesAssoc->addChild('item', $this->getQuery())->addAttribute('key', 'domain');
         $attributes->addAttribute('key', 'attributes');
+        $attributesAssoc = $attributes->addChild('dt_assoc');
+        foreach ($this->getAttributes() as $key => $value) {
+            if (is_array($value)) {
+                $item = $attributesAssoc->addChild('item');
+                $item->addAttribute('key', $key);
+                $attributesArray = $item->addChild('dt_array');
+                foreach ($value as $arrayKey => $arrayValue) {
+                    $attributesArray->addChild('item', $arrayValue)->addAttribute('key', $arrayKey);
+                }
+            } else {
+                $attributesAssoc->addChild('item', $value)->addAttribute('key', $key);
+            }
+        }
         $request = $xml->asXML();
         return $request;
     }
@@ -247,20 +258,20 @@ class Lookup
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getQuery()
+    public function getAttributes(): array
     {
-        return $this->query;
+        return $this->attributes;
     }
 
     /**
-     * @param string $query
+     * @param array $attributes
      * @return Lookup
      */
-    public function setQuery(string $query)
+    public function setAttributes(array $attributes): Lookup
     {
-        $this->query = $query;
+        $this->attributes = $attributes;
         return $this;
     }
 
@@ -317,27 +328,6 @@ class Lookup
     {
         $this->username = $username;
         return $this;
-    }
-
-    /**
-     * @param string $contents
-     * @return string
-     */
-    private function parseContents($contents)
-    {
-        $responseHeaders = $this->responseHeaders;
-        if (empty($contents)) {
-            if (empty($responseHeaders) === false) {
-                $contents = implode(PHP_EOL, $responseHeaders);
-                if (strpos($contents, '</OPS_envelope>') === false) {
-                    $contents .= '</OPS_envelope>';
-                }
-            }
-        }
-        if (empty($contents)) {
-            throw new DomainException(sprintf('Empty response, from host %s, with request content %s, request headers %s response headers: %s', $host, var_export($content, true), var_export($headers, true), var_export($responseHeaders, true)));
-        }
-        return $contents;
     }
 
     /**
@@ -405,10 +395,83 @@ class Lookup
     }
 
     /**
+     * @param string $contents
+     * @return string
+     */
+    private function parseContents($contents)
+    {
+        $responseHeaders = $this->responseHeaders;
+        if (empty($contents)) {
+            if (empty($responseHeaders) === false) {
+                $contents = implode(PHP_EOL, $responseHeaders);
+                if (strpos($contents, '</OPS_envelope>') === false) {
+                    $contents .= '</OPS_envelope>';
+                }
+            }
+        }
+        if (empty($contents)) {
+            throw new DomainException(sprintf('Empty response, from host %s, with request content %s, request headers %s response headers: %s', $host, var_export($content, true), var_export($headers, true), var_export($responseHeaders, true)));
+        }
+        return $contents;
+    }
+
+    /**
+     * @param string $query
+     * @return Lookup
+     */
+    public function setQuery(string $query)
+    {
+        $this->attributes['query'] = $query;
+        return $this;
+    }
+
+    /**
+     * Execute.
+     * @param array $attributes
+     * @param string $action
+     * @return array
+     * @throws Exception
+     */
+    public function execute(array $attributes, string $action = 'lookup')
+    {
+        return $this->setAttributes($attributes)
+            ->setAction($action)
+            ->perform()
+            ->getResult();
+    }
+
+    /**
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->attributes['query'];
+    }
+
+    /**
+     * @param string $key
+     * @param string $value
+     * @return Lookup
+     */
+    public function setAttribute(string $key, string $value)
+    {
+        $this->attributes[$key] = $value;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getHeaders(): string
     {
         return $this->headers;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequest(): string
+    {
+        return $this->request;
     }
 }
