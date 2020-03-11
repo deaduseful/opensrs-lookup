@@ -174,38 +174,7 @@ class Lookup
         $this->headers = $this->buildHeaders($this->request);
         $contents = $this->filePostContents($this->getHost(), $this->request, $this->headers);
         $this->content = $this->parseContents($contents);
-        $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
-        if (is_object($xml) === false) {
-            throw new UnexpectedValueException('Invalid XML response.');
-        }
-        $dataBlock = [];
-        foreach ($xml->body->data_block->dt_assoc->item as $item) {
-            $key = (string)$item->attributes()['key'];
-            $value = $item;
-            $dataBlock[$key] = $value;
-        }
-        $responseCode = (int)$dataBlock['response_code'];
-        $responseCodes = self::RESPONSE_CODES;
-        if (isset($responseCodes[$responseCode]) === true) {
-            $status = $responseCodes[$responseCode];
-        } else {
-            $status = self::STATUS_UNKNOWN;
-        }
-        $attributes = [];
-        if (array_key_exists('attributes', $dataBlock)) {
-            foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
-                $key = (string)$item->attributes()['key'];
-                $value = (string)$item;
-                $attributes[$key] = $value;
-            }
-        }
-        $response = (string)$dataBlock['response_text'];
-        $result = [
-            'response' => $response,
-            'code' => $responseCode,
-            'status' => $status,
-            'attributes' => $attributes
-        ];
+        $result = $this->formatResult();
         return $this->setResult($result);
     }
 
@@ -473,5 +442,45 @@ class Lookup
     public function getRequest(): string
     {
         return $this->request;
+    }
+
+    /**
+     * @return array
+     */
+    private function formatResult(): array
+    {
+        $xml = simplexml_load_string($this->content, 'SimpleXMLElement', LIBXML_NOCDATA);
+        if (is_object($xml) === false) {
+            throw new UnexpectedValueException('Invalid XML response.');
+        }
+        $dataBlock = [];
+        foreach ($xml->body->data_block->dt_assoc->item as $item) {
+            $key = (string)$item->attributes()['key'];
+            $value = $item;
+            $dataBlock[$key] = $value;
+        }
+        $responseCode = (int)$dataBlock['response_code'];
+        $responseCodes = self::RESPONSE_CODES;
+        if (isset($responseCodes[$responseCode]) === true) {
+            $status = $responseCodes[$responseCode];
+        } else {
+            $status = self::STATUS_UNKNOWN;
+        }
+        $attributes = [];
+        if (array_key_exists('attributes', $dataBlock)) {
+            foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
+                $key = (string)$item->attributes()['key'];
+                $value = (string)$item;
+                $attributes[$key] = $value;
+            }
+        }
+        $response = (string)$dataBlock['response_text'];
+        $result = [
+            'response' => $response,
+            'code' => $responseCode,
+            'status' => $status,
+            'attributes' => $attributes
+        ];
+        return $result;
     }
 }
