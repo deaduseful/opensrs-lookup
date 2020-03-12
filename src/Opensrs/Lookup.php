@@ -59,15 +59,15 @@ class Lookup
     /**
      * @var string
      */
-    private $request = '';
-    /**
-     * @var string
-     */
     public $responseContent;
     /**
      * @var string
      */
     public $responseHeaders;
+    /**
+     * @var string
+     */
+    private $request = '';
     /**
      * @var string
      */
@@ -116,15 +116,17 @@ class Lookup
     }
 
     /**
-     * @param $query
-     * @return bool
+     * @param string $query
+     * @return bool|null
      * @throws Exception
      */
-    public function checkTransfer($query)
+    public function checkTransfer(string $query)
     {
-        $result = $this->lookup($query, 'check_transfer');
-        if (array_key_exists('transferrable', $result)) {
-            return (int)$result['transferrable'] === 1;
+        $this->attributes['domain'] = $query;
+        $result = $this->perform('check_transfer')->getResult();
+        $attributes = $result['attributes'];
+        if (array_key_exists('transferrable', $attributes)) {
+            return (int)$attributes['transferrable'] === 1;
         }
         return null;
     }
@@ -138,10 +140,27 @@ class Lookup
      */
     public function lookup(string $query, string $action = 'lookup')
     {
-        return $this->setQuery($query)
-            ->setAction($action)
-            ->perform()
-            ->getResult();
+        $this->attributes['domain'] = $query;
+        return $this->perform($action)->getResult();
+    }
+
+    /**
+     * @param string $query
+     * @return bool
+     * @throws Exception
+     */
+    public function available(string $query)
+    {
+        $this->attributes['domain'] = $query;
+        $result = $this->perform()->getResult();
+        $attributes = $result['attributes'];
+        if ($attributes['status'] === 'taken') {
+            return false;
+        }
+        if ($attributes['status'] === 'available') {
+            return true;
+        }
+        return null;
     }
 
     /**
@@ -164,12 +183,13 @@ class Lookup
 
     /**
      * Perform action.
+     * @param string $action
      * @return Lookup
      * @throws Exception
-     * @throws DomainException
      */
-    private function perform()
+    private function perform(string $action = 'lookup')
     {
+        $this->setAction($action);
         $this->request = $this->encode();
         $this->headers = $this->buildHeaders($this->request);
         $contents = $this->filePostContents($this->getHost(), $this->request, $this->headers);
@@ -385,66 +405,6 @@ class Lookup
     }
 
     /**
-     * @param string $query
-     * @return Lookup
-     */
-    public function setQuery(string $query)
-    {
-        $this->attributes['query'] = $query;
-        return $this;
-    }
-
-    /**
-     * Execute.
-     * @param array $attributes
-     * @param string $action
-     * @return array
-     * @throws Exception
-     */
-    public function execute(array $attributes, string $action = 'lookup')
-    {
-        return $this->setAttributes($attributes)
-            ->setAction($action)
-            ->perform()
-            ->getResult();
-    }
-
-    /**
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->attributes['query'];
-    }
-
-    /**
-     * @param string $key
-     * @param string $value
-     * @return Lookup
-     */
-    public function setAttribute(string $key, string $value)
-    {
-        $this->attributes[$key] = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHeaders(): string
-    {
-        return $this->headers;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRequest(): string
-    {
-        return $this->request;
-    }
-
-    /**
      * @param string $content
      * @return array
      */
@@ -483,6 +443,52 @@ class Lookup
             'attributes' => $attributes
         ];
         return $result;
+    }
+
+    /**
+     * Suggest.
+     * @param string $searchString
+     * @param array $tlds
+     * @param array $services
+     * @return array
+     * @throws Exception
+     */
+    public function suggest($searchString, $tlds, $services = ['lookup', 'suggestion', 'premium', 'personal_names'])
+    {
+        $attributes = [
+            'searchstring' => $searchString,
+            'tlds' => $tlds,
+            'services' => $services
+        ];
+        $this->attributes = $attributes;
+        return $this->perform('name_suggest')->getResult();
+    }
+
+    /**
+     * @param string $key
+     * @param string $value
+     * @return Lookup
+     */
+    public function setAttribute(string $key, string $value)
+    {
+        $this->attributes[$key] = $value;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHeaders(): string
+    {
+        return $this->headers;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequest(): string
+    {
+        return $this->request;
     }
 
     /**

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE OPS_envelope SYSTEM "ops.dtd">
+<OPS_envelope>
+    <header>
+        <version>0.9</version>
+    </header>
+    <body>
+        <data_block>
+            <dt_assoc>
+                <item key="protocol">XCP</item>
+                <item key="response_text">Domain taken</item>
+                <item key="is_success">1</item>
+                <item key="attributes">
+                    <dt_assoc>
+                        <item key="status">taken</item>
+                    </dt_assoc>
+                </item>
+                <item key="response_code">211</item>
+                <item key="action">REPLY</item>
+                <item key="object">DOMAIN</item>
+            </dt_assoc>
+        </data_block>
+    </body>
+</OPS_envelope>
