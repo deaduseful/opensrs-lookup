@@ -2,7 +2,8 @@
 
 use Deaduseful\Opensrs\TldChart;
 
-include __DIR__ . '/../src/Opensrs/TldChart.php';
+require_once '../vendor/autoload.php';
+require_once '../config.php';
 
 $tldChart = new TldChart();
 echo json_encode($tldChart->getTlds());

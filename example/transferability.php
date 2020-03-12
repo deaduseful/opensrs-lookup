@@ -1,6 +1,7 @@
 <?php
 
-include '../src/Opensrs/Lookup.php';
+require_once '../vendor/autoload.php';
+require_once '../config.php';
 
 /**
  * @param $query
@@ -11,6 +12,8 @@ function checkTransferable($query)
 {
     $lookup = new Deaduseful\Opensrs\Lookup();
     $result = $lookup->checkTransfer($query);
+    $content = $lookup->getContent();
+    file_put_contents('../tests/transferability.xml', $content);
     return $result;
 }
 

@@ -1,6 +1,7 @@
 <?php
 
-include '../src/Opensrs/FastLookup.php';
+require_once '../vendor/autoload.php';
+require_once '../config.php';
 
 /**
  * @param $query

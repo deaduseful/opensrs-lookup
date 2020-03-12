@@ -1,7 +1,7 @@
 <?php
 
-include '../vendor/autoload.php';
-include '../config.php';
+require_once '../vendor/autoload.php';
+require_once '../config.php';
 
 $searchString = isset($argv[1]) ? $argv[1] : 'example';
 
