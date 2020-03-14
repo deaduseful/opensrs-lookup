@@ -61,7 +61,7 @@ class FastLookup
      * @return bool|null
      * @throws Exception
      */
-    function available(string $query)
+    public function available(string $query)
     {
         $result = $this->lookup($query);
         if ($result['status'] === 'taken') {
