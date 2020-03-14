@@ -111,28 +111,8 @@ class FastLookup
     public function checkDomain(string $query)
     {
         $command = "check_domain $query" . PHP_EOL;
-        $response = trim(self::query($command, $this->getHost(), $this->getPort()));
-        $results = explode(' ', $response, 2);
-        $responseCode = (int)trim($results[0]);
-        if (empty($responseCode)) {
-            throw new DomainException('Empty response code.');
-        }
-        if (array_key_exists($responseCode, self::SUCCESS_RESPONSE_CODES) === true) {
-            $status = self::SUCCESS_RESPONSE_CODES[$responseCode];
-            $success = true;
-        } elseif (array_key_exists($responseCode, self::FAILURE_RESPONSE_CODES) === true) {
-            $status = self::FAILURE_RESPONSE_CODES[$responseCode];
-            $success = false;
-        } else {
-            $status = self::STATUS_UNKNOWN;
-            $success = false;
-        }
-        $result = [
-            'success' => $success,
-            'response' => $response,
-            'code' => $responseCode,
-            'status' => $status,
-        ];
+        $response = $this->query($command, $this->getHost(), $this->getPort());
+        $result = $this->formatResponse($response);
         return $this->setResult($result);
     }
 
@@ -144,7 +124,7 @@ class FastLookup
      * @param int $timeout
      * @return string
      */
-    public function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048)
+    public static function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048)
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $options = ['sec' => $timeout, 'usec' => 0];
@@ -190,5 +170,36 @@ class FastLookup
     {
         $this->port = $port;
         return $this;
+    }
+
+    /**
+     * @param string $response
+     * @return array
+     * @throws DomainException
+     */
+    public static function formatResponse(string $response): array
+    {
+        $results = explode(' ', trim($response), 2);
+        $responseCode = (int)trim($results[0]);
+        if (empty($responseCode)) {
+            throw new DomainException('Empty response code.');
+        }
+        if (array_key_exists($responseCode, self::SUCCESS_RESPONSE_CODES) === true) {
+            $status = self::SUCCESS_RESPONSE_CODES[$responseCode];
+            $success = true;
+        } elseif (array_key_exists($responseCode, self::FAILURE_RESPONSE_CODES) === true) {
+            $status = self::FAILURE_RESPONSE_CODES[$responseCode];
+            $success = false;
+        } else {
+            $status = self::STATUS_UNKNOWN;
+            $success = false;
+        }
+        $result = [
+            'success' => $success,
+            'response' => $response,
+            'code' => $responseCode,
+            'status' => $status,
+        ];
+        return $result;
     }
 }
