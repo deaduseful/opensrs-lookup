@@ -132,38 +132,6 @@ class Lookup
     }
 
     /**
-     * Perform lookup.
-     * @param string $query
-     * @param string $action
-     * @return array
-     * @throws Exception
-     */
-    public function lookup(string $query, string $action = 'lookup')
-    {
-        $this->attributes['domain'] = $query;
-        return $this->perform($action)->getResult();
-    }
-
-    /**
-     * @param string $query
-     * @return bool
-     * @throws Exception
-     */
-    public function available(string $query)
-    {
-        $this->attributes['domain'] = $query;
-        $result = $this->perform()->getResult();
-        $attributes = $result['attributes'];
-        if ($attributes['status'] === 'taken') {
-            return false;
-        }
-        if ($attributes['status'] === 'available') {
-            return true;
-        }
-        return null;
-    }
-
-    /**
      * @return array
      */
     public function getResult()
@@ -431,7 +399,7 @@ class Lookup
         if (array_key_exists('attributes', $dataBlock)) {
             foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
                 $key = (string)$item->attributes()['key'];
-                $value = (string)$item;
+                $value = $this->parseItem($item);
                 $attributes[$key] = $value;
             }
         }
@@ -443,6 +411,57 @@ class Lookup
             'attributes' => $attributes
         ];
         return $result;
+    }
+
+    /**
+     * @param SimpleXMLElement $item
+     * @return array|string
+     */
+    private function parseItem(SimpleXMLElement $item)
+    {
+        if (isset($item->dt_assoc) || isset($item->dt_array)) {
+            $value = [];
+            $array = isset($item->dt_assoc->item) ? $item->dt_assoc->item : $item->dt_array->item;
+            foreach ($array as $subItem) {
+                $key = (string)$subItem->attributes()['key'];
+                $value[$key] = $this->parseItem($subItem);
+            }
+        } else {
+            $value = (string)$item;
+        }
+        return $value;
+    }
+
+    /**
+     * Perform lookup.
+     * @param string $query
+     * @param string $action
+     * @return array
+     * @throws Exception
+     */
+    public function lookup(string $query, string $action = 'lookup')
+    {
+        $this->attributes['domain'] = $query;
+        return $this->perform($action)->getResult();
+    }
+
+    /**
+     * @param string $query
+     * @return bool
+     * @throws Exception
+     */
+    public function available(string $query)
+    {
+        $this->attributes['domain'] = $query;
+        $result = $this->perform()->getResult();
+        $attributes = $result['attributes'];
+        if ($attributes['status'] === 'taken') {
+            return false;
+        }
+        if ($attributes['status'] === 'available') {
+            return true;
+        }
+        return null;
     }
 
     /**
