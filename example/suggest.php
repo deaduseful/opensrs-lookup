@@ -11,7 +11,4 @@ $services = ['lookup', 'suggestion', 'premium', 'personal_names'];
 $lookup = new Deaduseful\Opensrs\Lookup();
 
 $result = $lookup->suggest($searchString, $tlds, $services);
-$content = $lookup->getContent();
-file_put_contents('../tests/suggest.xml', $content);
-$result = $lookup->formatResult($content);
-var_dump($result);
+var_dump($result['attributes']);
