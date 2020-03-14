@@ -3,28 +3,11 @@
 require_once '../vendor/autoload.php';
 require_once '../config.php';
 
-/**
- * @param $query
- * @return bool
- * @throws Exception
- */
-function checkAvailability($query)
-{
-    $lookup = new Deaduseful\Opensrs\FastLookup();
-    $result = $lookup->lookup($query);
-    if ($result['status'] === 'taken') {
-        return false;
-    }
-    if ($result['status'] === 'available') {
-        return true;
-    }
-    throw new Exception('No result.');
-}
-
 $query = isset($argv[1]) ? $argv[1] : 'example.com';
 
 try {
-    $check = checkAvailability($query);
+    $lookup = new Deaduseful\Opensrs\FastLookup();
+    $check = $lookup->available($query);
     if ($check) {
         echo 'Available.';
     } else {

@@ -57,6 +57,23 @@ class FastLookup
     private $port = self::PORT;
 
     /**
+     * @param string $query
+     * @return bool|null
+     * @throws Exception
+     */
+    function available(string $query)
+    {
+        $result = $this->lookup($query);
+        if ($result['status'] === 'taken') {
+            return false;
+        }
+        if ($result['status'] === 'available') {
+            return true;
+        }
+        return null;
+    }
+
+    /**
      * Lookup.
      *
      * @param string $query The domain to query.
@@ -66,6 +83,24 @@ class FastLookup
     public function lookup(string $query)
     {
         return $this->checkDomain($query)->getResult();
+    }
+
+    /**
+     * @return array
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * @param array $result
+     * @return FastLookup
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+        return $this;
     }
 
     /**
@@ -154,24 +189,6 @@ class FastLookup
     public function setPort(int $port): FastLookup
     {
         $this->port = $port;
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getResult()
-    {
-        return $this->result;
-    }
-
-    /**
-     * @param array $result
-     * @return FastLookup
-     */
-    public function setResult($result)
-    {
-        $this->result = $result;
         return $this;
     }
 }
