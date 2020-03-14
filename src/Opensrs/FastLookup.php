@@ -8,18 +8,25 @@ use Exception;
 class FastLookup
 {
     /**
-     * OpenSRS domain service API url.
-     * LIVE => rr-n1-tor.opensrs.net, TEST => horizon.opensrs.net
+     * @const string[] OpenSRS domain service API hosts.
      */
-    const HOST = 'rr-n1-tor.opensrs.net';
+    const HOSTS = [
+        'LIVE' => 'rr-n1-tor.opensrs.net',
+        'TEST' => 'horizon.opensrs.net'
+    ];
 
     /**
-     * OpenSRS API fast lookup port.
+     * @const string OpenSRS domain service API host.
+     */
+    const HOST = self::HOSTS['LIVE'];
+
+    /**
+     * @const int OpenSRS API fast lookup port.
      */
     const PORT = 51000;
 
     /**
-     * Success response codes and their status.
+     * @const string[] Success response codes and their status.
      */
     const SUCCESS_RESPONSE_CODES = [
         210 => 'available',
@@ -27,7 +34,7 @@ class FastLookup
     ];
 
     /**
-     * Failure response codes and their status.
+     * * @const string[] Failure response codes and their status.
      */
     const FAILURE_RESPONSE_CODES = [
         465 => 'invalid_domain',
@@ -37,7 +44,7 @@ class FastLookup
     ];
 
     /**
-     * Unknown status.
+     * * @const string Unknown status.
      */
     const STATUS_UNKNOWN = 'unknown';
 
