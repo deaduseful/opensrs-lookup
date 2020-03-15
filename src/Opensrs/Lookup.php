@@ -21,28 +21,35 @@ define('OSRS_KEY', (string)getenv('OSRS_KEY'));
 class Lookup
 {
     /**
-     * OpenSRS domain service API url.
-     * LIVE => rr-n1-tor.opensrs.net, TEST => horizon.opensrs.net
+     * @const string[] OpenSRS domain service API hosts.
      */
-    const HOST = 'https://rr-n1-tor.opensrs.net:55443';
+    const HOSTS = [
+        'LIVE' => 'https://rr-n1-tor.opensrs.net:55443',
+        'TEST' => 'https://horizon.opensrs.net:55443'
+    ];
 
     /**
-     * OpenSRS reseller username.
+     * @const string OpenSRS domain service API host.
+     */
+    const HOST = self::HOSTS['LIVE'];
+
+    /**
+     * @const string OpenSRS reseller username.
      */
     const USERNAME = OSRS_USERNAME;
 
     /**
-     * OpenSRS reseller private Key. Please generate a key if you do not already have one.
+     * @const string OpenSRS reseller private Key. Please generate a key if you do not already have one.
      */
     const KEY = OSRS_KEY;
 
     /**
-     * Socket Timeout in seconds.
+     * @const int Socket Timeout in seconds.
      */
     const SOCKET_TIMEOUT = 120;
 
     /**
-     * Response codes and their status.
+     * @const string[] Response codes and their status.
      */
     const RESPONSE_CODES = [
         200 => 'success',
@@ -53,9 +60,10 @@ class Lookup
     ];
 
     /**
-     * Unknown status.
+     * @const string Unknown status.
      */
     const STATUS_UNKNOWN = 'unknown';
+
     /**
      * @var string
      */
@@ -95,11 +103,11 @@ class Lookup
     /**
      * @var string
      */
-    private $username = OSRS_USERNAME;
+    private $username = self::USERNAME;
     /**
      * @var string
      */
-    private $key = OSRS_KEY;
+    private $key = self::KEY;
     /**
      * @var string
      */
@@ -373,6 +381,24 @@ class Lookup
     }
 
     /**
+     * Check Content.
+     */
+    private function checkContent(): void
+    {
+        if (empty($this->content)) {
+            throw new DomainException(
+                sprintf(
+                    'Empty response, from host %s, with request content %s, request headers %s response headers: %s',
+                    $this->getHost(),
+                    var_export($this->content, true),
+                    var_export($this->headers, true),
+                    var_export($this->responseHeaders, true)
+                )
+            );
+        }
+    }
+
+    /**
      * @param string $content
      * @return array
      */
@@ -516,23 +542,5 @@ class Lookup
     public function getContent(): string
     {
         return $this->content;
-    }
-
-    /**
-     * Check Content.
-     */
-    private function checkContent(): void
-    {
-        if (empty($this->content)) {
-            throw new DomainException(
-                sprintf(
-                    'Empty response, from host %s, with request content %s, request headers %s response headers: %s',
-                    $this->getHost(),
-                    var_export($this->content, true),
-                    var_export($this->headers, true),
-                    var_export($this->responseHeaders, true)
-                )
-            );
-        }
     }
 }
