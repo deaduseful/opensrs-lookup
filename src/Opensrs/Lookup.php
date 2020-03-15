@@ -339,7 +339,7 @@ class Lookup
         ];
         $context = stream_context_create($options);
         $flags = null;
-        $this->responseContent = @file_get_contents($host, $flags, $context);
+        $this->responseContent = file_get_contents($host, $flags, $context);
         $this->responseHeaders = isset($http_response_header) ? $http_response_header : [];
         return $this->responseContent;
     }
