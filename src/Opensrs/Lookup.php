@@ -390,7 +390,7 @@ class Lookup
                 sprintf(
                     'Empty response, from host %s, with request content %s, request headers %s response headers: %s',
                     $this->getHost(),
-                    var_export($this->content, true),
+                    var_export($this->request, true),
                     var_export($this->headers, true),
                     var_export($this->responseHeaders, true)
                 )
