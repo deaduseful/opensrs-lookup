@@ -61,9 +61,9 @@ class Lookup
      */
     public $responseContent;
     /**
-     * @var string
+     * @var array
      */
-    public $responseHeaders;
+    public $responseHeaders = [];
     /**
      * @var string
      */
@@ -311,7 +311,7 @@ class Lookup
         $context = stream_context_create($options);
         $flags = null;
         $this->responseContent = @file_get_contents($host, $flags, $context);
-        $this->responseHeaders = $http_response_header;
+        $this->responseHeaders = isset($http_response_header) ? $http_response_header : [];
         return $this->responseContent;
     }
 
