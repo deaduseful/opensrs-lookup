@@ -5,6 +5,7 @@ namespace Deaduseful\Opensrs;
 use DomainException;
 use Exception;
 use InvalidArgumentException;
+use RuntimeException;
 use SimpleXMLElement;
 use UnexpectedValueException;
 
@@ -328,6 +329,9 @@ class Lookup
      */
     private function filePostContents(string $host, string $content, string $headers)
     {
+        if (ini_get('allow_url_fopen') == '0') {
+            throw new RuntimeException('Disabled in the server configuration by allow_url_fopen=0');
+        }
         $options = [
             'http' =>
                 [
