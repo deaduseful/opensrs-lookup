@@ -154,14 +154,17 @@ class Lookup
      * @param string $action
      * @return Lookup
      * @throws Exception
+     * @throws DomainException If content is empty.
      */
     private function perform(string $action = 'lookup')
     {
         $this->setAction($action);
         $this->request = $this->encode();
         $this->headers = $this->buildHeaders($this->request);
-        $contents = $this->filePostContents($this->getHost(), $this->request, $this->headers);
+        $host = $this->getHost();
+        $contents = $this->filePostContents($host, $this->request, $this->headers);
         $this->content = $this->parseContents($contents);
+        $this->checkContent();
         $result = $this->formatResult($this->content);
         return $this->setResult($result);
     }
@@ -288,6 +291,24 @@ class Lookup
     }
 
     /**
+     * @return string
+     */
+    public function getHost(): string
+    {
+        return $this->host;
+    }
+
+    /**
+     * @param string $host
+     * @return Lookup
+     */
+    public function setHost(string $host): Lookup
+    {
+        $this->host = $host;
+        return $this;
+    }
+
+    /**
      * Similar to file_get_contents but uses the POST method.
      *
      * @param string $host
@@ -334,24 +355,6 @@ class Lookup
     }
 
     /**
-     * @return string
-     */
-    public function getHost(): string
-    {
-        return $this->host;
-    }
-
-    /**
-     * @param string $host
-     * @return Lookup
-     */
-    public function setHost(string $host): Lookup
-    {
-        $this->host = $host;
-        return $this;
-    }
-
-    /**
      * @param string $contents
      * @return string
      */
@@ -365,9 +368,6 @@ class Lookup
                     $contents .= '</OPS_envelope>';
                 }
             }
-        }
-        if (empty($contents)) {
-            throw new DomainException(sprintf('Empty response, from host %s, with request content %s, request headers %s response headers: %s', $host, var_export($content, true), var_export($headers, true), var_export($responseHeaders, true)));
         }
         return $contents;
     }
@@ -516,5 +516,23 @@ class Lookup
     public function getContent(): string
     {
         return $this->content;
+    }
+
+    /**
+     * Check Content.
+     */
+    private function checkContent(): void
+    {
+        if (empty($this->content)) {
+            throw new DomainException(
+                sprintf(
+                    'Empty response, from host %s, with request content %s, request headers %s response headers: %s',
+                    $this->getHost(),
+                    var_export($this->content, true),
+                    var_export($this->headers, true),
+                    var_export($this->responseHeaders, true)
+                )
+            );
+        }
     }
 }
