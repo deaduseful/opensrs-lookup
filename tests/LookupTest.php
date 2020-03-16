@@ -6,7 +6,7 @@ include '../config.php';
 use Deaduseful\Opensrs\Lookup;
 use PHPUnit\Framework\TestCase;
 
-class lookupTest extends TestCase
+class LookupTest extends TestCase
 {
 
     public function testLookup()

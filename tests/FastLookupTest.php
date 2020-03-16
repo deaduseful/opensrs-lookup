@@ -5,7 +5,7 @@ include '../vendor/autoload.php';
 use Deaduseful\Opensrs\FastLookup;
 use PHPUnit\Framework\TestCase;
 
-class fastLookupTest extends TestCase
+class FastLookupTest extends TestCase
 {
     public function testCheckDomain()
     {

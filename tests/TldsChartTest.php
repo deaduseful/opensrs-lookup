@@ -6,7 +6,7 @@ include '../config.php';
 use Deaduseful\Opensrs\TldChart;
 use PHPUnit\Framework\TestCase;
 
-class tldsChartTest extends TestCase
+class TldsChartTest extends TestCase
 {
     /**
      */
