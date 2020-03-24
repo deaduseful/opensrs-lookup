@@ -17,16 +17,17 @@ class TldChart
      */
     public function __construct($source = null)
     {
-        $source = $source ? $source : self::SOURCE;
-        $this->data = $this->fetch($source);
+        $data = $this->fetch($source);
+        $this->setData($data);
     }
 
     /**
      * @param string|null $source the file or url of the source
      * @return array
      */
-    private function fetch($source = null)
+    public static function fetch($source = null)
     {
+        $source = $source ? $source : self::SOURCE;
         $array = [];
         $fh = fopen($source, 'r');
         while (($data = fgetcsv($fh)) !== false) {
