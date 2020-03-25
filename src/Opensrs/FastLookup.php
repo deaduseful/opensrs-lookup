@@ -8,17 +8,19 @@ use Exception;
 class FastLookup
 {
     /**
-     * @const string[] OpenSRS domain service API hosts.
+     * @const string LIVE OpenSRS domain service API host.
      */
-    const HOSTS = [
-        'LIVE' => 'rr-n1-tor.opensrs.net',
-        'TEST' => 'horizon.opensrs.net'
-    ];
+    const LIVE_HOST = 'rr-n1-tor.opensrs.net';
+
+    /**
+     * @const string TEST OpenSRS domain service API host.
+     */
+    const TEST_HOST = 'horizon.opensrs.net';
 
     /**
      * @const string OpenSRS domain service API host.
      */
-    const HOST = self::HOSTS['LIVE'];
+    const HOST = self::LIVE_HOST;
 
     /**
      * @const int OpenSRS API fast lookup port.

@@ -22,17 +22,19 @@ define('OSRS_KEY', (string)getenv('OSRS_KEY'));
 class Lookup
 {
     /**
-     * @const string[] OpenSRS domain service API hosts.
+     * @const string LIVE OpenSRS domain service API host.
      */
-    const HOSTS = [
-        'LIVE' => 'https://rr-n1-tor.opensrs.net:55443',
-        'TEST' => 'https://horizon.opensrs.net:55443'
-    ];
+    const LIVE_HOST = 'https://rr-n1-tor.opensrs.net:55443';
+
+    /**
+     * @const string TEST OpenSRS domain service API host.
+     */
+    const TEST_HOST = 'https://horizon.opensrs.net:55443';
 
     /**
      * @const string OpenSRS domain service API host.
      */
-    const HOST = self::HOSTS['LIVE'];
+    const HOST = self::LIVE_HOST;
 
     /**
      * @const string OpenSRS reseller username.
@@ -118,10 +120,14 @@ class Lookup
      * Lookup constructor.
      * @param string $username
      * @param string $key
+     * @param bool $test
      */
-    public function __construct(string $username = self::USERNAME, string $key = self::KEY)
+    public function __construct(string $username = self::USERNAME, string $key = self::KEY, bool $test = false)
     {
-        $this->setUsername($username)->setKey($key);
+        $host = $test ? self::TEST_HOST : self::LIVE_HOST;
+        $this->setUsername($username)
+            ->setKey($key)
+            ->setHost($host);
     }
 
     /**
