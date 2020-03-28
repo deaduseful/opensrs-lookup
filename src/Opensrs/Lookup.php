@@ -3,7 +3,6 @@
 namespace Deaduseful\Opensrs;
 
 use DomainException;
-use Exception;
 use InvalidArgumentException;
 use RuntimeException;
 use SimpleXMLElement;
@@ -133,7 +132,6 @@ class Lookup
     /**
      * @param string $query
      * @return bool|null
-     * @throws Exception
      */
     public function checkTransfer(string $query)
     {
@@ -168,7 +166,6 @@ class Lookup
      * Perform action.
      * @param string $action
      * @return Lookup
-     * @throws Exception
      * @throws DomainException If content is empty.
      */
     private function perform(string $action = 'lookup')
@@ -330,7 +327,6 @@ class Lookup
      * @param string $content
      * @param string $headers
      * @return string
-     * @throws Exception
      * @throws DomainException
      */
     private function filePostContents(string $host, string $content, string $headers)
@@ -473,7 +469,6 @@ class Lookup
      * @param string $query
      * @param string $action
      * @return array
-     * @throws Exception
      */
     public function lookup(string $query, string $action = 'lookup')
     {
@@ -484,7 +479,6 @@ class Lookup
     /**
      * @param string $query
      * @return bool
-     * @throws Exception
      */
     public function available(string $query)
     {
@@ -506,7 +500,6 @@ class Lookup
      * @param array $tlds
      * @param array $services
      * @return array
-     * @throws Exception
      */
     public function suggest($searchString, $tlds, $services = ['lookup', 'suggestion', 'premium', 'personal_names'])
     {

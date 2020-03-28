@@ -3,7 +3,6 @@
 namespace Deaduseful\Opensrs;
 
 use DomainException;
-use Exception;
 
 class FastLookup
 {
@@ -68,7 +67,6 @@ class FastLookup
     /**
      * @param string $query
      * @return bool|null
-     * @throws Exception
      */
     public function available(string $query)
     {
@@ -87,7 +85,6 @@ class FastLookup
      *
      * @param string $query The domain to query.
      * @return array
-     * @throws Exception
      */
     public function lookup(string $query)
     {
