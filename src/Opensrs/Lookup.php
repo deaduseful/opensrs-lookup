@@ -139,7 +139,12 @@ class Lookup
         $result = $this->perform('check_transfer')->getResult();
         $attributes = $result['attributes'];
         if (array_key_exists('transferrable', $attributes)) {
-            return (int)$attributes['transferrable'] === 1;
+            if ($attributes['transferrable'] === 1) {
+                return true;
+            }
+            if ($attributes['transferrable'] === 0) {
+                return false;
+            }
         }
         return null;
     }
