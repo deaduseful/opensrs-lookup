@@ -3,7 +3,6 @@
 namespace Deaduseful\Opensrs;
 
 use DomainException;
-use InvalidArgumentException;
 use RuntimeException;
 use SimpleXMLElement;
 use UnexpectedValueException;
@@ -11,12 +10,12 @@ use UnexpectedValueException;
 /**
  * OpenSRS reseller username.
  */
-define('OSRS_USERNAME', (string)getenv('OSRS_USERNAME'));
+defined('OSRS_USERNAME') || define('OSRS_USERNAME', (string)getenv('OSRS_USERNAME'));
 
 /**
  * OpenSRS reseller private Key. Please generate a key if you do not already have one.
  */
-define('OSRS_KEY', (string)getenv('OSRS_KEY'));
+defined('OSRS_KEY') || define('OSRS_KEY', (string)getenv('OSRS_KEY'));
 
 class Lookup
 {
@@ -29,11 +28,6 @@ class Lookup
      * @const string TEST OpenSRS domain service API host.
      */
     const TEST_HOST = 'https://horizon.opensrs.net:55443';
-
-    /**
-     * @const string OpenSRS domain service API host.
-     */
-    const HOST = self::LIVE_HOST;
 
     /**
      * @const string OpenSRS reseller username.
@@ -67,33 +61,18 @@ class Lookup
     const STATUS_UNKNOWN = 'unknown';
 
     /**
-     * @var string
+     * @const string The Closing Ops Envelope string.
      */
-    public $responseContent;
-    /**
-     * @var array
-     */
-    public $responseHeaders = [];
-    /**
-     * @var string
-     */
-    private $request = '';
-    /**
-     * @var string
-     */
-    private $headers;
-    /**
-     * @var string
-     */
-    private $action = '';
-    /**
-     * @var array
-     */
-    private $attributes = [];
-    /**
-     * @var array
-     */
-    private $result = [];
+    const OPS_ENVELOPE = '</OPS_envelope>';
+
+    const ACTION_CHECK_TRANSFER = 'check_transfer';
+    const ACTION_LOOKUP = 'lookup';
+    const ACTION_NAME_SUGGEST = 'name_suggest';
+    const SERVICES_SUGGEST = ['lookup', 'suggestion', 'premium', 'personal_names'];
+    const STATUS_AVAILABLE = 'available';
+    const STATUS_TAKEN = 'taken';
+    const STATUS_TRANSFERRABLE = 'transferrable';
+
     /**
      * @var int
      */
@@ -101,7 +80,7 @@ class Lookup
     /**
      * @var string
      */
-    private $host = self::HOST;
+    private $host = self::LIVE_HOST;
     /**
      * @var string
      */
@@ -110,10 +89,6 @@ class Lookup
      * @var string
      */
     private $key = self::KEY;
-    /**
-     * @var string
-     */
-    private $content;
 
     /**
      * Lookup constructor.
@@ -124,9 +99,7 @@ class Lookup
     public function __construct(string $username = self::USERNAME, string $key = self::KEY, bool $test = false)
     {
         $host = $test ? self::TEST_HOST : self::LIVE_HOST;
-        $this->setUsername($username)
-            ->setKey($key)
-            ->setHost($host);
+        $this->setUsername($username)->setKey($key)->setHost($host);
     }
 
     /**
@@ -135,14 +108,16 @@ class Lookup
      */
     public function checkTransfer(string $query)
     {
-        $this->attributes['domain'] = $query;
-        $result = $this->perform('check_transfer')->getResult();
+        $attributes = ['domain' => $query];
+        $result = $this->perform(self::ACTION_CHECK_TRANSFER, $attributes);
         $attributes = $result['attributes'];
-        if (array_key_exists('transferrable', $attributes)) {
-            if ($attributes['transferrable'] === 1) {
+        $key = self::STATUS_TRANSFERRABLE;
+        if (array_key_exists($key, $attributes)) {
+            $transferable = $attributes[$key];
+            if ($transferable === 1) {
                 return true;
             }
-            if ($attributes['transferrable'] === 0) {
+            if ($transferable === 0) {
                 return false;
             }
         }
@@ -150,143 +125,19 @@ class Lookup
     }
 
     /**
-     * @return array
-     */
-    public function getResult()
-    {
-        return $this->result;
-    }
-
-    /**
-     * @param array $result
-     * @return Lookup
-     */
-    public function setResult($result)
-    {
-        $this->result = $result;
-        return $this;
-    }
-
-    /**
      * Perform action.
      * @param string $action
-     * @return Lookup
-     * @throws DomainException If content is empty.
-     */
-    private function perform(string $action = 'lookup')
-    {
-        $this->setAction($action);
-        $this->request = $this->encode();
-        $this->headers = $this->buildHeaders($this->request);
-        $host = $this->getHost();
-        $contents = $this->filePostContents($host, $this->request, $this->headers);
-        $this->content = $this->parseContents($contents);
-        $this->checkContent();
-        $result = $this->formatResult($this->content);
-        return $this->setResult($result);
-    }
-
-    /**
-     * Converts a PHP array into an OPS message.
-     * @return string OPS XML message.
-     */
-    function encode()
-    {
-        $xml = new SimpleXMLElement('<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope></OPS_envelope>');
-        $assoc = $xml->addChild('body')->addChild('data_block')->addChild('dt_assoc');
-        $assoc->addChild('item', 'XCP')->addAttribute('key', 'protocol');
-        $assoc->addChild('item', $this->getAction())->addAttribute('key', 'action');
-        $assoc->addChild('item', 'DOMAIN')->addAttribute('key', 'object');
-        $attributes = $assoc->addChild('item');
-        $attributes->addAttribute('key', 'attributes');
-        $attributesAssoc = $attributes->addChild('dt_assoc');
-        foreach ($this->getAttributes() as $key => $value) {
-            if (is_array($value)) {
-                $item = $attributesAssoc->addChild('item');
-                $item->addAttribute('key', $key);
-                $attributesArray = $item->addChild('dt_array');
-                foreach ($value as $arrayKey => $arrayValue) {
-                    $attributesArray->addChild('item', $arrayValue)->addAttribute('key', $arrayKey);
-                }
-            } else {
-                $attributesAssoc->addChild('item', $value)->addAttribute('key', $key);
-            }
-        }
-        $request = $xml->asXML();
-        return $request;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    /**
-     * @param string $action
-     * @return Lookup
-     */
-    public function setAction(string $action)
-    {
-        $this->action = $action;
-        return $this;
-    }
-
-    /**
+     * @param array $attributes
      * @return array
      */
-    public function getAttributes(): array
+    private function perform(string $action = self::ACTION_LOOKUP, array $attributes = [])
     {
-        return $this->attributes;
-    }
-
-    /**
-     * @param array $attributes
-     * @return Lookup
-     */
-    public function setAttributes(array $attributes): Lookup
-    {
-        $this->attributes = $attributes;
-        return $this;
-    }
-
-    /**
-     * Builds the headers.
-     *
-     * @param string $request
-     * @return string
-     * @throws InvalidArgumentException
-     */
-    private function buildHeaders(string $request)
-    {
-        $len = strlen($request);
-        $signature = md5(md5($request . $this->getKey()) . $this->getKey());
-        $header[] = 'Content-Type: text/xml';
-        $header[] = 'X-Username: ' . $this->getUsername();
-        $header[] = 'X-Signature: ' . $signature;
-        $header[] = 'Content-Length: ' . $len;
-        $headers = implode(PHP_EOL, $header);
-        return $headers;
-    }
-
-    /**
-     * @return string
-     */
-    public function getKey(): string
-    {
-        return $this->key;
-    }
-
-    /**
-     * @param string $key
-     * @return Lookup
-     */
-    public function setKey(string $key): Lookup
-    {
-        $this->key = $key;
-        return $this;
+        $username = $this->getUsername();
+        $key = $this->getKey();
+        $host = $this->getHost();
+        $timeout = $this->getTimeout();
+        $result = self::getResult($action, $attributes, $username, $key, $host, $timeout);
+        return $result;
     }
 
     /**
@@ -310,6 +161,24 @@ class Lookup
     /**
      * @return string
      */
+    public function getKey(): string
+    {
+        return $this->key;
+    }
+
+    /**
+     * @param string $key
+     * @return Lookup
+     */
+    public function setKey(string $key): Lookup
+    {
+        $this->key = $key;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getHost(): string
     {
         return $this->host;
@@ -323,36 +192,6 @@ class Lookup
     {
         $this->host = $host;
         return $this;
-    }
-
-    /**
-     * Similar to file_get_contents but uses the POST method.
-     *
-     * @param string $host
-     * @param string $content
-     * @param string $headers
-     * @return string
-     * @throws DomainException
-     */
-    private function filePostContents(string $host, string $content, string $headers)
-    {
-        if (ini_get('allow_url_fopen') == '0') {
-            throw new RuntimeException('Disabled in the server configuration by allow_url_fopen=0');
-        }
-        $options = [
-            'http' =>
-                [
-                    'method' => 'POST',
-                    'header' => $headers,
-                    'content' => $content,
-                    'timeout' => $this->getTimeout()
-                ]
-        ];
-        $context = stream_context_create($options);
-        $flags = null;
-        $this->responseContent = file_get_contents($host, $flags, $context);
-        $this->responseHeaders = isset($http_response_header) ? $http_response_header : [];
-        return $this->responseContent;
     }
 
     /**
@@ -374,17 +213,130 @@ class Lookup
     }
 
     /**
-     * @param string $contents
+     * @param string $action
+     * @param array $attributes
+     * @param string $username
+     * @param string $key
+     * @param string $host
+     * @param int $timeout
+     * @return array
+     */
+    private static function getResult(string $action, array $attributes = [], string $username = self::USERNAME, string $key = self::KEY, string $host = self::LIVE_HOST, int $timeout = self::SOCKET_TIMEOUT): array
+    {
+        $request = self::encode($action, $attributes);
+        $headers = self::buildHeaders($request, $username, $key);
+        $contents = self::filePostContents($host, $request, $headers, $timeout);
+        $responseHeaders = self::getResponseHeaders();
+        $content = self::parseContents($contents, $responseHeaders);
+        self::checkContent($content, $host, $request, $headers, $responseHeaders);
+        $result = self::formatResult($content);
+        return $result;
+    }
+
+    /**
+     * Converts a PHP array into an OPS message.
+     * @param string $action
+     * @param array $attributes
+     * @param string $object
+     * @return string OPS XML message.
+     */
+    public static function encode($action, $attributes, $object = 'DOMAIN')
+    {
+        $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope></OPS_envelope>';
+        $xml = new SimpleXMLElement($markup);
+        $assoc = $xml->addChild('body')->addChild('data_block')->addChild('dt_assoc');
+        $assoc->addChild('item', 'XCP')->addAttribute('key', 'protocol');
+        $assoc->addChild('item', $action)->addAttribute('key', 'action');
+        $assoc->addChild('item', $object)->addAttribute('key', 'object');
+        $attributesItem = $assoc->addChild('item');
+        $attributesItem->addAttribute('key', 'attributes');
+        $attributesAssoc = $attributesItem->addChild('dt_assoc');
+        foreach ($attributes as $key => $value) {
+            if (is_array($value)) {
+                $item = $attributesAssoc->addChild('item');
+                $item->addAttribute('key', $key);
+                $attributesArray = $item->addChild('dt_array');
+                foreach ($value as $arrayKey => $arrayValue) {
+                    $attributesArray->addChild('item', $arrayValue)->addAttribute('key', $arrayKey);
+                }
+            } else {
+                $attributesAssoc->addChild('item', $value)->addAttribute('key', $key);
+            }
+        }
+        $request = $xml->asXML();
+        return $request;
+    }
+
+    /**
+     * Builds the headers.
+     *
+     * @param string $request
+     * @param string $username
+     * @param string $key
      * @return string
      */
-    private function parseContents($contents)
+    private static function buildHeaders(string $request, $username, $key)
     {
-        $responseHeaders = $this->responseHeaders;
+        $len = strlen($request);
+        $signature = md5(md5($request . $key) . $key);
+        $header[] = 'Content-Type: text/xml';
+        $header[] = 'X-Username: ' . $username;
+        $header[] = 'X-Signature: ' . $signature;
+        $header[] = 'Content-Length: ' . $len;
+        $headers = implode(PHP_EOL, $header);
+        return $headers;
+    }
+
+    /**
+     * Similar to file_get_contents but uses the POST method.
+     *
+     * @param string $host
+     * @param string $content
+     * @param string $headers
+     * @param int $timeout
+     * @return string
+     */
+    private static function filePostContents(string $host, string $content, string $headers, int $timeout = self::SOCKET_TIMEOUT)
+    {
+        if (ini_get('allow_url_fopen') == '0') {
+            throw new RuntimeException('Disabled in the server configuration by allow_url_fopen=0');
+        }
+        $options = [
+            'http' =>
+                [
+                    'method' => 'POST',
+                    'header' => $headers,
+                    'content' => $content,
+                    'timeout' => $timeout
+                ]
+        ];
+        $context = stream_context_create($options);
+        $flags = null;
+        $responseContent = file_get_contents($host, $flags, $context);
+        return $responseContent;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getResponseHeaders(): array
+    {
+        $responseHeaders = isset($http_response_header) ? $http_response_header : [];
+        return $responseHeaders;
+    }
+
+    /**
+     * @param string $contents
+     * @param array $responseHeaders
+     * @return string
+     */
+    private static function parseContents($contents, $responseHeaders)
+    {
         if (empty($contents)) {
             if (empty($responseHeaders) === false) {
                 $contents = implode(PHP_EOL, $responseHeaders);
-                if (strpos($contents, '</OPS_envelope>') === false) {
-                    $contents .= '</OPS_envelope>';
+                if (strpos($contents, self::OPS_ENVELOPE) === false) {
+                    $contents .= self::OPS_ENVELOPE;
                 }
             }
         }
@@ -392,18 +344,22 @@ class Lookup
     }
 
     /**
-     * Check Content.
+     * @param string $content
+     * @param string $host
+     * @param string $request
+     * @param string $headers
+     * @param array $responseHeaders
      */
-    private function checkContent(): void
+    private static function checkContent(string $content, string $host, string $request, string $headers, array $responseHeaders): void
     {
-        if (empty($this->content)) {
+        if (empty($content)) {
             throw new DomainException(
                 sprintf(
                     'Empty response, from host %s, with request content %s, request headers %s response headers: %s',
-                    $this->getHost(),
-                    var_export($this->request, true),
-                    var_export($this->headers, true),
-                    var_export($this->responseHeaders, true)
+                    $host,
+                    var_export($request, true),
+                    var_export($headers, true),
+                    var_export($responseHeaders, true)
                 )
             );
         }
@@ -413,7 +369,7 @@ class Lookup
      * @param string $content
      * @return array
      */
-    public function formatResult($content): array
+    public static function formatResult($content): array
     {
         $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
@@ -436,7 +392,7 @@ class Lookup
         if (array_key_exists('attributes', $dataBlock)) {
             foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
                 $key = (string)$item->attributes()['key'];
-                $value = $this->parseItem($item);
+                $value = self::parseItem($item);
                 $attributes[$key] = $value;
             }
         }
@@ -454,14 +410,14 @@ class Lookup
      * @param SimpleXMLElement $item
      * @return array|string
      */
-    private function parseItem(SimpleXMLElement $item)
+    private static function parseItem(SimpleXMLElement $item)
     {
         if (isset($item->dt_assoc) || isset($item->dt_array)) {
             $value = [];
             $array = isset($item->dt_assoc->item) ? $item->dt_assoc->item : $item->dt_array->item;
             foreach ($array as $subItem) {
                 $key = (string)$subItem->attributes()['key'];
-                $value[$key] = $this->parseItem($subItem);
+                $value[$key] = self::parseItem($subItem);
             }
         } else {
             $value = (string)$item;
@@ -475,25 +431,26 @@ class Lookup
      * @param string $action
      * @return array
      */
-    public function lookup(string $query, string $action = 'lookup')
+    public function lookup(string $query, string $action = self::ACTION_LOOKUP)
     {
-        $this->attributes['domain'] = $query;
-        return $this->perform($action)->getResult();
+        $attributes = ['domain' => $query];
+        return $this->perform($action, $attributes);
     }
 
     /**
      * @param string $query
-     * @return bool
+     * @return bool|null
      */
     public function available(string $query)
     {
-        $this->attributes['domain'] = $query;
-        $result = $this->perform()->getResult();
+        $attributes = ['domain' => $query];
+        $action = self::ACTION_LOOKUP;
+        $result = $this->perform($action, $attributes);
         $attributes = $result['attributes'];
-        if ($attributes['status'] === 'taken') {
+        if ($attributes['status'] === self::STATUS_TAKEN) {
             return false;
         }
-        if ($attributes['status'] === 'available') {
+        if ($attributes['status'] === self::STATUS_AVAILABLE) {
             return true;
         }
         return null;
@@ -506,49 +463,13 @@ class Lookup
      * @param array $services
      * @return array
      */
-    public function suggest($searchString, $tlds, $services = ['lookup', 'suggestion', 'premium', 'personal_names'])
+    public function suggest($searchString, $tlds, $services = self::SERVICES_SUGGEST)
     {
         $attributes = [
             'searchstring' => $searchString,
             'tlds' => $tlds,
             'services' => $services
         ];
-        $this->attributes = $attributes;
-        return $this->perform('name_suggest')->getResult();
-    }
-
-    /**
-     * @param string $key
-     * @param string $value
-     * @return Lookup
-     */
-    public function setAttribute(string $key, string $value)
-    {
-        $this->attributes[$key] = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHeaders(): string
-    {
-        return $this->headers;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRequest(): string
-    {
-        return $this->request;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContent(): string
-    {
-        return $this->content;
+        return $this->perform(self::ACTION_NAME_SUGGEST, $attributes);
     }
 }
