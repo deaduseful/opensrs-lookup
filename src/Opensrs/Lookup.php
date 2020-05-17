@@ -240,7 +240,7 @@ class Lookup
      * @param string $object
      * @return string OPS XML message.
      */
-    public static function encode($action, $attributes, $object = 'DOMAIN')
+    public static function encode(string $action, array $attributes = [], string $object = 'DOMAIN')
     {
         $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope></OPS_envelope>';
         $xml = new SimpleXMLElement($markup);
