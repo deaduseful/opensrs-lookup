@@ -221,7 +221,7 @@ class Lookup
      * @param int $timeout
      * @return array
      */
-    private static function getResult(string $action, array $attributes = [], string $username = self::USERNAME, string $key = self::KEY, string $host = self::LIVE_HOST, int $timeout = self::SOCKET_TIMEOUT): array
+    private static function getResult(string $action = self::ACTION_LOOKUP, array $attributes = [], string $username = self::USERNAME, string $key = self::KEY, string $host = self::LIVE_HOST, int $timeout = self::SOCKET_TIMEOUT): array
     {
         $request = self::encode($action, $attributes);
         $headers = self::buildHeaders($request, $username, $key);
@@ -240,7 +240,7 @@ class Lookup
      * @param string $object
      * @return string OPS XML message.
      */
-    public static function encode(string $action, array $attributes = [], string $object = 'DOMAIN')
+    public static function encode(string $action = self::ACTION_LOOKUP, array $attributes = [], string $object = 'DOMAIN')
     {
         $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope></OPS_envelope>';
         $xml = new SimpleXMLElement($markup);
