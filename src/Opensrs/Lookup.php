@@ -82,4 +82,26 @@ class Lookup extends Service
         ];
         return $this->perform(self::ACTION_NAME_SUGGEST, $attributes);
     }
+
+    /**
+     * Perform query on a domain.
+     * @param string $action
+     * @param string $query
+     * @return array
+     */
+    public function query(string $action, string $query)
+    {
+        $attributes = ['domain' => $query];
+        return $this->perform($action, $attributes);
+    }
+
+    /**
+     * Get domain.
+     * @param string $domain
+     * @return array
+     */
+    public function getDomain($domain)
+    {
+        return $this->query('get', $domain);
+    }
 }
