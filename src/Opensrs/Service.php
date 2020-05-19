@@ -67,15 +67,12 @@ class Service
      * Perform action.
      * @param string $action
      * @param array $attributes
+     * @param array $items
      * @return array
      */
-    public function perform(string $action, array $attributes = [])
+    public function perform(string $action, array $attributes = [], $items = [])
     {
-        $username = $this->getUsername();
-        $key = $this->getKey();
-        $host = $this->getHost();
-        $timeout = $this->getTimeout();
-        $result = self::getResult($action, $attributes, $username, $key, $host, $timeout);
+        $result = $this->getResult($action, $attributes, $items);
         return $result;
     }
 
@@ -154,15 +151,16 @@ class Service
     /**
      * @param string $action
      * @param array $attributes
-     * @param string $username
-     * @param string $key
-     * @param string $host
-     * @param int $timeout
+     * @param array $items
      * @return array
      */
-    public static function getResult(string $action, array $attributes = [], string $username = self::USERNAME, string $key = self::KEY, string $host = self::LIVE_HOST, int $timeout = Request::SOCKET_TIMEOUT): array
+    public function getResult(string $action, array $attributes = [], array $items = []): array
     {
-        $request = Request::encode($action, $attributes);
+        $request = Request::encode($action, $attributes, $items);
+        $username = $this->getUsername();
+        $key = $this->getKey();
+        $host = $this->getHost();
+        $timeout = $this->getTimeout();
         $headers = Request::buildHeaders($request, $username, $key);
         $contents = Request::filePostContents($host, $request, $headers, $timeout);
         $responseHeaders = Request::getResponseHeaders();

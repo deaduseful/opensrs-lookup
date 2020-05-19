@@ -91,7 +91,9 @@ class Lookup extends Service
      */
     public function query(string $action, string $query)
     {
-        $attributes = ['domain' => $query];
+        $attributes = [
+            'domain' => $query,
+        ];
         return $this->perform($action, $attributes);
     }
 
@@ -102,6 +104,13 @@ class Lookup extends Service
      */
     public function getDomain($domain)
     {
-        return $this->query('get', $domain);
+        $action = 'GET';
+        $attributes = [
+            'type' => 'admin',
+        ];
+        $items = [
+            'domain' => $domain,
+        ];
+        return $this->perform($action, $attributes, $items);
     }
 }
