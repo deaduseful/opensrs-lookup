@@ -74,17 +74,20 @@ class Request
      * Converts a PHP array into an OPS message.
      * @param string $action
      * @param array $attributes
-     * @param string $object
+     * @param array $items
      * @return string OPS XML message.
      */
-    public static function encode(string $action, array $attributes = [], string $object = 'DOMAIN')
+    public static function encode($action, array $attributes = [], array $items = [])
     {
         $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope></OPS_envelope>';
         $xml = new SimpleXMLElement($markup);
         $assoc = $xml->addChild('body')->addChild('data_block')->addChild('dt_assoc');
         $assoc->addChild('item', 'XCP')->addAttribute('key', 'protocol');
         $assoc->addChild('item', $action)->addAttribute('key', 'action');
-        $assoc->addChild('item', $object)->addAttribute('key', 'object');
+        $assoc->addChild('item', 'DOMAIN')->addAttribute('key', 'object');
+        foreach ($items as $key => $item) {
+            $assoc->addChild('item', $item)->addAttribute('key', $key);
+        }
         $attributesItem = $assoc->addChild('item');
         $attributesItem->addAttribute('key', 'attributes');
         $attributesAssoc = $attributesItem->addChild('dt_assoc');
