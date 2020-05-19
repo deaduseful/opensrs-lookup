@@ -25,10 +25,10 @@ class Lookup extends Service
         $key = self::STATUS_TRANSFER;
         if (array_key_exists($key, $attributes)) {
             $transferable = $attributes[$key];
-            if ($transferable === 1) {
+            if ($transferable === '1') {
                 return true;
             }
-            if ($transferable === 0) {
+            if ($transferable === '0') {
                 return false;
             }
         }
