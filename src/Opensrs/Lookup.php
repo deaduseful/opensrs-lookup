@@ -100,13 +100,14 @@ class Lookup extends Service
     /**
      * Get domain.
      * @param string $domain
+     * @param string $type
      * @return array
      */
-    public function getDomain($domain)
+    public function getDomain($domain, $type = 'all_info')
     {
         $action = 'GET';
         $attributes = [
-            'type' => 'admin',
+            'type' => $type,
         ];
         $items = [
             'domain' => $domain,
