@@ -17,7 +17,7 @@ class DomainPricing
      */
     public function __construct($source = null)
     {
-        $data = $this->fetch($source);
+        $data = self::fetch($source);
         $this->setData($data);
     }
 
@@ -63,7 +63,7 @@ class DomainPricing
         $tlds = [];
         foreach ($this->data as $row) {
             if ($row[0]) {
-                $tlds[] = $row[0];
+                $tlds[] = trim($row[0], '.');
             }
         }
         array_shift($tlds);
