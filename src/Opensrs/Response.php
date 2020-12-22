@@ -13,7 +13,7 @@ class Response
      * @const string[] Response codes and their status.
      */
     const RESPONSE_CODES = [
-        200 => 'success',
+        self::SUCCESS => 'success',
         400 => 'invalid_credentials',
         415 => 'authentication_error', // "Authentication Error."
         401 => 'unauthorized',
@@ -32,6 +32,7 @@ class Response
      * @const string The Closing Ops Envelope string.
      */
     const OPS_ENVELOPE = '</OPS_envelope>';
+    const SUCCESS = 200;
 
     /**
      * @param string $content
