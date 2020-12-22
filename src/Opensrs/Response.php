@@ -27,7 +27,6 @@ class Response
      */
     const STATUS_UNKNOWN = 'unknown';
 
-
     /**
      * @const string The Closing Ops Envelope string.
      */
@@ -37,7 +36,7 @@ class Response
      * @param string $content
      * @return array
      */
-    public static function formatResult($content): array
+    public static function formatResult(string $content): array
     {
         $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
@@ -65,13 +64,12 @@ class Response
             }
         }
         $response = (string)$dataBlock['response_text'];
-        $result = [
+        return [
             'response' => $response,
             'code' => $responseCode,
             'status' => $status,
             'attributes' => $attributes
         ];
-        return $result;
     }
 
     /**
@@ -82,10 +80,12 @@ class Response
     {
         if (isset($item->dt_assoc) || isset($item->dt_array)) {
             $value = [];
-            $array = isset($item->dt_assoc->item) ? $item->dt_assoc->item : $item->dt_array->item;
-            foreach ($array as $subItem) {
-                $key = (string)$subItem->attributes()['key'];
-                $value[$key] = self::parseItem($subItem);
+            $array = empty($item->dt_assoc->item) ? $item->dt_array->item : $item->dt_assoc->item;
+            if (empty($array) === false) {
+                foreach ($array as $subItem) {
+                    $key = (string)$subItem->attributes()['key'];
+                    $value[$key] = self::parseItem($subItem);
+                }
             }
         } else {
             $value = (string)$item;
@@ -120,7 +120,7 @@ class Response
      * @param array $responseHeaders
      * @return string
      */
-    public static function parseContents($contents, $responseHeaders)
+    public static function parseContents(string $contents, array $responseHeaders)
     {
         if (empty($contents)) {
             if (empty($responseHeaders) === false) {
