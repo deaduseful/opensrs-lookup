@@ -9,6 +9,7 @@ use UnexpectedValueException;
 class Response
 {
     /**
+     * @see https://domains.opensrs.guide/docs/codes
      * @const string[] Response codes and their status.
      */
     const RESPONSE_CODES = [
@@ -16,6 +17,7 @@ class Response
         400 => 'invalid_credentials',
         401 => 'unauthorized',
         404 => 'missing_header',
+        465 => 'domain_already_renewed', // "Domain Already Renewed"
         480 => 'missing_currentexpirationyear', // "Current expiration year must be specified" @ see https://domains.opensrs.guide/docs/renew-domain-
         555 => 'invalid_ip'
     ];
