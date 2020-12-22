@@ -13,7 +13,6 @@ class Renew extends Service
      */
     public function renew(array $attributes = [])
     {
-        $attributes['currentexpirationyear'] = substr($attributes['registry_expiredate'], 0, 4);
         return $this->perform(self::ACTION, $attributes);
     }
 }
