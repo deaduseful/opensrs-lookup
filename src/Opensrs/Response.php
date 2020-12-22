@@ -16,6 +16,7 @@ class Response
         400 => 'invalid_credentials',
         401 => 'unauthorized',
         404 => 'missing_header',
+        480 => 'missing_expiration_year', // "Current expiration year must be specified"
         555 => 'invalid_ip'
     ];
 
