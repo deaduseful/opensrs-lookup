@@ -15,6 +15,7 @@ class Response
     const RESPONSE_CODES = [
         200 => 'success',
         400 => 'invalid_credentials',
+        415 => 'authentication_error', // "Authentication Error."
         401 => 'unauthorized',
         404 => 'missing_header',
         465 => 'domain_already_renewed', // "Domain Already Renewed"
