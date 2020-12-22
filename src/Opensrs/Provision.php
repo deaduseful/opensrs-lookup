@@ -4,15 +4,15 @@ namespace Deaduseful\Opensrs;
 
 class Provision extends Service
 {
-    const ACTION_REGISTER = 'sw_register';
+    const ACTION = 'sw_register';
 
     /**
      * Register.
-     * @param array $data
+     * @param array $attributes
      * @return array
      */
-    public function register(array $data = [])
+    public function register(array $attributes = [])
     {
-        return $this->perform(self::ACTION_REGISTER, $data);
+        return $this->perform(self::ACTION, $attributes);
     }
 }
