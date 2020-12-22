@@ -35,13 +35,11 @@ class Response
     /**
      * @param string $content
      * @return array
+     * @throws UnexpectedValueException
      */
     public static function formatResult(string $content): array
     {
-        $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
-        if (is_object($xml) === false) {
-            throw new UnexpectedValueException('Invalid XML response.');
-        }
+        $xml = self::parseXml($content);
         $dataBlock = [];
         foreach ($xml->body->data_block->dt_assoc->item as $item) {
             $key = (string)$item->attributes()['key'];
@@ -131,5 +129,19 @@ class Response
             }
         }
         return $contents;
+    }
+
+    /**
+     * @param string $content
+     * @return SimpleXMLElement
+     * @throws UnexpectedValueException
+     */
+    protected static function parseXml(string $content): SimpleXMLElement
+    {
+        $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
+        if (is_object($xml) === false) {
+            throw new UnexpectedValueException('Invalid XML response.');
+        }
+        return $xml;
     }
 }
