@@ -16,7 +16,7 @@ class Response
         400 => 'invalid_credentials',
         401 => 'unauthorized',
         404 => 'missing_header',
-        480 => 'missing_expiration_year', // "Current expiration year must be specified"
+        480 => 'missing_currentexpirationyear', // "Current expiration year must be specified" @ see https://domains.opensrs.guide/docs/renew-domain-
         555 => 'invalid_ip'
     ];
 
