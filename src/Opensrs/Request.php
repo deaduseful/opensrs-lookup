@@ -24,13 +24,13 @@ class Request
     /**
      * Similar to file_get_contents but uses the POST method.
      *
-     * @param string $host
+     * @param string $url
      * @param string $content
      * @param string $headers
      * @param int $timeout
      * @return string
      */
-    public static function filePostContents(string $host, string $content, string $headers, int $timeout = self::SOCKET_TIMEOUT)
+    public static function filePostContents(string $url, string $content, string $headers, int $timeout = self::SOCKET_TIMEOUT)
     {
         if (ini_get('allow_url_fopen') == '0') {
             throw new RuntimeException('Disabled in the server configuration by allow_url_fopen=0');
@@ -44,10 +44,17 @@ class Request
                     'timeout' => $timeout
                 ]
         ];
+        return self::fileGetContents($url, $options);
+    }
+
+    /**
+     * @param string $filename
+     * @param array $options
+     * @return false|string
+     */
+    public static function fileGetContents(string $filename, $options = []) {
         $context = stream_context_create($options);
-        $flags = null;
-        $responseContent = file_get_contents($host, $flags, $context);
-        return $responseContent;
+        return file_get_contents($filename, false, $context);
     }
 
     /**
