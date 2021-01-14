@@ -18,7 +18,7 @@ class Response
         415 => 'authentication_error', // "Authentication Error."
         401 => 'unauthorized',
         404 => 'missing_header',
-        465 => 'domain_already_renewed', // "Domain Already Renewed"
+        465 => self::INVALID_DATA,
         480 => 'missing_currentexpirationyear', // "Current expiration year must be specified" @ see https://domains.opensrs.guide/docs/renew-domain-
         555 => 'invalid_ip'
     ];
@@ -33,6 +33,12 @@ class Response
      */
     const OPS_ENVELOPE = '</OPS_envelope>';
     const SUCCESS = 200;
+
+    /** @var string
+     * "Data conversion error. Check the command 'modify' syntax"
+     * "Domain Already Renewed"
+     */
+    const INVALID_DATA = 'invalid_data';
 
     /**
      * @param string $content
@@ -70,6 +76,20 @@ class Response
             'status' => $status,
             'attributes' => $attributes
         ];
+    }
+
+    /**
+     * @param string $content
+     * @return SimpleXMLElement
+     * @throws UnexpectedValueException
+     */
+    protected static function parseXml(string $content): SimpleXMLElement
+    {
+        $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
+        if (is_object($xml) === false) {
+            throw new UnexpectedValueException('Invalid XML response.');
+        }
+        return $xml;
     }
 
     /**
@@ -131,19 +151,5 @@ class Response
             }
         }
         return $contents;
-    }
-
-    /**
-     * @param string $content
-     * @return SimpleXMLElement
-     * @throws UnexpectedValueException
-     */
-    protected static function parseXml(string $content): SimpleXMLElement
-    {
-        $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
-        if (is_object($xml) === false) {
-            throw new UnexpectedValueException('Invalid XML response.');
-        }
-        return $xml;
     }
 }
