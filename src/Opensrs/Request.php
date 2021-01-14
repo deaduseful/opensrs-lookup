@@ -98,19 +98,27 @@ class Request
         $attributesItem = $assoc->addChild('item');
         $attributesItem->addAttribute('key', 'attributes');
         $attributesAssoc = $attributesItem->addChild('dt_assoc');
+        self::parseAttributes($attributes, $attributesAssoc);
+        return $xml->asXML();
+    }
+
+    /**
+     * @param array $attributes
+     * @param SimpleXMLElement $attributesAssoc
+     */
+    private static function parseAttributes(array $attributes, SimpleXMLElement $attributesAssoc): void
+    {
         foreach ($attributes as $key => $value) {
             if (is_array($value)) {
                 $item = $attributesAssoc->addChild('item');
                 $item->addAttribute('key', $key);
                 $attributesArray = $item->addChild('dt_array');
                 foreach ($value as $arrayKey => $arrayValue) {
-                    $attributesArray->addChild('item', $arrayValue)->addAttribute('key', $arrayKey);
+                    self::parseAttributes($arrayValue, $attributesArray);
                 }
             } else {
                 $attributesAssoc->addChild('item', $value)->addAttribute('key', $key);
             }
         }
-        $request = $xml->asXML();
-        return $request;
     }
 }
