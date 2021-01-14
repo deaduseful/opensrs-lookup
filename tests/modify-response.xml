@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE OPS_envelope SYSTEM "ops.dtd">
+<OPS_envelope>
+ <header>
+  <version>0.9</version>
+  </header>
+ <body>
+  <data_block>
+   <dt_assoc>
+    <item key="protocol">XCP</item>
+    <item key="response_text">Authentication Error.</item>
+    <item key="response_code">415</item>
+    <item key="action">REPLY</item>
+    <item key="object">DOMAIN</item>
+    <item key="support_message"></item>
+    <item key="is_success">0</item>
+    <item key="mwi_reset_password_allowed">0</item>
+   </dt_assoc>
+  </data_block>
+ </body>
+</OPS_envelope>

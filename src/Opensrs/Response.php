@@ -13,12 +13,13 @@ class Response
      * @const string[] Response codes and their status.
      */
     const RESPONSE_CODES = [
-        self::SUCCESS => 'success',
+        self::CODE_UNKNOWN => self::STATUS_UNKNOWN,
+        self::CODE_SUCCESS => 'success',
         400 => 'invalid_credentials',
         415 => 'authentication_error', // "Authentication Error."
         401 => 'unauthorized',
         404 => 'missing_header',
-        465 => self::INVALID_DATA,
+        465 => self::STATUS_INVALID_DATA,
         480 => 'missing_currentexpirationyear', // "Current expiration year must be specified" @ see https://domains.opensrs.guide/docs/renew-domain-
         555 => 'invalid_ip'
     ];
@@ -32,13 +33,18 @@ class Response
      * @const string The Closing Ops Envelope string.
      */
     const OPS_ENVELOPE = '</OPS_envelope>';
-    const SUCCESS = 200;
+
+    /** @var int Success */
+    const CODE_SUCCESS = 200;
+
+    /** @var int Unknown */
+    const CODE_UNKNOWN = 999;
 
     /** @var string
      * "Data conversion error. Check the command 'modify' syntax"
      * "Domain Already Renewed"
      */
-    const INVALID_DATA = 'invalid_data';
+    const STATUS_INVALID_DATA = 'invalid_data';
 
     /**
      * @param string $content
@@ -54,12 +60,14 @@ class Response
             $value = $item;
             $dataBlock[$key] = $value;
         }
-        $responseCode = (int)$dataBlock['response_code'];
-        $responseCodes = self::RESPONSE_CODES;
-        if (isset($responseCodes[$responseCode]) === true) {
-            $status = $responseCodes[$responseCode];
-        } else {
-            $status = self::STATUS_UNKNOWN;
+        $responseCode = self::CODE_UNKNOWN;
+        $status = self::STATUS_UNKNOWN;
+        if (isset($dataBlock['response_code'])) {
+            $responseCode = (int)$dataBlock['response_code'];
+            $responseCodes = self::RESPONSE_CODES;
+            if (isset($responseCodes[$responseCode]) === true) {
+                $status = $responseCodes[$responseCode];
+            }
         }
         $attributes = [];
         if (array_key_exists('attributes', $dataBlock)) {
@@ -69,7 +77,7 @@ class Response
                 $attributes[$key] = $value;
             }
         }
-        $response = (string)$dataBlock['response_text'];
+        $response = isset($dataBlock['response_text']) ? (string)$dataBlock['response_text'] : '';
         return [
             'response' => $response,
             'code' => $responseCode,
@@ -83,7 +91,7 @@ class Response
      * @return SimpleXMLElement
      * @throws UnexpectedValueException
      */
-    protected static function parseXml(string $content): SimpleXMLElement
+    public static function parseXml(string $content): SimpleXMLElement
     {
         $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (is_object($xml) === false) {
@@ -115,23 +123,11 @@ class Response
 
     /**
      * @param string $content
-     * @param string $host
-     * @param string $request
-     * @param string $headers
-     * @param array $responseHeaders
      */
-    public static function checkContent(string $content, string $host, string $request, string $headers, array $responseHeaders): void
+    public static function checkContent(string $content): void
     {
         if (empty($content)) {
-            throw new DomainException(
-                sprintf(
-                    'Empty response, from host %s, with request content %s, request headers %s response headers: %s',
-                    $host,
-                    var_export($request, true),
-                    var_export($headers, true),
-                    var_export($responseHeaders, true)
-                )
-            );
+            throw new DomainException('Empty response');
         }
     }
 

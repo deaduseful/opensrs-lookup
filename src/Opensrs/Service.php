@@ -157,6 +157,17 @@ class Service
     public function getResult(string $action, array $attributes = [], array $items = []): array
     {
         $request = Request::encode($action, $attributes, $items);
+        $content = $this->getContents($request);
+        Response::checkContent($content);
+        return Response::formatResult($content);
+    }
+
+    /**
+     * @param string $request
+     * @return string
+     */
+    public function getContents(string $request): string
+    {
         $username = $this->getUsername();
         $key = $this->getKey();
         $host = $this->getHost();
@@ -164,10 +175,7 @@ class Service
         $headers = Request::buildHeaders($request, $username, $key);
         $contents = Request::filePostContents($host, $request, $headers, $timeout);
         $responseHeaders = Request::getResponseHeaders();
-        $content = Response::parseContents($contents, $responseHeaders);
-        Response::checkContent($content, $host, $request, $headers, $responseHeaders);
-        $result = Response::formatResult($content);
-        return $result;
+        return Response::parseContents($contents, $responseHeaders);
     }
 
 }

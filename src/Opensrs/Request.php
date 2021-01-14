@@ -12,6 +12,9 @@ class Request
      */
     const SOCKET_TIMEOUT = 120;
 
+    /** @var float OpenSRS API Version */
+    const VERSION = 0.9;
+
     /**
      * @return array
      */
@@ -82,38 +85,37 @@ class Request
      * @param array $items
      * @return string OPS XML message.
      */
-    public static function encode($action, array $attributes = [], array $items = [])
+    public static function encode(string $action, array $attributes = [], array $items = [])
     {
-        $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope></OPS_envelope>';
+        $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope />';
         $xml = new SimpleXMLElement($markup);
+        $xml->addChild('header')->addChild('version', self::VERSION);
         $assoc = $xml->addChild('body')->addChild('data_block')->addChild('dt_assoc');
         $assoc->addChild('item', 'XCP')->addAttribute('key', 'protocol');
-        $assoc->addChild('item', $action)->addAttribute('key', 'action');
+        $assoc->addChild('item', strtoupper($action))->addAttribute('key', 'action');
         $assoc->addChild('item', 'DOMAIN')->addAttribute('key', 'object');
         foreach ($items as $key => $item) {
             $assoc->addChild('item', $item)->addAttribute('key', $key);
         }
         $attributesItem = $assoc->addChild('item');
         $attributesItem->addAttribute('key', 'attributes');
-        $attributesAssoc = $attributesItem->addChild('dt_assoc');
-        self::parseAttributes($attributes, $attributesAssoc);
+        self::parseAttributes($attributes, $attributesItem);
         return $xml->asXML();
     }
 
     /**
      * @param array $attributes
-     * @param SimpleXMLElement $attributesAssoc
+     * @param SimpleXMLElement $attributesItem
      */
-    private static function parseAttributes(array $attributes, SimpleXMLElement $attributesAssoc): void
+    private static function parseAttributes(array $attributes, SimpleXMLElement $attributesItem): void
     {
+        $indexType = array_values($attributes) === $attributes ? 'dt_array' : 'dt_assoc';
+        $attributesAssoc = $attributesItem->addChild($indexType);
         foreach ($attributes as $key => $value) {
             if (is_array($value)) {
                 $item = $attributesAssoc->addChild('item');
                 $item->addAttribute('key', $key);
-                $attributesArray = $item->addChild('dt_array');
-                foreach ($value as $arrayKey => $arrayValue) {
-                    self::parseAttributes($arrayValue, $attributesArray);
-                }
+                self::parseAttributes($value, $item);
             } else {
                 $attributesAssoc->addChild('item', $value)->addAttribute('key', $key);
             }

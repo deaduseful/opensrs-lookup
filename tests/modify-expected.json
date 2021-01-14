@@ -1,0 +1,33 @@
+{
+  "action": "MODIFY",
+  "items": {
+    "domain": "acmeinc.biz",
+    "registrant_ip": "111.121.121.11"
+  },
+  "attributes": {
+    "data": "contact_info",
+    "affect_domains": "0",
+    "contact_set": {
+      "also_apply_to": [
+        "owner",
+        "billing"
+      ],
+      "admin": {
+        "first_name": "Adler",
+        "last_name": "Adams",
+        "org_name": "Example Inc.",
+        "address1": "32 Oak St.",
+        "address2": "Suite 100",
+        "address3": "",
+        "city": "Santa Clara",
+        "state": "CA",
+        "postal_code": "90210",
+        "country": "US",
+        "phone": "+1.7075551212x1812",
+        "fax": "+1.7075553123",
+        "email": "adams@example.com",
+        "url": "http:\/\/www.example.com"
+      }
+    }
+  }
+}
