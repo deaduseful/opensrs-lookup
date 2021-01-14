@@ -17,8 +17,7 @@ class Request
      */
     public static function getResponseHeaders(): array
     {
-        $responseHeaders = isset($http_response_header) ? $http_response_header : [];
-        return $responseHeaders;
+        return isset($http_response_header) ? $http_response_header : [];
     }
 
     /**
@@ -65,7 +64,7 @@ class Request
      * @param string $key
      * @return string
      */
-    public static function buildHeaders(string $request, $username, $key)
+    public static function buildHeaders(string $request, string $username, string $key)
     {
         $len = strlen($request);
         $signature = md5(md5($request . $key) . $key);
@@ -73,8 +72,7 @@ class Request
         $header[] = 'X-Username: ' . $username;
         $header[] = 'X-Signature: ' . $signature;
         $header[] = 'Content-Length: ' . $len;
-        $headers = implode(PHP_EOL, $header);
-        return $headers;
+        return implode(PHP_EOL, $header);
     }
 
     /**
