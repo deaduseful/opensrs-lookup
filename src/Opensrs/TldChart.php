@@ -4,7 +4,10 @@ namespace Deaduseful\Opensrs;
 
 class TldChart
 {
-    /** @var string URL to fetch data from. */
+    /**
+     * @var string URL to fetch data from.
+     * @see http://opensrs.help/chart
+     */
     const SOURCE = 'https://docs.google.com/spreadsheets/d/13t4l-kO3qAio4RCF3j1lF0X2AxaIr_G5kFIqIF3LAZU/export?format=csv';
 
     /** @var array Source as data array. */
@@ -38,22 +41,6 @@ class TldChart
     }
 
     /**
-     * @return array
-     */
-    public function getData(): array
-    {
-        return $this->data;
-    }
-
-    /**
-     * @param array $data
-     */
-    public function setData(array $data): void
-    {
-        $this->data = $data;
-    }
-
-    /**
      * Get the Tlds only from the data.
      *
      * @return array
@@ -74,7 +61,8 @@ class TldChart
      * @param $tld
      * @return mixed
      */
-    public function getDataByTld($tld) {
+    public function getDataByTld($tld)
+    {
         $data = $this->getData();
         foreach ($data as $item) {
             if ($item[0] === $tld) {
@@ -84,7 +72,24 @@ class TldChart
         return [];
     }
 
-    public function getSuffixes() {
+    /**
+     * @return array
+     */
+    public function getData(): array
+    {
+        return $this->data;
+    }
+
+    /**
+     * @param array $data
+     */
+    public function setData(array $data): void
+    {
+        $this->data = $data;
+    }
+
+    public function getSuffixes()
+    {
         $column = 16;
         $data = $this->getData();
         $results = [];

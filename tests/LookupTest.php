@@ -1,7 +1,6 @@
 <?php
 
-include '../vendor/autoload.php';
-include '../config.php';
+include __DIR__ . '/../bootstrap.php';
 
 use Deaduseful\Opensrs\Lookup;
 use Deaduseful\Opensrs\Response;
@@ -50,6 +49,15 @@ class LookupTest extends TestCase
         $query = 'example.com';
         $lookup = new Lookup();
         $result = $lookup->getDomain($query);
+        $this->assertIsString($result['response']);
+        $this->assertIsInt($result['code']);
+        $this->assertIsString($result['status']);
+    }
+
+    public function testGetDomainsByExpireDate()
+    {
+        $lookup = new Lookup();
+        $result = $lookup->getDomainsByExpireDate();
         $this->assertIsString($result['response']);
         $this->assertIsInt($result['code']);
         $this->assertIsString($result['status']);

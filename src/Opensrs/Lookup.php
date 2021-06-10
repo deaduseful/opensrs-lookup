@@ -12,6 +12,7 @@ class Lookup extends Service
     const STATUS_AVAILABLE = 'available';
     const STATUS_TAKEN = 'taken';
     const STATUS_TRANSFER = 'transferrable';
+    const DATE_FORMAT = 'Y-m-d';
 
     /**
      * @param string $query
@@ -98,10 +99,11 @@ class Lookup extends Service
     }
 
     /**
-     * Get domain.
+     * Get domains.
      * @param string $domain
      * @param string $type
      * @return array
+     * @see https://domains.opensrs.guide/docs/get_domains_by_expiredate
      */
     public function getDomain($domain, $type = 'all_info')
     {
@@ -113,5 +115,18 @@ class Lookup extends Service
             'domain' => $domain,
         ];
         return $this->perform($action, $attributes, $items);
+    }
+
+    public function getDomainsByExpireDate($time = '+6066 days') {
+        $action = 'get_domains_by_expiredate';
+        $expiryFrom = date(self::DATE_FORMAT, 1);
+        $expiryTo = date(self::DATE_FORMAT, strtotime($time));
+        $attributes = [
+            'exp_from' => $expiryFrom,
+            'exp_to' => $expiryTo,
+            'limit' => '9999',
+            'page' => 1,
+        ];
+        return $this->perform($action, $attributes);
     }
 }

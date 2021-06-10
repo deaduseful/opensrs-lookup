@@ -1,7 +1,6 @@
 <?php
 
-include '../vendor/autoload.php';
-include '../config.php';
+include __DIR__ . '/../bootstrap.php';
 
 use Deaduseful\Opensrs\DomainPricing;
 use PHPUnit\Framework\TestCase;
