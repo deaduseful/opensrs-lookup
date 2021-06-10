@@ -12,7 +12,7 @@ class Lookup extends Service
     const STATUS_AVAILABLE = 'available';
     const STATUS_TAKEN = 'taken';
     const STATUS_TRANSFER = 'transferrable';
-        const DATE_FORMAT = 'Y-m-d';
+    const DATE_FORMAT = 'Y-m-d';
 
     /**
      * @param string $query
@@ -117,7 +117,15 @@ class Lookup extends Service
         return $this->perform($action, $attributes, $items);
     }
 
-    public function getDomainsByExpireDate($expiryTo = '2038-01-18', $expiryFrom = '1970-01-01', $limit = 999999999, $page = 1) {
+    public function getDomainsByExpireTime($toTime = 2147483647 - 86400, $fromTime = 1, $limit = 999999999, $page = 1)
+    {
+        $expiryFrom = date(self::DATE_FORMAT, $fromTime);
+        $expiryTo = date(self::DATE_FORMAT, $toTime);
+        return $this->getDomainsByExpireDate($expiryTo, $expiryFrom, $limit, $page);
+    }
+
+    public function getDomainsByExpireDate($expiryTo = '2038-01-18', $expiryFrom = '1970-01-01', $limit = 999999999, $page = 1)
+    {
         $action = 'get_domains_by_expiredate';
         $attributes = [
             'exp_from' => $expiryFrom,
@@ -126,11 +134,5 @@ class Lookup extends Service
             'page' => $page,
         ];
         return $this->perform($action, $attributes);
-    }
-
-    public function getDomainsByExpireTime($toTime = 2147483647 - 86400, $fromTime = 1, $limit = 999999999, $page = 1) {
-        $expiryFrom = date(self::DATE_FORMAT, $fromTime);
-        $expiryTo = date(self::DATE_FORMAT, $toTime);
-        return $this->getDomainsByExpireDate($expiryTo, $expiryFrom, $limit, $page);
     }
 }
