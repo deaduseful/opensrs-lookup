@@ -61,5 +61,6 @@ class LookupTest extends TestCase
         $this->assertIsString($result['response']);
         $this->assertIsInt($result['code']);
         $this->assertIsString($result['status']);
+        var_dump($result);
     }
 }
