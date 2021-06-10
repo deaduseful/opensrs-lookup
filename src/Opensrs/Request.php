@@ -15,6 +15,12 @@ class Request
     /** @var float OpenSRS API Version */
     const VERSION = 0.9;
 
+    /** @var string Content Type used in header. */
+    const CONTENT_TYPE = 'text/xml';
+
+    /** @var string DocType used by payload. */
+    const DOCTYPE = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope />';
+
     /**
      * @return array
      */
@@ -69,9 +75,18 @@ class Request
      */
     public static function buildHeaders(string $request, string $username, string $key)
     {
+        if (empty($username)) {
+            throw new RuntimeException('Missing X-Username: header', 404);
+        }
+        if (empty($key)) {
+            throw new RuntimeException('Missing Key', 404);
+        }
+        if (empty($request)) {
+            throw new RuntimeException('Missing Request', 404);
+        }
         $len = strlen($request);
-        $signature = md5(md5($request . $key) . $key);
-        $header[] = 'Content-Type: text/xml';
+        $signature = self::getSignature($request, $key);
+        $header[] = 'Content-Type: ' . self::CONTENT_TYPE;
         $header[] = 'X-Username: ' . $username;
         $header[] = 'X-Signature: ' . $signature;
         $header[] = 'Content-Length: ' . $len;
@@ -87,7 +102,7 @@ class Request
      */
     public static function encode(string $action, array $attributes = [], array $items = [])
     {
-        $markup = '<!DOCTYPE OPS_envelope SYSTEM "ops.dtd"><OPS_envelope />';
+        $markup = self::DOCTYPE;
         $xml = new SimpleXMLElement($markup);
         $xml->addChild('header')->addChild('version', self::VERSION);
         $assoc = $xml->addChild('body')->addChild('data_block')->addChild('dt_assoc');
@@ -120,5 +135,15 @@ class Request
                 $attributesAssoc->addChild('item', $value)->addAttribute('key', $key);
             }
         }
+    }
+
+    /**
+     * @param string $request
+     * @param string $key
+     * @return string
+     */
+    private static function getSignature(string $request, string $key): string
+    {
+        return md5(md5($request . $key) . $key);
     }
 }
