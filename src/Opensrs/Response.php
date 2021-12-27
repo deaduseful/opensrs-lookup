@@ -14,14 +14,14 @@ class Response
      */
     const RESPONSE_CODES = [
         self::CODE_UNKNOWN => self::STATUS_UNKNOWN,
-        self::CODE_SUCCESS => 'success',
-        400 => 'invalid_credentials',
-        415 => 'authentication_error', // "Authentication Error."
-        401 => 'unauthorized',
-        404 => 'missing_header',
-        465 => self::STATUS_INVALID_DATA,
-        480 => 'missing_currentexpirationyear', // "Current expiration year must be specified" @ see https://domains.opensrs.guide/docs/renew-domain-
-        555 => 'invalid_ip'
+        self::CODE_SUCCESS => self::STATUS_SUCCESS,
+        self::CODE_INVALID_CREDENTIALS => self::STATUS_INVALID_CREDENTIALS,
+        self::CODE_AUTHENTICATION_ERROR => self::STATUS_AUTHENTICATION_ERROR,
+        self::CODE_UNAUTHORIZED => self::STATUS_UNAUTHORIZED,
+        self::CODE_MISSING_HEADER => self::STATUS_MISSING_HEADER,
+        self::CODE_INVALID_DATA => self::STATUS_INVALID_DATA,
+        self::CODE_MISSING_CURRENT_EXPIRATION_YEAR => self::STATUS_MISSING_CURRENT_EXPIRATION_YEAR,
+        self::CODE_INVALID_IP => self::STATUS_INVALID_IP,
     ];
 
     /**
@@ -45,6 +45,28 @@ class Response
      * "Domain Already Renewed"
      */
     const STATUS_INVALID_DATA = 'invalid_data';
+
+    const CODE_AUTHENTICATION_ERROR = 415;
+    const CODE_INVALID_CREDENTIALS = 400;
+    const CODE_INVALID_DATA = 465;
+    const CODE_INVALID_IP = 555;
+    const CODE_MISSING_CURRENT_EXPIRATION_YEAR = 480;
+    const CODE_MISSING_HEADER = 404;
+    const CODE_UNAUTHORIZED = 401;
+
+    /** @var string "Authentication Error." */
+    const STATUS_AUTHENTICATION_ERROR = 'authentication_error';
+    const STATUS_INVALID_CREDENTIALS = 'invalid_credentials';
+    const STATUS_INVALID_IP = 'invalid_ip';
+    /**
+     * @var string
+     * "Current expiration year must be specified"
+     * @see https://domains.opensrs.guide/docs/renew-domain-
+     */
+    const STATUS_MISSING_CURRENT_EXPIRATION_YEAR = 'missing_currentexpirationyear';
+    const STATUS_MISSING_HEADER = 'missing_header';
+    const STATUS_SUCCESS = 'success';
+    const STATUS_UNAUTHORIZED = 'unauthorized';
 
     /**
      * @param string $content
@@ -136,7 +158,7 @@ class Response
      * @param array $responseHeaders
      * @return string
      */
-    public static function parseContents(string $contents, array $responseHeaders)
+    public static function parseContents(string $contents, array $responseHeaders): string
     {
         if (empty($contents)) {
             if (empty($responseHeaders) === false) {

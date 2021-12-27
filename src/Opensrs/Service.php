@@ -70,10 +70,9 @@ class Service
      * @param array $items
      * @return array
      */
-    public function perform(string $action, array $attributes = [], $items = [])
+    public function perform(string $action, array $attributes = [], $items = []): array
     {
-        $result = $this->getResult($action, $attributes, $items);
-        return $result;
+        return $this->getResult($action, $attributes, $items);
     }
 
     /**
@@ -153,6 +152,7 @@ class Service
      * @param array $attributes
      * @param array $items
      * @return array
+     * @throws \Exception
      */
     public function getResult(string $action, array $attributes = [], array $items = []): array
     {

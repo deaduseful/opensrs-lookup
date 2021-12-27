@@ -18,7 +18,7 @@ class TldChart
      *
      * @param string|null $source the file or url of the source
      */
-    public function __construct($source = null)
+    public function __construct(string $source = null)
     {
         $data = $this->fetch($source);
         $this->setData($data);
@@ -28,7 +28,7 @@ class TldChart
      * @param string|null $source the file or url of the source
      * @return array
      */
-    public static function fetch($source = null)
+    public static function fetch(string $source = null): array
     {
         $source = $source ? $source : self::SOURCE;
         $array = [];
@@ -45,7 +45,7 @@ class TldChart
      *
      * @return array
      */
-    public function getTlds()
+    public function getTlds(): array
     {
         $tlds = [];
         foreach ($this->data as $row) {
@@ -58,10 +58,10 @@ class TldChart
     }
 
     /**
-     * @param $tld
-     * @return mixed
+     * @param string $tld
+     * @return array
      */
-    public function getDataByTld($tld)
+    public function getDataByTld(string $tld): array
     {
         $data = $this->getData();
         foreach ($data as $item) {
@@ -88,7 +88,7 @@ class TldChart
         $this->data = $data;
     }
 
-    public function getSuffixes()
+    public function getSuffixes(): array
     {
         $column = 16;
         $data = $this->getData();

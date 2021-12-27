@@ -11,7 +11,7 @@ class Renew extends Service
      * @param array $attributes
      * @return array
      */
-    public function renew(array $attributes = [])
+    public function renew(array $attributes = []): array
     {
         return $this->perform(self::ACTION, $attributes);
     }

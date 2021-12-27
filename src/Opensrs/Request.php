@@ -26,7 +26,7 @@ class Request
      */
     public static function getResponseHeaders(): array
     {
-        return isset($http_response_header) ? $http_response_header : [];
+        return $http_response_header ?? [];
     }
 
     /**
@@ -60,7 +60,7 @@ class Request
      * @param array $options
      * @return false|string
      */
-    public static function fileGetContents(string $filename, $options = []) {
+    public static function fileGetContents(string $filename, array $options = []) {
         $context = stream_context_create($options);
         return file_get_contents($filename, false, $context);
     }
@@ -73,7 +73,7 @@ class Request
      * @param string $key
      * @return string
      */
-    public static function buildHeaders(string $request, string $username, string $key)
+    public static function buildHeaders(string $request, string $username, string $key): string
     {
         if (empty($username)) {
             throw new RuntimeException('Missing X-Username: header', 404);
@@ -99,8 +99,9 @@ class Request
      * @param array $attributes
      * @param array $items
      * @return string OPS XML message.
+     * @throws \Exception
      */
-    public static function encode(string $action, array $attributes = [], array $items = [])
+    public static function encode(string $action, array $attributes = [], array $items = []): string
     {
         $markup = self::DOCTYPE;
         $xml = new SimpleXMLElement($markup);

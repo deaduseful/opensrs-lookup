@@ -68,7 +68,7 @@ class FastLookup
      * @param string $query
      * @return bool|null
      */
-    public function available(string $query)
+    public function available(string $query): ?bool
     {
         $result = $this->lookup($query);
         if ($result['status'] === 'taken') {
@@ -86,7 +86,7 @@ class FastLookup
      * @param string $query The domain to query.
      * @return array
      */
-    public function lookup(string $query)
+    public function lookup(string $query): array
     {
         return $this->checkDomain($query)->getResult();
     }
@@ -94,7 +94,7 @@ class FastLookup
     /**
      * @return array
      */
-    public function getResult()
+    public function getResult(): array
     {
         return $this->result;
     }
@@ -130,7 +130,7 @@ class FastLookup
      * @param int $timeout
      * @return string
      */
-    public static function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048)
+    public static function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048): string
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $options = ['sec' => $timeout, 'usec' => 0];
@@ -200,12 +200,11 @@ class FastLookup
             $status = self::STATUS_UNKNOWN;
             $success = false;
         }
-        $result = [
+        return [
             'success' => $success,
             'response' => $response,
             'code' => $responseCode,
             'status' => $status,
         ];
-        return $result;
     }
 }

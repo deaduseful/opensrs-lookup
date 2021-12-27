@@ -5,20 +5,20 @@ namespace Deaduseful\Opensrs;
 class Lookup extends Service
 {
 
-    const ACTION_CHECK_TRANSFER = 'check_transfer';
-    const ACTION_LOOKUP = 'lookup';
-    const ACTION_NAME_SUGGEST = 'name_suggest';
-    const SERVICES_SUGGEST = ['lookup', 'suggestion', 'premium', 'personal_names'];
-    const STATUS_AVAILABLE = 'available';
-    const STATUS_TAKEN = 'taken';
-    const STATUS_TRANSFER = 'transferrable';
-    const DATE_FORMAT = 'Y-m-d';
+    public const ACTION_CHECK_TRANSFER = 'check_transfer';
+    public const ACTION_LOOKUP = 'lookup';
+    public const ACTION_NAME_SUGGEST = 'name_suggest';
+    public const SERVICES_SUGGEST = ['lookup', 'suggestion', 'premium', 'personal_names'];
+    public const STATUS_AVAILABLE = 'available';
+    public const STATUS_TAKEN = 'taken';
+    public const STATUS_TRANSFER = 'transferrable';
+    public const DATE_FORMAT = 'Y-m-d';
 
     /**
      * @param string $query
      * @return bool|null
      */
-    public function checkTransfer(string $query)
+    public function checkTransfer(string $query): ?bool
     {
         $attributes = ['domain' => $query];
         $result = $this->perform(self::ACTION_CHECK_TRANSFER, $attributes);
@@ -42,7 +42,7 @@ class Lookup extends Service
      * @param string $action
      * @return array
      */
-    public function lookup(string $query, string $action = self::ACTION_LOOKUP)
+    public function lookup(string $query, string $action = self::ACTION_LOOKUP): array
     {
         $attributes = ['domain' => $query];
         return $this->perform($action, $attributes);
@@ -52,7 +52,7 @@ class Lookup extends Service
      * @param string $query
      * @return bool|null
      */
-    public function available(string $query)
+    public function available(string $query): ?bool
     {
         $attributes = ['domain' => $query];
         $action = self::ACTION_LOOKUP;
@@ -74,7 +74,7 @@ class Lookup extends Service
      * @param array $services
      * @return array
      */
-    public function suggest($searchString, $tlds, $services = self::SERVICES_SUGGEST)
+    public function suggest(string $searchString, array $tlds, array $services = self::SERVICES_SUGGEST): array
     {
         $attributes = [
             'searchstring' => $searchString,
@@ -90,7 +90,7 @@ class Lookup extends Service
      * @param string $query
      * @return array
      */
-    public function query(string $action, string $query)
+    public function query(string $action, string $query): array
     {
         $attributes = [
             'domain' => $query,
@@ -105,7 +105,7 @@ class Lookup extends Service
      * @return array
      * @see https://domains.opensrs.guide/docs/get_domains_by_expiredate
      */
-    public function getDomain($domain, $type = 'all_info')
+    public function getDomain(string $domain, string $type = 'all_info'): array
     {
         $action = 'GET';
         $attributes = [
@@ -117,14 +117,14 @@ class Lookup extends Service
         return $this->perform($action, $attributes, $items);
     }
 
-    public function getDomainsByExpireTime($toTime = 2147483647 - 86400, $fromTime = 1, $limit = 999999999, $page = 1)
+    public function getDomainsByExpireTime($toTime = 2147483647 - 86400, $fromTime = 1, $limit = 999999999, $page = 1): array
     {
         $expiryFrom = date(self::DATE_FORMAT, $fromTime);
         $expiryTo = date(self::DATE_FORMAT, $toTime);
         return $this->getDomainsByExpireDate($expiryTo, $expiryFrom, $limit, $page);
     }
 
-    public function getDomainsByExpireDate($expiryTo = '2038-01-18', $expiryFrom = '1970-01-01', $limit = 999999999, $page = 1)
+    public function getDomainsByExpireDate($expiryTo = '2038-01-18', $expiryFrom = '1970-01-01', $limit = 999999999, $page = 1): array
     {
         $action = 'get_domains_by_expiredate';
         $attributes = [

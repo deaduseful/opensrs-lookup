@@ -15,7 +15,7 @@ class DomainPricing
      *
      * @param string|null $source the file or url of the source
      */
-    public function __construct($source = null)
+    public function __construct(string $source = null)
     {
         $data = self::fetch($source);
         $this->setData($data);
@@ -25,7 +25,7 @@ class DomainPricing
      * @param string|null $source the file or url of the source
      * @return array
      */
-    public static function fetch($source = null)
+    public static function fetch(string $source = null): array
     {
         $source = $source ? $source : self::SOURCE;
         $array = [];
@@ -58,7 +58,7 @@ class DomainPricing
      *
      * @return array
      */
-    public function getTlds()
+    public function getTlds(): array
     {
         $tlds = [];
         foreach ($this->data as $row) {
@@ -71,18 +71,20 @@ class DomainPricing
     }
 
     /**
-     * @param $tld
-     * @return mixed
+     * @param string $tld
+     * @return array
      */
-    public function getDataByTld($tld) {
+    public function getDataByTld(string $tld): array
+    {
         $data = $this->toArray();
-        return isset($data[$tld]) ? $data[$tld] : [];
+        return $data[$tld] ?? [];
     }
 
     /**
      * @return array
      */
-    public function toArray() {
+    public function toArray(): array
+    {
         $data = $this->getData();
         $header = array_shift($data);
         $list = [];

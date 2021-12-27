@@ -11,7 +11,7 @@ class Provision extends Service
      * @param array $attributes
      * @return array
      */
-    public function register(array $attributes = [])
+    public function register(array $attributes = []): array
     {
         return $this->perform(self::ACTION, $attributes);
     }
