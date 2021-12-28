@@ -13,6 +13,27 @@ class Lookup extends Service
     public const STATUS_TAKEN = 'taken';
     public const STATUS_TRANSFER = 'transferrable';
     public const DATE_FORMAT = 'Y-m-d';
+    public const TYPE_ALL = 'all_info';
+    public const TYPES = [
+        'admin', // Returns admin contact information.
+        'all_info', // Returns all information.
+        'billing', // Returns billing contact information.
+        'ca_whois_display_setting', // Returns the current CIRA Whois Privacy setting for .CA domains.
+        'domain_auth_info', // Returns domain authorization code, if applicable.
+        'expire_action', // Returns the action to be taken upon domain expiry, specifically whether to auto-renew the domain, or let it expire silently.
+        'forwarding_email', // Returns forwarding email for .NAME 2nd level.
+        'list', // Returns list of domains in the same profile or returns list of domains for user using cookie method.
+        'nameservers', // Returns nameserver information.
+        'owner', // Returns owner contact information.
+        'rsp_whois_info', // Returns name and contact information for RSP.
+        'status', // Returns lock or escrow status of the domain.
+        'tech', // Returns tech contact information.
+        'tld_data', // Returns additional information that is required by some registries, such as the residency of the registrant.
+        'waiting history', // Returns information on asynchronous requests.
+        'whois_privacy_state', // Returns the state for the WHOIS Privacy feature: enabled, disabled, enabling, or disabling. Note: If the TLD does not allow WHOIS Privacy, always returns Disabled.
+        'whois_publicity_state', // Returns the state for the WHOIS Publicity feature: enabled, disabled. Note: If the TLD does not allow WHOIS Privacy, always returns Disabled.
+        'xpack_waiting_history', // Returns the state of completed/cancelled requests not yet deleted from the database for .DK domains. All completed/cancelled requests are deleted from the database two weeks after they move to final state.
+    ];
 
     /**
      * @param string $query
@@ -105,8 +126,9 @@ class Lookup extends Service
      * @return array
      * @see https://domains.opensrs.guide/docs/get_domains_by_expiredate
      */
-    public function getDomain(string $domain, string $type = 'all_info'): array
+    public function getDomain(string $domain, string $type = self::TYPE_ALL): array
     {
+        $this->checkTypes($type);
         $action = 'GET';
         $attributes = [
             'type' => $type,
@@ -135,5 +157,17 @@ class Lookup extends Service
             'page' => $page,
         ];
         return $this->perform($action, $attributes);
+    }
+
+    /**
+     * @param string $type
+     * @return void
+     */
+    private function checkTypes(string $type): void
+    {
+        if (in_array($type, self::TYPES)) {
+            $message = sprintf('Type expected %s, got %s', implode(', ', self::TYPES), $type);
+            throw new \InvalidArgumentException($message);
+        }
     }
 }
