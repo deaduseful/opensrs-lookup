@@ -99,12 +99,11 @@ class Request
      * @param array $attributes
      * @param array $items
      * @return string OPS XML message.
-     * @throws \Exception
      */
     public static function encode(string $action, array $attributes = [], array $items = []): string
     {
         $markup = self::DOCTYPE;
-        $xml = new SimpleXMLElement($markup);
+        $xml = simplexml_load_string($markup);
         $xml->addChild('header')->addChild('version', self::VERSION);
         $assoc = $xml->addChild('body')->addChild('data_block')->addChild('dt_assoc');
         $assoc->addChild('item', 'XCP')->addAttribute('key', 'protocol');
