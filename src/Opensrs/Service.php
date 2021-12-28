@@ -35,6 +35,11 @@ class Service
     const KEY = OSRS_KEY;
 
     /**
+     * @const string Default for the test flag.
+     */
+    const TEST = false;
+
+    /**
      * @var int
      */
     private $timeout = Request::SOCKET_TIMEOUT;
@@ -57,7 +62,7 @@ class Service
      * @param string $key
      * @param bool $test
      */
-    public function __construct(string $username = self::USERNAME, string $key = self::KEY, bool $test = false)
+    public function __construct(string $username = self::USERNAME, string $key = self::KEY, bool $test = self::TEST)
     {
         $host = $test ? self::TEST_HOST : self::LIVE_HOST;
         $this->setUsername($username)->setKey($key)->setHost($host);
