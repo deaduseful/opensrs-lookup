@@ -110,6 +110,7 @@ class Lookup extends Service
         $action = 'GET';
         $attributes = [
             'type' => $type,
+            'domain_name' => $domain,
         ];
         $items = [
             'domain' => $domain,
