@@ -20,7 +20,7 @@ class Response
         self::CODE_UNAUTHORIZED => self::STATUS_UNAUTHORIZED,
         self::CODE_MISSING_HEADER => self::STATUS_MISSING_HEADER,
         self::CODE_INVALID_DATA => self::STATUS_INVALID_DATA,
-        self::CODE_MISSING_CURRENT_EXPIRATION_YEAR => self::STATUS_MISSING_CURRENT_EXPIRATION_YEAR,
+        self::CODE_MISSING_ATTRIBUTE => self::STATUS_MISSING_ATTRIBUTE,
         self::CODE_INVALID_IP => self::STATUS_INVALID_IP,
     ];
 
@@ -50,7 +50,7 @@ class Response
     const CODE_INVALID_CREDENTIALS = 400;
     const CODE_INVALID_DATA = 465;
     const CODE_INVALID_IP = 555;
-    const CODE_MISSING_CURRENT_EXPIRATION_YEAR = 480;
+    const CODE_MISSING_ATTRIBUTE = 480;
     const CODE_MISSING_HEADER = 404;
     const CODE_UNAUTHORIZED = 401;
 
@@ -63,7 +63,7 @@ class Response
      * "Current expiration year must be specified"
      * @see https://domains.opensrs.guide/docs/renew-domain-
      */
-    const STATUS_MISSING_CURRENT_EXPIRATION_YEAR = 'missing_currentexpirationyear';
+    const STATUS_MISSING_ATTRIBUTE = 'missing_attribute';
     const STATUS_MISSING_HEADER = 'missing_header';
     const STATUS_SUCCESS = 'success';
     const STATUS_UNAUTHORIZED = 'unauthorized';
