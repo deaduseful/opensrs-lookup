@@ -61,6 +61,15 @@ class LookupTest extends TestCase
         $this->assertIsString($result['response']);
         $this->assertIsInt($result['code']);
         $this->assertIsString($result['status']);
-        var_dump($result);
+    }
+
+    public function testGetDomainStatus()
+    {
+        $query = 'example.com';
+        $lookup = new Lookup();
+        $result = $lookup->getDomain($query, 'status');
+        $this->assertIsString($result['response']);
+        $this->assertIsInt($result['code']);
+        $this->assertIsString($result['status']);
     }
 }
