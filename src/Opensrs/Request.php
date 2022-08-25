@@ -31,14 +31,8 @@ class Request
 
     /**
      * Similar to file_get_contents but uses the POST method.
-     *
-     * @param string $url
-     * @param string $content
-     * @param string $headers
-     * @param int $timeout
-     * @return string
      */
-    public static function filePostContents(string $url, string $content, string $headers, int $timeout = self::SOCKET_TIMEOUT)
+    public static function filePostContents(string $url, string $content, string $headers = '', int $timeout = self::SOCKET_TIMEOUT)
     {
         if (ini_get('allow_url_fopen') == '0') {
             throw new RuntimeException('Disabled in the server configuration by allow_url_fopen=0');
