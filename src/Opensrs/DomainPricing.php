@@ -5,49 +5,36 @@ namespace Deaduseful\Opensrs;
 class DomainPricing
 {
     /** @var string URL to fetch data from. */
-    const SOURCE = 'https://opensrs.com/wp-content/uploads/domain_pricing.csv';
+    const SOURCE = 'https://opensrs.com/wp-admin/admin-ajax.php';
+    const SOURCE_DATA = 'action=angus_get_dataset&data=eyJvcHRpb25LZXkiOiJhbmd1c19zeW5jXzBhNmNiNzJkLTE3ZjMtNDFhZC05Y2E5LWQ1MjM1NzliM2U4MSIsInRsZHMiOmZhbHNlfQ';
 
     /** @var array Source as data array. */
     private $data;
 
     /**
      * TldChart constructor.
-     *
-     * @param string|null $source the file or url of the source
      */
-    public function __construct(string $source = null)
+    public function __construct()
     {
-        $data = self::fetch($source);
+        $data = self::fetch();
         $this->setData($data);
     }
 
-    /**
-     * @param string|null $source the file or url of the source
-     * @return array
-     */
-    public static function fetch(string $source = null): array
+    public static function fetch(): array
     {
-        $source = $source ? $source : self::SOURCE;
-        $array = [];
-        $fh = fopen($source, 'r');
-        while (($data = fgetcsv($fh)) !== false) {
-            $array[] = $data;
-        }
-        fclose($fh);
-        return $array;
+        $headers = [];
+        $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+        $headers = implode(PHP_EOL, $headers);
+        $json = Request::filePostContents(self::SOURCE, self::SOURCE_DATA, $headers);
+        $data = json_decode($json, true);
+        return $data['data'][0];
     }
 
-    /**
-     * @return array
-     */
     public function getData(): array
     {
         return $this->data;
     }
 
-    /**
-     * @param array $data
-     */
     public function setData(array $data): void
     {
         $this->data = $data;
@@ -55,8 +42,6 @@ class DomainPricing
 
     /**
      * Get the Tlds only from the data.
-     *
-     * @return array
      */
     public function getTlds(): array
     {
@@ -70,28 +55,19 @@ class DomainPricing
         return $tlds;
     }
 
-    /**
-     * @param string $tld
-     * @return array
-     */
     public function getDataByTld(string $tld): array
     {
         $data = $this->toArray();
         return $data[$tld] ?? [];
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         $data = $this->getData();
-        $header = array_shift($data);
         $list = [];
         foreach ($data as $item) {
-            $array = array_combine($header, $item);
-            $key = $array['tld'];
-            $list[$key] = $array;
+            $key = $item['tld'];
+            $list[$key] = $item;
         }
         return $list;
     }
