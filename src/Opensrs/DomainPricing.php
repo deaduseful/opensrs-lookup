@@ -11,9 +11,6 @@ class DomainPricing
     /** @var array Source as data array. */
     private $data;
 
-    /**
-     * TldChart constructor.
-     */
     public function __construct()
     {
         $data = self::fetch();
