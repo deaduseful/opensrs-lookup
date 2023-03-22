@@ -9,27 +9,22 @@ class FastLookup
     /**
      * @const string LIVE OpenSRS domain service API host.
      */
-    const LIVE_HOST = 'rr-n1-tor.opensrs.net';
+    public const LIVE_HOST = 'rr-n1-tor.opensrs.net';
 
     /**
      * @const string TEST OpenSRS domain service API host.
      */
-    const TEST_HOST = 'horizon.opensrs.net';
-
-    /**
-     * @const string OpenSRS domain service API host.
-     */
-    const HOST = self::LIVE_HOST;
+    public const TEST_HOST = 'horizon.opensrs.net';
 
     /**
      * @const int OpenSRS API fast lookup port.
      */
-    const PORT = 51000;
+    public const PORT = 51000;
 
     /**
      * @const string[] Success response codes and their status.
      */
-    const SUCCESS_RESPONSE_CODES = [
+    public const SUCCESS_RESPONSE_CODES = [
         210 => 'available',
         211 => 'taken',
     ];
@@ -37,37 +32,17 @@ class FastLookup
     /**
      * * @const string[] Failure response codes and their status.
      */
-    const FAILURE_RESPONSE_CODES = [
+    public const FAILURE_RESPONSE_CODES = [
         465 => 'invalid_domain',
         5050 => 'invalid_command',
         555 => 'invalid_ip',
         701 => 'unknown_tld',
     ];
-
-    /**
-     * * @const string Unknown status.
-     */
-    const STATUS_UNKNOWN = 'unknown';
-
-    /**
-     * @var array
-     */
+    public const STATUS_UNKNOWN = 'unknown';
     private $result = [];
-
-    /**
-     * @var string
-     */
-    private $host = self::HOST;
-
-    /**
-     * @var int
-     */
+    private $host = self::LIVE_HOST;
     private $port = self::PORT;
 
-    /**
-     * @param string $query
-     * @return bool|null
-     */
     public function available(string $query): ?bool
     {
         $result = $this->lookup($query);
@@ -80,41 +55,26 @@ class FastLookup
         return null;
     }
 
-    /**
-     * Lookup.
-     *
-     * @param string $query The domain to query.
-     * @return array
-     */
     public function lookup(string $query): array
     {
         return $this->checkDomain($query)->getResult();
     }
 
-    /**
-     * @return array
-     */
     public function getResult(): array
     {
         return $this->result;
     }
 
-    /**
-     * @param array $result
-     * @return FastLookup
-     */
-    public function setResult($result)
+    public function setResult(array $result): FastLookup
     {
         $this->result = $result;
         return $this;
     }
 
     /**
-     * @param string $query
-     * @return FastLookup
      * @throws DomainException
      */
-    public function checkDomain(string $query)
+    public function checkDomain(string $query): FastLookup
     {
         $command = "check_domain $query" . PHP_EOL;
         $response = $this->query($command, $this->getHost(), $this->getPort());
@@ -122,15 +82,7 @@ class FastLookup
         return $this->setResult($result);
     }
 
-    /**
-     * @param string $payload
-     * @param string $host
-     * @param int $port
-     * @param int $length
-     * @param int $timeout
-     * @return string
-     */
-    public static function query(string $payload, string $host = self::HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048): string
+    public static function query(string $payload, string $host = self::LIVE_HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048): string
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $options = ['sec' => $timeout, 'usec' => 0];
@@ -142,36 +94,22 @@ class FastLookup
         return $out;
     }
 
-    /**
-     * @return string
-     */
     public function getHost(): string
     {
         return $this->host;
     }
 
-    /**
-     * @param string $host
-     * @return FastLookup
-     */
     public function setHost(string $host): FastLookup
     {
         $this->host = $host;
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getPort(): int
     {
         return $this->port;
     }
 
-    /**
-     * @param int $port
-     * @return FastLookup
-     */
     public function setPort(int $port): FastLookup
     {
         $this->port = $port;
@@ -179,8 +117,6 @@ class FastLookup
     }
 
     /**
-     * @param string $response
-     * @return array
      * @throws DomainException
      */
     public static function formatResponse(string $response): array
@@ -188,7 +124,7 @@ class FastLookup
         $results = explode(' ', trim($response), 2);
         $responseCode = (int)trim($results[0]);
         if (empty($responseCode)) {
-            throw new DomainException('Empty response code.');
+            throw new DomainException('Empty Response Code');
         }
         if (array_key_exists($responseCode, self::SUCCESS_RESPONSE_CODES) === true) {
             $status = self::SUCCESS_RESPONSE_CODES[$responseCode];
