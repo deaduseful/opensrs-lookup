@@ -9,17 +9,27 @@ class FastLookup
     /**
      * @const string LIVE OpenSRS domain service API host.
      */
-    public const LIVE_HOST = 'rr-n1-tor.opensrs.net';
+    private const LIVE_HOST = 'rr-n1-tor.opensrs.net';
 
     /**
      * @const string TEST OpenSRS domain service API host.
      */
-    public const TEST_HOST = 'horizon.opensrs.net';
+    private const TEST_HOST = 'horizon.opensrs.net';
 
     /**
      * @const int OpenSRS API fast lookup port.
      */
-    public const PORT = 51000;
+    private const PORT = 51000;
+
+    /**
+     * @const int Default Timeout.
+     */
+    public const TIMEOUT = 1;
+
+    /**
+     * @const int Default Length.
+     */
+    public const LENGTH = 2048;
 
     /**
      * @const string[] Success response codes and their status.
@@ -39,9 +49,12 @@ class FastLookup
         701 => 'unknown_tld',
     ];
     public const STATUS_UNKNOWN = 'unknown';
+    public const COMMAND_CHECK_DOMAIN = 'check_domain';
     private $result = [];
     private $host = self::LIVE_HOST;
     private $port = self::PORT;
+    private $timeout = self::TIMEOUT;
+    private $length = self::LENGTH;
 
     public function available(string $query): ?bool
     {
@@ -76,44 +89,22 @@ class FastLookup
      */
     public function checkDomain(string $query): FastLookup
     {
-        $command = "check_domain $query" . PHP_EOL;
-        $response = $this->query($command, $this->getHost(), $this->getPort());
+        $command = self::COMMAND_CHECK_DOMAIN . ' ' . $query . PHP_EOL;
+        $response = $this->query($command);
         $result = $this->formatResponse($response);
         return $this->setResult($result);
     }
 
-    public static function query(string $payload, string $host = self::LIVE_HOST, int $port = self::PORT, int $timeout = 1, int $length = 2048): string
+    private function query(string $payload): string
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        $options = ['sec' => $timeout, 'usec' => 0];
+        $options = ['sec' => $this->timeout, 'usec' => 0];
         socket_set_option($socket, SOL_SOCKET, SO_RCVTIMEO, $options);
-        socket_connect($socket, $host, $port);
+        socket_connect($socket, $this->host, $this->port);
         socket_send($socket, $payload, strlen($payload), 0);
-        $out = socket_read($socket, $length);
+        $out = socket_read($socket, $this->length);
         socket_close($socket);
         return $out;
-    }
-
-    public function getHost(): string
-    {
-        return $this->host;
-    }
-
-    public function setHost(string $host): FastLookup
-    {
-        $this->host = $host;
-        return $this;
-    }
-
-    public function getPort(): int
-    {
-        return $this->port;
-    }
-
-    public function setPort(int $port): FastLookup
-    {
-        $this->port = $port;
-        return $this;
     }
 
     /**
@@ -142,5 +133,28 @@ class FastLookup
             'code' => $responseCode,
             'status' => $status,
         ];
+    }
+
+    public function setHost(bool $test): FastLookup
+    {
+        $this->host = $test ? self::TEST_HOST : self::LIVE_HOST;
+        return $this;
+    }
+
+    public function setTimeout(int $timeout): void
+    {
+        $this->timeout = $timeout;
+    }
+
+    public function setPort(int $port): FastLookup
+    {
+        $this->port = $port;
+        return $this;
+    }
+
+    public function setLength(int $length): FastLookup
+    {
+        $this->length = $length;
+        return $this;
     }
 }
