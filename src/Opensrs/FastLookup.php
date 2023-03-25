@@ -35,9 +35,12 @@ class FastLookup
      * @const string[] Success response codes and their status.
      */
     public const SUCCESS_RESPONSE_CODES = [
-        210 => 'available',
-        211 => 'taken',
+        210 => self::STATUS_AVAILABLE,
+        211 => self::STATUS_TAKEN,
     ];
+
+    public const STATUS_AVAILABLE = 'available';
+    public const STATUS_TAKEN = 'taken';
 
     /**
      * * @const string[] Failure response codes and their status.
