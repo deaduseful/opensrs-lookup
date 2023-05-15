@@ -5,11 +5,17 @@ namespace Deaduseful\Opensrs;
 class DomainPricing
 {
     /** @var string URL to fetch data from. */
-    const SOURCE = 'https://opensrs.com/wp-admin/admin-ajax.php';
-    const SOURCE_DATA = 'action=angus_get_dataset&data=eyJvcHRpb25LZXkiOiJhbmd1c19zeW5jXzBhNmNiNzJkLTE3ZjMtNDFhZC05Y2E5LWQ1MjM1NzliM2U4MSIsInRsZHMiOmZhbHNlfQ';
+    private const SOURCE = 'https://opensrs.com/wp-admin/admin-ajax.php';
+
+    private const SOURCE_QUERY = ['action' => 'tt_get_dataset', 'data' => 'eyJvcHRpb25LZXkiOiJhbmd1c19zeW5jXzBhNmNiNzJkLTE3ZjMtNDFhZC05Y2E5LWQ1MjM1NzliM2U4MSIsInRsZHMiOmZhbHNlfQ=='];
+
+    private const HEADERS = [
+        'Content-Type: application/x-www-form-urlencoded',
+        'User-Agent: php/' . PHP_VERSION,
+    ];
 
     /** @var array Source as data array. */
-    private $data;
+    private array $data;
 
     public function __construct()
     {
@@ -17,12 +23,11 @@ class DomainPricing
         $this->setData($data);
     }
 
-    public static function fetch(): array
+    public static function fetch(): ?array
     {
-        $headers = [];
-        $headers[] = 'Content-Type: application/x-www-form-urlencoded';
-        $headers = implode(PHP_EOL, $headers);
-        $json = Request::filePostContents(self::SOURCE, self::SOURCE_DATA, $headers);
+        $headers = implode(PHP_EOL, self::HEADERS);
+        $content = http_build_query(self::SOURCE_QUERY);
+        $json = Request::filePostContents(self::SOURCE, $content, $headers);
         $data = json_decode($json, true);
         return $data['data'][0];
     }
