@@ -4,7 +4,6 @@ namespace Deaduseful\Opensrs;
 
 class Lookup extends Service
 {
-
     public const ACTION_CHECK_TRANSFER = 'check_transfer';
     public const ACTION_LOOKUP = 'lookup';
     public const ACTION_NAME_SUGGEST = 'name_suggest';
@@ -35,10 +34,6 @@ class Lookup extends Service
         'xpack_waiting_history', // Returns the state of completed/cancelled requests not yet deleted from the database for .DK domains. All completed/cancelled requests are deleted from the database two weeks after they move to final state.
     ];
 
-    /**
-     * @param string $query
-     * @return bool|null
-     */
     public function checkTransfer(string $query): ?bool
     {
         $attributes = ['domain' => $query];
@@ -59,9 +54,6 @@ class Lookup extends Service
 
     /**
      * Perform lookup.
-     * @param string $query
-     * @param string $action
-     * @return array
      */
     public function lookup(string $query, string $action = self::ACTION_LOOKUP): array
     {
@@ -69,10 +61,6 @@ class Lookup extends Service
         return $this->perform($action, $attributes);
     }
 
-    /**
-     * @param string $query
-     * @return bool|null
-     */
     public function available(string $query): ?bool
     {
         $attributes = ['domain' => $query];
@@ -90,10 +78,6 @@ class Lookup extends Service
 
     /**
      * Suggest.
-     * @param string $searchString
-     * @param array $tlds
-     * @param array $services
-     * @return array
      */
     public function suggest(string $searchString, array $tlds, array $services = self::SERVICES_SUGGEST): array
     {
@@ -107,9 +91,6 @@ class Lookup extends Service
 
     /**
      * Perform query on a domain.
-     * @param string $action
-     * @param string $query
-     * @return array
      */
     public function query(string $action, string $query): array
     {
@@ -121,9 +102,6 @@ class Lookup extends Service
 
     /**
      * Get domains.
-     * @param string $domain
-     * @param string $type
-     * @return array
      * @see https://domains.opensrs.guide/docs/get_domains_by_expiredate
      */
     public function getDomain(string $domain, string $type = self::TYPE_ALL): array
@@ -159,13 +137,9 @@ class Lookup extends Service
         return $this->perform($action, $attributes);
     }
 
-    /**
-     * @param string $type
-     * @return void
-     */
-    private function checkTypes(string $type): void
+    protected function checkTypes(string $type): void
     {
-        if (in_array($type, self::TYPES)) {
+        if (in_array($type, self::TYPES) === false) {
             $message = sprintf('Type expected %s, got %s', implode(', ', self::TYPES), $type);
             throw new \InvalidArgumentException($message);
         }

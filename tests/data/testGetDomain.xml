@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE OPS_envelope SYSTEM "ops.dtd">
+<OPS_envelope>
+ <header>
+  <version>0.9</version>
+  </header>
+ <body>
+  <data_block>
+   <dt_assoc>
+    <item key="is_success">1</item>
+    <item key="object">DOMAIN</item>
+    <item key="protocol">XCP</item>
+    <item key="response_text">Query Successful</item>
+    <item key="attributes">
+     <dt_assoc>
+      <item key="let_expire">0</item>
+      <item key="nameserver_list">
+       <dt_array>
+        <item key="0">
+         <dt_assoc>
+          <item key="ipaddress">87.117.209.199</item>
+          <item key="sortorder">1</item>
+          <item key="name">ns1.phurix.com</item>
+         </dt_assoc>
+        </item>
+        <item key="1">
+         <dt_assoc>
+          <item key="name">ns2.phurix.com</item>
+          <item key="sortorder">2</item>
+          <item key="ipaddress">78.129.236.55</item>
+         </dt_assoc>
+        </item>
+       </dt_array>
+      </item>
+      <item key="tld_data"></item>
+      <item key="contact_set">
+       <dt_assoc>
+        <item key="owner">
+         <dt_assoc>
+          <item key="org_name">Phurix</item>
+          <item key="postal_code">BL8 2NZ</item>
+          <item key="country">GB</item>
+          <item key="state"></item>
+          <item key="fax"></item>
+          <item key="address2">261 Bolton Rd</item>
+          <item key="last_name">Partners</item>
+          <item key="email">domains@phurix.co.uk</item>
+          <item key="address3"></item>
+          <item key="address1">1246 Davenport House</item>
+          <item key="city">Bury</item>
+          <item key="phone">+44.8712181337</item>
+          <item key="status">active</item>
+          <item key="first_name">The</item>
+         </dt_assoc>
+        </item>
+        <item key="tech">
+         <dt_assoc>
+          <item key="first_name">The</item>
+          <item key="status">active</item>
+          <item key="city">Bury</item>
+          <item key="phone">+44.8712181337</item>
+          <item key="address1">1246 Davenport House</item>
+          <item key="address3"></item>
+          <item key="email">domains@phurix.co.uk</item>
+          <item key="last_name">Partners</item>
+          <item key="address2">261 Bolton Rd</item>
+          <item key="state"></item>
+          <item key="fax"></item>
+          <item key="country">GB</item>
+          <item key="org_name">Phurix</item>
+          <item key="postal_code">BL8 2NZ</item>
+         </dt_assoc>
+        </item>
+        <item key="billing">
+         <dt_assoc>
+          <item key="state"></item>
+          <item key="fax"></item>
+          <item key="postal_code">BL8 2NZ</item>
+          <item key="org_name">Phurix</item>
+          <item key="country">GB</item>
+          <item key="email">domains@phurix.co.uk</item>
+          <item key="address2">261 Bolton Rd</item>
+          <item key="last_name">Partners</item>
+          <item key="city">Bury</item>
+          <item key="phone">+44.8712181337</item>
+          <item key="address1">1246 Davenport House</item>
+          <item key="address3"></item>
+          <item key="first_name">The</item>
+          <item key="status">active</item>
+         </dt_assoc>
+        </item>
+        <item key="admin">
+         <dt_assoc>
+          <item key="country">GB</item>
+          <item key="postal_code">BL8 2NZ</item>
+          <item key="org_name">Phurix</item>
+          <item key="state"></item>
+          <item key="fax"></item>
+          <item key="last_name">Partners</item>
+          <item key="address2">261 Bolton Rd</item>
+          <item key="email">domains@phurix.co.uk</item>
+          <item key="address1">1246 Davenport House</item>
+          <item key="address3"></item>
+          <item key="city">Bury</item>
+          <item key="phone">+44.8712181337</item>
+          <item key="status">active</item>
+          <item key="first_name">The</item>
+         </dt_assoc>
+        </item>
+       </dt_assoc>
+      </item>
+      <item key="registry_updatedate">2025-02-16 17:20:08</item>
+      <item key="sponsoring_rsp">1</item>
+      <item key="registry_createdate">2004-02-13 14:56:10</item>
+      <item key="gdpr_consent_status">NONE</item>
+      <item key="registry_expiredate">2028-02-13 14:56:10</item>
+      <item key="auto_renew">1</item>
+      <item key="affiliate_id"></item>
+      <item key="expiredate">2028-02-13 14:56:10</item>
+     </dt_assoc>
+    </item>
+    <item key="response_code">200</item>
+    <item key="action">REPLY</item>
+   </dt_assoc>
+  </data_block>
+ </body>
+</OPS_envelope>

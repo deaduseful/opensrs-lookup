@@ -1,0 +1,11 @@
+{
+  "response": "Command successful",
+  "code": 200,
+  "status": "success",
+  "attributes": {
+    "parkp_status": "",
+    "can_modify": "1",
+    "lock_state": "1",
+    "domain_supports": "1"
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE OPS_envelope SYSTEM "ops.dtd">
+<OPS_envelope>
+ <header>
+  <version>0.9</version>
+  </header>
+ <body>
+  <data_block>
+   <dt_assoc>
+    <item key="action">REPLY</item>
+    <item key="response_code">200</item>
+    <item key="is_success">1</item>
+    <item key="object">DOMAIN</item>
+    <item key="protocol">XCP</item>
+    <item key="response_text">Command successful</item>
+    <item key="attributes">
+     <dt_assoc>
+      <item key="page">1</item>
+      <item key="exp_domains">
+       <dt_array>
+        <item key="0">
+         <dt_assoc>
+          <item key="expiredate">2028-02-13 14:56:10</item>
+          <item key="f_auto_renew">Y</item>
+          <item key="f_let_expire">N</item>
+          <item key="name">phurix.com</item>
+         </dt_assoc>
+        </item>
+       </dt_array>
+      </item>
+      <item key="total">1</item>
+      <item key="remainder">0</item>
+     </dt_assoc>
+    </item>
+   </dt_assoc>
+  </data_block>
+ </body>
+</OPS_envelope>

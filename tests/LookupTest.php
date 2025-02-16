@@ -3,7 +3,7 @@
 include __DIR__ . '/../bootstrap.php';
 
 use Deaduseful\Opensrs\Lookup;
-use Deaduseful\Opensrs\Response;
+use Deaduseful\Opensrs\ResponseParser;
 use PHPUnit\Framework\TestCase;
 
 class LookupTest extends TestCase
@@ -46,12 +46,11 @@ class LookupTest extends TestCase
 
     public function testGetDomain()
     {
-        $query = 'example.com';
+        $query = 'phurix.com';
         $lookup = new Lookup();
         $result = $lookup->getDomain($query);
-        $this->assertIsString($result['response']);
-        $this->assertIsInt($result['code']);
-        $this->assertIsString($result['status']);
+        $expected = json_decode(file_get_contents(__DIR__ . '/data/testGetDomain.json'), true);
+        $this->assertEquals($expected, $result);
     }
 
     public function testGetDomainsByExpireDate()
@@ -65,11 +64,10 @@ class LookupTest extends TestCase
 
     public function testGetDomainStatus()
     {
-        $query = 'example.com';
+        $query = 'phurix.com';
         $lookup = new Lookup();
         $result = $lookup->getDomain($query, 'status');
-        $this->assertIsString($result['response']);
-        $this->assertIsInt($result['code']);
-        $this->assertIsString($result['status']);
+        $expected = json_decode(file_get_contents(__DIR__ . '/data/testGetDomainStatus.json'), true);
+        $this->assertEquals($expected, $result);
     }
 }

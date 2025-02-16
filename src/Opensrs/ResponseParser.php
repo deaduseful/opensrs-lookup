@@ -6,7 +6,7 @@ use DomainException;
 use SimpleXMLElement;
 use UnexpectedValueException;
 
-class Response
+class ResponseParser
 {
     /**
      * @see https://domains.opensrs.guide/docs/codes
@@ -34,13 +34,13 @@ class Response
      */
     const OPS_ENVELOPE = '</OPS_envelope>';
 
-    /** @var int Success */
+    /** @const int Success */
     const CODE_SUCCESS = 200;
 
-    /** @var int Unknown */
+    /** @const int Unknown */
     const CODE_UNKNOWN = 999;
 
-    /** @var string
+    /** @const string
      * "Data conversion error. Check the command 'modify' syntax"
      * "Domain Already Renewed"
      */
@@ -67,15 +67,16 @@ class Response
     const STATUS_MISSING_HEADER = 'missing_header';
     const STATUS_SUCCESS = 'success';
     const STATUS_UNAUTHORIZED = 'unauthorized';
+    const MAXIMUM_SUCCESS_CODE = 299;
+
+    private ?Result $result = null;
 
     /**
-     * @param string $content
-     * @return array
      * @throws UnexpectedValueException
      */
-    public static function formatResult(string $content): array
+    public function parseResult(string $content): self
     {
-        $xml = self::parseXml($content);
+        $xml = $this->parseXml($content);
         $dataBlock = [];
         foreach ($xml->body->data_block->dt_assoc->item as $item) {
             $key = (string)$item->attributes()['key'];
@@ -95,22 +96,19 @@ class Response
         if (array_key_exists('attributes', $dataBlock)) {
             foreach ($dataBlock['attributes']->dt_assoc->item as $item) {
                 $key = (string)$item->attributes()['key'];
-                $value = self::parseItem($item);
+                $value = $this->parseItem($item);
                 $attributes[$key] = $value;
             }
         }
         $response = isset($dataBlock['response_text']) ? (string)$dataBlock['response_text'] : '';
-        return [
-            'response' => $response,
-            'code' => $responseCode,
-            'status' => $status,
-            'attributes' => $attributes
-        ];
+        if ($responseCode > self::MAXIMUM_SUCCESS_CODE) {
+            throw new DomainException($response, $responseCode);
+        }
+        $this->result = new Result($response, $responseCode, $status, $attributes);
+        return $this;
     }
 
     /**
-     * @param string $content
-     * @return SimpleXMLElement
      * @throws UnexpectedValueException
      */
     public static function parseXml(string $content): SimpleXMLElement
@@ -122,11 +120,7 @@ class Response
         return $xml;
     }
 
-    /**
-     * @param SimpleXMLElement $item
-     * @return array|string
-     */
-    private static function parseItem(SimpleXMLElement $item)
+    private function parseItem(SimpleXMLElement $item)
     {
         if (isset($item->dt_assoc) || isset($item->dt_array)) {
             $value = [];
@@ -134,7 +128,7 @@ class Response
             if (empty($array) === false) {
                 foreach ($array as $subItem) {
                     $key = (string)$subItem->attributes()['key'];
-                    $value[$key] = self::parseItem($subItem);
+                    $value[$key] = $this->parseItem($subItem);
                 }
             }
         } else {
@@ -143,22 +137,15 @@ class Response
         return $value;
     }
 
-    /**
-     * @param string $content
-     */
-    public static function checkContent(string $content): void
+    public function checkContent(string $content): self
     {
         if (empty($content)) {
             throw new DomainException('Empty response');
         }
+        return $this;
     }
 
-    /**
-     * @param string $contents
-     * @param array $responseHeaders
-     * @return string
-     */
-    public static function parseContents(string $contents, array $responseHeaders): string
+    public function parseContents(string $contents, array $responseHeaders): string
     {
         if (empty($contents)) {
             if (empty($responseHeaders) === false) {
@@ -169,5 +156,10 @@ class Response
             }
         }
         return $contents;
+    }
+
+    public function getResult(): ?Result
+    {
+        return $this->result;
     }
 }

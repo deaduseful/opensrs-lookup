@@ -8,8 +8,6 @@ class Provision extends Service
 
     /**
      * Register.
-     * @param array $attributes
-     * @return array
      */
     public function register(array $attributes = []): array
     {

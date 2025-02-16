@@ -4,12 +4,10 @@ namespace Deaduseful\Opensrs;
 
 class Renew extends Service
 {
-    const ACTION= 'renew';
+    public const ACTION = 'renew';
 
     /**
-     * Register.
-     * @param array $attributes
-     * @return array
+     * Renew.
      */
     public function renew(array $attributes = []): array
     {

@@ -39,147 +39,111 @@ class Service
      */
     const TEST = false;
 
-    /**
-     * @var int
-     */
-    private $timeout = Request::SOCKET_TIMEOUT;
-    /**
-     * @var string
-     */
-    private $host = self::LIVE_HOST;
-    /**
-     * @var string
-     */
-    private $username = self::USERNAME;
-    /**
-     * @var string
-     */
-    private $key = self::KEY;
+    protected int $timeout = RequestClient::SOCKET_TIMEOUT;
+    protected string $host = self::LIVE_HOST;
+    protected string $username = self::USERNAME;
+    protected string $key = self::KEY;
+    protected RequestClient $requestClient;
+    protected RequestBuilder $requestBuilder;
+    protected ResponseParser $responseParser;
+    private ?Result $result;
 
     /**
      * Service constructor.
-     * @param string $username
-     * @param string $key
-     * @param bool $test
      */
-    public function __construct(string $username = self::USERNAME, string $key = self::KEY, bool $test = self::TEST)
-    {
+    public function __construct(
+        string $username = self::USERNAME,
+        string $key = self::KEY,
+        bool $test = self::TEST,
+        RequestBuilder $requestBuilder = null,
+        RequestClient $requestClient = null,
+        ResponseParser $responseParser = null
+    ) {
         $host = $test ? self::TEST_HOST : self::LIVE_HOST;
         $this->setUsername($username)->setKey($key)->setHost($host);
+        $this->requestBuilder = $requestBuilder ?: new RequestBuilder();
+        $this->requestClient = $requestClient ?: new RequestClient();
+        $this->responseParser = $responseParser ?: new ResponseParser();
     }
 
     /**
      * Perform action.
-     * @param string $action
-     * @param array $attributes
-     * @param array $items
-     * @return array
      */
     public function perform(string $action, array $attributes = [], array $items = []): array
     {
-        return $this->getResult($action, $attributes, $items);
+        return $this->parseResult($action, $attributes, $items)->getResult()->toArray();
     }
 
-    /**
-     * @return string
-     */
     public function getUsername(): string
     {
         return $this->username;
     }
 
-    /**
-     * @param string $username
-     * @return self
-     */
     public function setUsername(string $username): self
     {
         $this->username = $username;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getKey(): string
     {
         return $this->key;
     }
 
-    /**
-     * @param string $key
-     * @return self
-     */
     public function setKey(string $key): self
     {
         $this->key = $key;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getHost(): string
     {
         return $this->host;
     }
 
-    /**
-     * @param string $host
-     * @return self
-     */
     public function setHost(string $host): self
     {
         $this->host = $host;
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getTimeout(): int
     {
         return $this->timeout;
     }
 
-    /**
-     * @param int $timeout
-     * @return self
-     */
     public function setTimeout(int $timeout): self
     {
         $this->timeout = $timeout;
         return $this;
     }
 
-    /**
-     * @param string $action
-     * @param array $attributes
-     * @param array $items
-     * @return array
-     */
-    public function getResult(string $action, array $attributes = [], array $items = []): array
+    protected function parseResult(string $action, array $attributes = [], array $items = []): self
     {
-        $request = Request::encode($action, $attributes, $items);
+        $request = $this->requestBuilder->encode($action, $attributes, $items);
         $content = $this->getContents($request);
-        Response::checkContent($content);
-        return Response::formatResult($content);
+        $this->result = $this->responseParser
+            ->checkContent($content)
+            ->parseResult($content)
+            ->getResult();
+        return $this;
     }
 
-    /**
-     * @param string $request
-     * @return string
-     */
-    public function getContents(string $request): string
+    protected function getContents(string $request): string
     {
         $username = $this->getUsername();
         $key = $this->getKey();
         $host = $this->getHost();
         $timeout = $this->getTimeout();
-        $headers = Request::buildHeaders($request, $username, $key);
-        $contents = Request::filePostContents($host, $request, $headers, $timeout);
-        $responseHeaders = Request::getResponseHeaders();
-        return Response::parseContents($contents, $responseHeaders);
+        $headers = $this->requestBuilder->buildHeaders($request, $username, $key);
+        $this->requestClient->call($request, $headers, $host, $timeout);
+        $contents = $this->requestClient->getContents();
+        $responseHeaders = $this->requestClient->getHeaders();
+        return $this->responseParser->parseContents($contents, $responseHeaders);
     }
 
+    public function getResult(): ?Result
+    {
+        return $this->result;
+    }
 }

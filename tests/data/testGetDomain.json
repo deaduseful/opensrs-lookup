@@ -1,0 +1,80 @@
+{
+    "response": "Query Successful",
+    "code": 200,
+    "status": "success",
+    "attributes": {
+        "let_expire": "0",
+        "tld_data": "",
+        "contact_set": {
+            "owner": {
+                "status": "active",
+                "email": "domains@phurix.co.uk",
+                "state": "",
+                "country": "GB",
+                "first_name": "The",
+                "city": "Bury",
+                "phone": "+44.8712181337",
+                "fax": "",
+                "address1": "1246 Davenport House",
+                "address3": "",
+                "postal_code": "BL8 2NZ",
+                "org_name": "Phurix",
+                "address2": "261 Bolton Rd",
+                "last_name": "Partners"
+            },
+            "billing": {
+                "status": "active",
+                "state": "",
+                "email": "domains@phurix.co.uk",
+                "country": "GB",
+                "first_name": "The",
+                "phone": "+44.8712181337",
+                "city": "Bury",
+                "fax": "",
+                "address3": "",
+                "address1": "1246 Davenport House",
+                "postal_code": "BL8 2NZ",
+                "org_name": "Phurix",
+                "address2": "261 Bolton Rd",
+                "last_name": "Partners"
+            },
+            "tech": [],
+            "admin": {
+                "address2": "261 Bolton Rd",
+                "last_name": "Partners",
+                "org_name": "Phurix",
+                "postal_code": "BL8 2NZ",
+                "address3": "",
+                "address1": "1246 Davenport House",
+                "fax": "",
+                "phone": "+44.8712181337",
+                "city": "Bury",
+                "first_name": "The",
+                "country": "GB",
+                "state": "",
+                "email": "domains@phurix.co.uk",
+                "status": "active"
+            }
+        },
+        "registry_expiredate": "2028-02-13 14:56:10",
+        "gdpr_consent_status": "NONE",
+        "nameserver_list": [
+            {
+                "sortorder": "1",
+                "name": "ns1.phurix.com",
+                "ipaddress": "87.117.209.199"
+            },
+            {
+                "sortorder": "2",
+                "name": "ns2.phurix.com",
+                "ipaddress": "78.129.236.55"
+            }
+        ],
+        "affiliate_id": "",
+        "registry_createdate": "2004-02-13 14:56:10",
+        "registry_updatedate": "2025-02-16 17:20:08",
+        "sponsoring_rsp": "1",
+        "expiredate": "2028-02-13 14:56:10",
+        "auto_renew": "1"
+    }
+}

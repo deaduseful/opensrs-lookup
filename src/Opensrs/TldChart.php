@@ -11,26 +11,20 @@ class TldChart
     const SOURCE = 'https://docs.google.com/spreadsheets/d/13t4l-kO3qAio4RCF3j1lF0X2AxaIr_G5kFIqIF3LAZU/export?format=csv';
 
     /** @var array Source as data array. */
-    private $data;
+    protected array $data;
 
     /**
      * TldChart constructor.
-     *
-     * @param string|null $source the file or url of the source
      */
-    public function __construct(string $source = null)
+    public function __construct(?string $source = null)
     {
         $data = $this->fetch($source);
         $this->setData($data);
     }
 
-    /**
-     * @param string|null $source the file or url of the source
-     * @return array
-     */
-    public static function fetch(string $source = null): array
+    public static function fetch(?string $source = null): array
     {
-        $source = $source ? $source : self::SOURCE;
+        $source = $source ?: self::SOURCE;
         $array = [];
         $fh = fopen($source, 'r');
         while (($data = fgetcsv($fh)) !== false) {
@@ -42,8 +36,6 @@ class TldChart
 
     /**
      * Get the Tlds only from the data.
-     *
-     * @return array
      */
     public function getTlds(): array
     {
@@ -57,32 +49,22 @@ class TldChart
         return $tlds;
     }
 
-    /**
-     * @param string $tld
-     * @return array
-     */
     public function getDataByTld(string $tld): array
     {
         $data = $this->getData();
         foreach ($data as $item) {
             if ($item[0] === $tld) {
-                return $tld;
+                return $item;
             }
         }
         return [];
     }
 
-    /**
-     * @return array
-     */
     public function getData(): array
     {
         return $this->data;
     }
 
-    /**
-     * @param array $data
-     */
     public function setData(array $data): void
     {
         $this->data = $data;

@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class TldsChartTest extends TestCase
 {
-    private const TLD_FILE = __DIR__ . '/tlds.csv';
+    private const TLD_FILE = __DIR__ . '/data/tlds.csv';
 
     /**
      */
