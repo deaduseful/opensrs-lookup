@@ -8,7 +8,7 @@ class TldChart
      * @var string URL to fetch data from.
      * @see http://opensrs.help/chart
      */
-    const SOURCE = 'https://docs.google.com/spreadsheets/d/13t4l-kO3qAio4RCF3j1lF0X2AxaIr_G5kFIqIF3LAZU/export?format=csv';
+    const SOURCE = 'https://docs.google.com/spreadsheets/d/13t4l-kO3qAio4RCF3j1lF0X2AxaIr_G5kFIqIF3LAZU/export?gid=1203932299&format=csv';
 
     /** @var array Source as data array. */
     protected array $data;
