@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class DomainPricingTest extends TestCase
 {
-
     public function testToArray()
     {
         $domainPricing = new DomainPricing();
@@ -19,8 +18,8 @@ class DomainPricingTest extends TestCase
     {
         $key = '.com';
         $domainPricing = new DomainPricing();
-        $result = $domainPricing->getDataByTld($key);
+        $result = $domainPricing->getByTld($key);
         $expected = json_decode(file_get_contents(__DIR__ . '/data/testGetDataByTld.json'), true);
-        $this->assertEquals($expected, $result);
+        $this->assertEquals($expected, (array)$result);
     }
 }

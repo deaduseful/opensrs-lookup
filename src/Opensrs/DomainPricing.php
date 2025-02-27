@@ -7,7 +7,10 @@ class DomainPricing
     /** @var string URL to fetch data from. */
     protected const SOURCE = 'https://opensrs.com/wp-admin/admin-ajax.php';
 
-    protected const SOURCE_QUERY = ['action' => 'tt_get_dataset', 'data' => 'eyJvcHRpb25LZXkiOiJhbmd1c19zeW5jXzBhNmNiNzJkLTE3ZjMtNDFhZC05Y2E5LWQ1MjM1NzliM2U4MSIsInRsZHMiOmZhbHNlfQ=='];
+    protected const SOURCE_QUERY = [
+        'action' => 'tt_get_dataset',
+        'data' => 'eyJvcHRpb25LZXkiOiJhbmd1c19zeW5jXzBhNmNiNzJkLTE3ZjMtNDFhZC05Y2E5LWQ1MjM1NzliM2U4MSIsInRsZHMiOmZhbHNlfQ=='
+    ];
 
     protected const HEADERS = [
         'Content-Type: application/x-www-form-urlencoded',
@@ -22,26 +25,20 @@ class DomainPricing
     {
         $this->request = $request ?? new RequestClient();
         $data = $this->fetch();
-        $this->setData($data);
+        $this->data = $this->getParsedData($data);
     }
 
-    protected function fetch(): ?array
+    protected function fetch(): array
     {
         $headers = implode(PHP_EOL, self::HEADERS);
         $content = http_build_query(self::SOURCE_QUERY);
         $json = $this->request->filePostContents(self::SOURCE, $content, $headers);
-        $data = json_decode($json, true);
-        return $data['data'][0];
+        return json_decode($json, true);
     }
 
     public function getData(): array
     {
         return $this->data;
-    }
-
-    public function setData(array $data): void
-    {
-        $this->data = $data;
     }
 
     /**
@@ -59,21 +56,26 @@ class DomainPricing
         return $tlds;
     }
 
-    public function getDataByTld(string $tld): array
+    public function getByTld(string $tld): ?DomainPrice
     {
-        $data = $this->toArray();
-        return $data[$tld] ?? [];
+        $data = $this->data;
+        return $data[$tld] ?? null;
     }
 
     public function toArray(): array
     {
-        $data = $this->getData();
+        return $this->getData();
+    }
+
+    protected function getParsedData(array $data): array
+    {
+        $parsedData = $data['data'][0];
         $list = [];
-        foreach ($data as $item) {
-            $key = $item['tld'];
-            $list[$key] = $item;
+        foreach ($parsedData as $item) {
+            $domainPrice = new DomainPrice($item);
+            $key = $domainPrice->getTld();
+            $list[$key] = $domainPrice;
         }
         return $list;
     }
 }
-
