@@ -1,0 +1,298 @@
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:left">Code</th>
+        <th style="text-align:left">Response text/Explanation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:left">200</td>
+        <td style="text-align:left">Command Successful.<br>
+            Authentication Successful.<br>
+            Closing Connection.<br>
+            Registration Successful.<br>
+            Modification Successful.<br>
+            Nameserver Update Successful.<br>
+            Nameserver Added.<br>
+            Nameserver Created.<br>
+            Nameserver deleted.<br>
+            No nameserver changes necessary.<br>
+            Query Successful.<br>
+            Registration successful.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">210</td>
+        <td style="text-align:left">Domain available.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">211</td>
+        <td style="text-align:left">Domain taken.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">221</td>
+        <td style="text-align:left">Domain taken (a waiting registration exists in OpenSRS).<br>
+            Note: This is used for asynchronous registries only.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">250</td>
+        <td style="text-align:left">Action submitted successfully for processing to asynchronous registry.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">300</td>
+        <td style="text-align:left">Exceeded max command rate. Request deferred (for async).<br><br>
+            or<br><br>
+            Registration is pending contact agreeing to share information per GDPR.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">310</td>
+        <td style="text-align:left">Exceeded max simultaneous connections.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">350</td>
+        <td style="text-align:left">Number of command per connection exceeded limit. Client must re-authenticate with
+            server.<br>
+            A maximum of 100 commands can be sent through one connection/session. After 100 commands have been
+            submitted, the connection is closed and a new connection must be opened to submit outstanding requests.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">400</td>
+        <td style="text-align:left">Internal server error.<br>
+            Invalid Command: xxx.<br>
+            Access denied: invalid IP address.<br>
+            Invalid encryption method; try -des: ...<br>
+            Unable to change nameserver hostname to $new_fqdn.<br>
+            Unable to complete registration. Please retry.<br>
+            Domain already renewed; another renewal cannot be applied until the first request completes at the registry.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">404</td>
+        <td style="text-align:left">Internal Server Error.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">405</td>
+        <td style="text-align:left">405 Registry error: domain's nameserver not updated.<br>
+            Registry error, unable to add nameserver to domain.<br>
+            Registry error, unable to remove nameserver.<br>
+            Registry error, nameserver creation failed.<br>
+            Nameserver deletion failed at registry.<br>
+            Unable to modify nameserver record.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">410</td>
+        <td style="text-align:left">Reseller authentication error.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">415</td>
+        <td style="text-align:left">Registrant (end-user) authentication error.<br><br>
+            Invalid Password supplied.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">420</td>
+        <td style="text-align:left">Failed to create new registrant contact: Parameter value range error\r\nInvalid
+            telephone number format.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">430</td>
+        <td style="text-align:left">Invalid command.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">435</td>
+        <td style="text-align:left">Permission denied, subuser permissions.<br>
+            Permission Denied for Modify $type, f_owner=xxx #modify_contact_info.<br>
+            Cannot remove domain owner.<br>
+            Permission Denied: not owner.<br>
+            Request failed validation: Name server 'nameserver.tld' is not found at the registry. Please double check
+            the nameserver and re-submit.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">436</td>
+        <td style="text-align:left">This error occurs when the RM does not know what to do with the response code
+            returned by the RA after it talked with the registry. This error usually means that the RM needs to be fixed
+            to understand the new response.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">437</td>
+        <td style="text-align:left">Cannot process command because there is already another request waiting on this
+            domain. (Used for asynchronous registries.)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">440</td>
+        <td style="text-align:left">Registration Failed: over quota.<br><br>
+            Please check for sufficient funds in the reseller account. Premium domains might have a high cost that
+            exceeds the available balance in the reseller account.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">445</td>
+        <td style="text-align:left">Nameserver quota exceeded.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">447</td>
+        <td style="text-align:left">Sub-user limit exceeded.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">460</td>
+        <td style="text-align:left">No Domain Supplied.<br>
+            Modify type not specified.<br>
+            Required field 'username' not provided.<br>
+            Required field 'password' not provided.<br>
+            Missing required field.<br>
+            Missing required field: fqdn.<br>
+            Missing required field: ip.<br>
+            Info type not specified.<br>
+            Required field 'reg_username' not provided.<br>
+            Required field 'reg_password' not provided.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">465</td>
+        <td style="text-align:left">Registration Failed: Invalid data, error=<br>
+            Registration Failed, error=<br>
+            Unknown Modify type: xxx<br>
+            Invalid data, error=#modify_contact_info.<br>
+            Subuser cannot be the same as the owner.<br>
+            Invalid syntax for subuser name.<br>
+            Password exceeded maximum length: 20 characters.<br>
+            Invalid domain name syntax.<br>
+            Invalid syntax for registrant username.<br>
+            Password length below minimum: 3 characters.<br>
+            Invalid nameserver syntax (common_rule for nameserver).<br>
+            Invalid syntax for nameserver (2nd level domain).<br>
+            Invalid new nameserver hostname.<br>
+            Invalid domain name syntax.<br>
+            Duplicate nameserver detected for xxx.<br>
+            Duplicate sortorder detected for xxx.<br>
+            Invalid IP address: $ip.<br>
+            Unknown Info type: $type.<br>
+            Invalid syntax for username.<br>
+            Invalid registration type: $reg_type.<br>
+            Domain does not belong to Registrar.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">480</td>
+        <td style="text-align:left">Domain xxx not owned by user.<br>
+            Renewals not supported for this TLD. Response text =<br>
+            'capability is not enabled for domain.ca'.<br>
+            Subuser not found.<br>
+            Subuser xxx not found.<br>
+            Sub-User not found.<br>
+            User profile for xxx/xxx not found.<br>
+            Profile based on xxx not found.<br>
+            Command failed: unable to verify existence of nameserver xxx.<br>
+            Nameserver doesn't exist.<br>
+            Unable to locate nameserver in local database.<br>
+            Unable to find domain in registry.<br>
+            Nameserver $fqdn not currently mapped to domain.<br>
+            Nameserver not found.<br>
+            Non-existent nameserver #(in registry).
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">470</td>
+        <td style="text-align:left">Invalid format of owner contact.<br>
+            Contact type is not supported by TLD.<br>
+            Contact can not be updated together with other contact types.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">485</td>
+        <td style="text-align:left">Domain taken.<br>
+            Nameserver already mapped to domain.<br>
+            Nameserver $fqdn already exists (as result of request in DB or RRP).<br>
+            Nameserver in use.<br>
+            New nameserver hostname already in registry.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">486</td>
+        <td style="text-align:left">Entity already exists in a processing state (usually a domain registration) Trying
+            again in a few seconds to a minute should resolve the issue (i.e. show it truly taken or available).
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">487</td>
+        <td style="text-align:left">Domain not transferable.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">541</td>
+        <td style="text-align:left">Domain's current expiration year in registry doesn't match the year provided by
+            user.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">552</td>
+        <td style="text-align:left">Domain is less than 60 days old.<br>
+            This can occur if:<br>
+            Domain is not yet 60 days old.<br>
+            Existing registrar has the name locked for either Nonpayment or at the end users request - requesting Party
+            needs to contact existing registrar to resolve.<br>
+            Domain name is in dispute.<br>
+            The name has been deleted.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">555</td>
+        <td style="text-align:left">Domain has already been successfully renewed, with the current expiration year
+            matching the year provided by the user.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">557</td>
+        <td style="text-align:left">Nameserver locked.<br>
+            An attempt has been made to modify or delete a name server that is hosting a TLD in the root zone.
+            Modifications to the root zone can only be made with the approval of the U.S. Department of Commerce and
+            IANA, so if the registrar absolutely needs to modify or delete such a name server; the action needs to be
+            coordinated through the registry operator using an out-of-band communications channel. (Extracted from the
+            RRP spec).
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">599</td>
+        <td style="text-align:left">Failed to create contact for this TLD. Parameter value range error\r\nInvalid
+            telephone number format.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">702</td>
+        <td style="text-align:left">700 series indicates communication error with registry/vendor. 702 is a catch-all
+            for errors related to communication issues.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">703</td>
+        <td style="text-align:left">Could not send command.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">704</td>
+        <td style="text-align:left">Read empty message on the socket.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">705</td>
+        <td style="text-align:left">Timed out, resubmit request.<br>
+            Client timed out waiting for the RA to respond.
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">unnumbered</td>
+        <td style="text-align:left">Domain: sampledomainname Registration attempt failed: Timeout reading client
+            request. Client must re-authenticate with server.<br>
+            A connection with the OpenSRS server remains open for no more than 60 seconds. If the authentication and
+            sending of a registration request do not complete within 60 seconds, the connection is closed and a new
+            connection must be opened.
+        </td>
+    </tr>
+    </tbody>
+</table>

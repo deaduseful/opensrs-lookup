@@ -13,7 +13,7 @@ class ResponseParserTest extends TestCase
         $response = new ResponseParser();
         $result = $response->parseResult($content)->getResult()->toArray();
         $actual = json_encode($result);
-        $expected = '{"response":"Domain taken","code":211,"status":"unknown","attributes":{"status":"taken"}}';
+        $expected = '{"response":"Domain taken","code":211,"status":"domain_taken","attributes":{"status":"taken"}}';
         $this->assertEquals($expected, $actual);
     }
 

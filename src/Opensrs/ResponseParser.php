@@ -9,65 +9,9 @@ use UnexpectedValueException;
 class ResponseParser
 {
     /**
-     * @see https://domains.opensrs.guide/docs/codes
-     * @const string[] Response codes and their status.
-     */
-    const RESPONSE_CODES = [
-        self::CODE_UNKNOWN => self::STATUS_UNKNOWN,
-        self::CODE_SUCCESS => self::STATUS_SUCCESS,
-        self::CODE_INVALID_CREDENTIALS => self::STATUS_INVALID_CREDENTIALS,
-        self::CODE_AUTHENTICATION_ERROR => self::STATUS_AUTHENTICATION_ERROR,
-        self::CODE_UNAUTHORIZED => self::STATUS_UNAUTHORIZED,
-        self::CODE_MISSING_HEADER => self::STATUS_MISSING_HEADER,
-        self::CODE_INVALID_DATA => self::STATUS_INVALID_DATA,
-        self::CODE_MISSING_ATTRIBUTE => self::STATUS_MISSING_ATTRIBUTE,
-        self::CODE_INVALID_IP => self::STATUS_INVALID_IP,
-    ];
-
-    /**
-     * @const string Unknown status.
-     */
-    const STATUS_UNKNOWN = 'unknown';
-
-    /**
      * @const string The Closing Ops Envelope string.
      */
-    const OPS_ENVELOPE = '</OPS_envelope>';
-
-    /** @const int Success */
-    const CODE_SUCCESS = 200;
-
-    /** @const int Unknown */
-    const CODE_UNKNOWN = 999;
-
-    /** @const string
-     * "Data conversion error. Check the command 'modify' syntax"
-     * "Domain Already Renewed"
-     */
-    const STATUS_INVALID_DATA = 'invalid_data';
-
-    const CODE_AUTHENTICATION_ERROR = 415;
-    const CODE_INVALID_CREDENTIALS = 400;
-    const CODE_INVALID_DATA = 465;
-    const CODE_INVALID_IP = 555;
-    const CODE_MISSING_ATTRIBUTE = 480;
-    const CODE_MISSING_HEADER = 404;
-    const CODE_UNAUTHORIZED = 401;
-
-    /** @var string "Authentication Error." */
-    const STATUS_AUTHENTICATION_ERROR = 'authentication_error';
-    const STATUS_INVALID_CREDENTIALS = 'invalid_credentials';
-    const STATUS_INVALID_IP = 'invalid_ip';
-    /**
-     * @var string
-     * "Current expiration year must be specified"
-     * @see https://domains.opensrs.guide/docs/renew-domain-
-     */
-    const STATUS_MISSING_ATTRIBUTE = 'missing_attribute';
-    const STATUS_MISSING_HEADER = 'missing_header';
-    const STATUS_SUCCESS = 'success';
-    const STATUS_UNAUTHORIZED = 'unauthorized';
-    const MAXIMUM_SUCCESS_CODE = 299;
+    public const OPS_ENVELOPE = '</OPS_envelope>';
 
     private ?Result $result = null;
 
@@ -83,14 +27,11 @@ class ResponseParser
             $value = $item;
             $dataBlock[$key] = $value;
         }
-        $responseCode = self::CODE_UNKNOWN;
-        $status = self::STATUS_UNKNOWN;
+        $responseCode = ResponseCode::UNKNOWN;
+        $status = 'unknown';
         if (isset($dataBlock['response_code'])) {
             $responseCode = (int)$dataBlock['response_code'];
-            $responseCodes = self::RESPONSE_CODES;
-            if (isset($responseCodes[$responseCode]) === true) {
-                $status = $responseCodes[$responseCode];
-            }
+            $status = ResponseCode::getStatus($responseCode);
         }
         $attributes = [];
         if (array_key_exists('attributes', $dataBlock)) {
@@ -101,7 +42,7 @@ class ResponseParser
             }
         }
         $response = isset($dataBlock['response_text']) ? (string)$dataBlock['response_text'] : '';
-        if ($responseCode > self::MAXIMUM_SUCCESS_CODE) {
+        if (!ResponseCode::isSuccess($responseCode)) {
             throw new DomainException($response, $responseCode);
         }
         $this->result = new Result($response, $responseCode, $status, $attributes);
