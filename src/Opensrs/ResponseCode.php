@@ -67,7 +67,7 @@ final class ResponseCode
      * Flattened response codes mapping for quick lookup
      * @var array<int, string>
      */
-    private static array $responseCodes;
+    private static ?array $responseCodes = null;
 
     /**
      * Maximum success code

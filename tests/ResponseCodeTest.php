@@ -152,4 +152,63 @@ class ResponseCodeTest extends TestCase
         $this->assertFalse(ResponseCode::isInCategory(ResponseCode::SUCCESS, 'errors'));
         $this->assertFalse(ResponseCode::isInCategory(99999, 'success'));
     }
+
+    /**
+     * Test that covers the specific execution path that was failing in production
+     * This test ensures the static property initialization works correctly
+     */
+    public function testStaticPropertyInitialization(): void
+    {
+        // Test that getAllCodes() can be called multiple times without errors
+        $codes1 = ResponseCode::getAllCodes();
+        $codes2 = ResponseCode::getAllCodes();
+        
+        // Both calls should return the same result
+        $this->assertEquals($codes1, $codes2);
+        
+        // Test that getStatus() works after getAllCodes() has been called
+        $status1 = ResponseCode::getStatus(ResponseCode::SUCCESS);
+        $status2 = ResponseCode::getStatus(ResponseCode::DOMAIN_AVAILABLE);
+        
+        $this->assertEquals('success', $status1);
+        $this->assertEquals('domain_available', $status2);
+        
+        // Test that isValid() works correctly
+        $this->assertTrue(ResponseCode::isValid(ResponseCode::SUCCESS));
+        $this->assertFalse(ResponseCode::isValid(99999));
+    }
+
+    /**
+     * Test that covers the exact scenario from the production error
+     * This simulates the ResponseParser calling getStatus() with a valid code
+     */
+    public function testProductionExecutionPath(): void
+    {
+        // Simulate the exact scenario from the production error
+        // ResponseParser calls getStatus() with code 200
+        $responseCode = 200;
+        $status = ResponseCode::getStatus($responseCode);
+        
+        $this->assertEquals('success', $status);
+        $this->assertTrue(ResponseCode::isSuccess($responseCode));
+        $this->assertTrue(ResponseCode::isValid($responseCode));
+    }
+
+    /**
+     * Test that covers multiple rapid calls to ensure no race conditions
+     */
+    public function testMultipleRapidCalls(): void
+    {
+        // Make multiple rapid calls to simulate high-load scenario
+        for ($i = 0; $i < 10; $i++) {
+            $status = ResponseCode::getStatus(ResponseCode::SUCCESS);
+            $this->assertEquals('success', $status);
+            
+            $isValid = ResponseCode::isValid(ResponseCode::SUCCESS);
+            $this->assertTrue($isValid);
+            
+            $allCodes = ResponseCode::getAllCodes();
+            $this->assertArrayHasKey(ResponseCode::SUCCESS, $allCodes);
+        }
+    }
 } 
