@@ -7,3 +7,4 @@ composer.phar
 .env
 /.phpunit.result.cache
 /.history
+/.idea
