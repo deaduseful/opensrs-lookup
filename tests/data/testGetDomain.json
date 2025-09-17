@@ -38,7 +38,22 @@
                 "address2": "261 Bolton Rd",
                 "last_name": "Partners"
             },
-            "tech": [],
+            "tech": {
+                "address2": "261 Bolton Rd",
+                "last_name": "Partners",
+                "org_name": "Phurix",
+                "postal_code": "BL8 2NZ",
+                "address3": "",
+                "address1": "1246 Davenport House",
+                "fax": "",
+                "phone": "+44.8712181337",
+                "city": "Bury",
+                "first_name": "The",
+                "country": "GB",
+                "state": "",
+                "email": "domains@phurix.co.uk",
+                "status": "active"
+            },
             "admin": {
                 "address2": "261 Bolton Rd",
                 "last_name": "Partners",

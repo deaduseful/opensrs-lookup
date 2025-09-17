@@ -65,8 +65,10 @@ class ResponseParser
     {
         if (isset($item->dt_assoc) || isset($item->dt_array)) {
             $value = [];
-            $array = empty($item->dt_assoc->item) ? $item->dt_array->item : $item->dt_assoc->item;
-            if (empty($array) === false) {
+            $dtAssocItems = $item->dt_assoc->item ?? null;
+            $dtArrayItems = $item->dt_array->item ?? null;
+            $array = ($dtAssocItems === null || count($dtAssocItems) === 0) ? $dtArrayItems : $dtAssocItems;
+            if ($array !== null && count($array) > 0) {
                 foreach ($array as $subItem) {
                     $key = (string)$subItem->attributes()['key'];
                     $value[$key] = $this->parseItem($subItem);
