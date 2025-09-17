@@ -3,18 +3,15 @@
 namespace Deaduseful\Opensrs;
 
 use RuntimeException;
-use SimpleXMLElement;
 
 class RequestClient
 {
-    /**
-     * @const int Socket Timeout in seconds.
-     */
-    const SOCKET_TIMEOUT = 120;
+    /** @const int Socket Timeout in seconds. */
+    public const SOCKET_TIMEOUT = 120;
     protected string $contents;
     protected array $headers;
 
-    public function call(string $request, string $headers, string $host, int $timeout): self
+    public function call(string $request, string $headers, string $host, int $timeout = self::SOCKET_TIMEOUT): self
     {
         $contents = $this->filePostContents($host, $request, $headers, $timeout);
         if (empty($contents)) {

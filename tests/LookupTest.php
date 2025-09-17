@@ -3,7 +3,6 @@
 include __DIR__ . '/../bootstrap.php';
 
 use Deaduseful\Opensrs\Lookup;
-use Deaduseful\Opensrs\ResponseParser;
 use PHPUnit\Framework\TestCase;
 
 class LookupTest extends TestCase

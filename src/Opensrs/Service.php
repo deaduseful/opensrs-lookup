@@ -17,27 +17,27 @@ class Service
     /**
      * @const string LIVE OpenSRS domain service API host.
      */
-    const LIVE_HOST = 'https://rr-n1-tor.opensrs.net:55443';
+    protected const LIVE_HOST = 'https://rr-n1-tor.opensrs.net:55443';
 
     /**
      * @const string TEST OpenSRS domain service API host.
      */
-    const TEST_HOST = 'https://horizon.opensrs.net:55443';
+    protected const TEST_HOST = 'https://horizon.opensrs.net:55443';
 
     /**
      * @const string OpenSRS reseller username.
      */
-    const USERNAME = OSRS_USERNAME;
+    protected const USERNAME = OSRS_USERNAME;
 
     /**
      * @const string OpenSRS reseller private Key. Please generate a key if you do not already have one.
      */
-    const KEY = OSRS_KEY;
+    protected const KEY = OSRS_KEY;
 
     /**
      * @const string Default for the test flag.
      */
-    const TEST = false;
+    protected const TEST = false;
 
     protected int $timeout = RequestClient::SOCKET_TIMEOUT;
     protected string $host = self::LIVE_HOST;
