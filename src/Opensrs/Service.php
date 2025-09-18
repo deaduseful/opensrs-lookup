@@ -17,12 +17,12 @@ class Service
     /**
      * @const string LIVE OpenSRS domain service API host.
      */
-    protected const LIVE_HOST = 'https://rr-n1-tor.opensrs.net:55443';
+    public const LIVE_HOST = 'https://rr-n1-tor.opensrs.net:55443';
 
     /**
      * @const string TEST OpenSRS domain service API host.
      */
-    protected const TEST_HOST = 'https://horizon.opensrs.net:55443';
+    public const TEST_HOST = 'https://horizon.opensrs.net:55443';
 
     /**
      * @const string OpenSRS reseller username.
@@ -47,6 +47,7 @@ class Service
     protected RequestBuilder $requestBuilder;
     protected ResponseParser $responseParser;
     private ?Result $result;
+    protected bool $test = self::TEST;
 
     /**
      * Service constructor.
@@ -59,8 +60,11 @@ class Service
         RequestClient $requestClient = null,
         ResponseParser $responseParser = null
     ) {
-        $host = $test ? self::TEST_HOST : self::LIVE_HOST;
-        $this->setUsername($username)->setKey($key)->setHost($host);
+        $this
+            ->setUsername($username)
+            ->setKey($key)
+            ->setTest($test)
+            ->setHost();
         $this->requestBuilder = $requestBuilder ?: new RequestBuilder();
         $this->requestClient = $requestClient ?: new RequestClient();
         $this->responseParser = $responseParser ?: new ResponseParser();
@@ -101,8 +105,11 @@ class Service
         return $this->host;
     }
 
-    public function setHost(string $host): self
+    public function setHost(?string $host = null): self
     {
+        if ($host === null) {
+            $host = $this->getHostFromMode($this->test);
+        }
         $this->host = $host;
         return $this;
     }
@@ -112,7 +119,7 @@ class Service
         return $this->timeout;
     }
 
-    public function setTimeout(int $timeout): self
+    public function setTimeout(int $timeout = RequestClient::SOCKET_TIMEOUT): self
     {
         $this->timeout = $timeout;
         return $this;
@@ -145,5 +152,16 @@ class Service
     public function getResult(): ?Result
     {
         return $this->result;
+    }
+
+    private function setTest(bool $test): Service
+    {
+        $this->test = $test;
+        return $this;
+    }
+
+    public function getHostFromMode(bool $test = self::TEST): string
+    {
+        return $test ? self::TEST_HOST : self::LIVE_HOST;
     }
 }
