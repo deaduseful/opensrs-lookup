@@ -1,7 +1,5 @@
 <?php
 
-include '../vendor/autoload.php';
-
 use Deaduseful\Opensrs\FastLookup;
 use PHPUnit\Framework\TestCase;
 
