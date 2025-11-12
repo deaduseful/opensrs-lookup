@@ -2,6 +2,7 @@
 
 namespace Deaduseful\Opensrs;
 
+use ErrorException;
 use RuntimeException;
 
 class RequestClient
@@ -11,6 +12,9 @@ class RequestClient
     protected string $contents;
     protected array $headers;
 
+    /**
+     * @throws ErrorException|RuntimeException
+     */
     public function call(string $request, string $headers, string $host, int $timeout = self::SOCKET_TIMEOUT): self
     {
         $contents = $this->filePostContents($host, $request, $headers, $timeout);
@@ -29,6 +33,7 @@ class RequestClient
 
     /**
      * Similar to file_get_contents but uses the POST method.
+     * @throws ErrorException|RuntimeException
      */
     public function filePostContents(string $url, string $content, string $headers = '', int $timeout = self::SOCKET_TIMEOUT, int $maxRetries = 3, int $initialDelayMs = 200)
     {
@@ -49,6 +54,7 @@ class RequestClient
 
     /**
      * Attempts to get contents with retry logic on connection errors.
+     * @throws ErrorException|RuntimeException
      */
     protected function fileGetContentsWithRetry(string $filename, array $options = [], int $maxRetries = 3, int $initialDelayMs = 200)
     {
@@ -57,7 +63,7 @@ class RequestClient
         do {
             try {
                 return $this->fileGetContents($filename, $options);
-            } catch (\ErrorException $e) {
+            } catch (ErrorException $e) {
                 // Only retry on connection errors
                 if (strpos($e->getMessage(), 'Failed to open stream') === false) {
                     throw $e;
@@ -73,9 +79,6 @@ class RequestClient
         throw new RuntimeException('file_get_contents failed after retries');
     }
 
-    /**
-     * @throws \ErrorException
-     */
     protected function fileGetContents(string $filename, array $options = []) {
         $context = stream_context_create($options);
         return file_get_contents($filename, false, $context);
