@@ -22,7 +22,7 @@ class TldChart
         $this->setData($data);
     }
 
-    public static function fetch(?string $source = null): array
+    protected static function fetch(?string $source = null): array
     {
         $source = $source ?: self::SOURCE;
         $array = [];
